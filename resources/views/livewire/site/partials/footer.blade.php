@@ -8,16 +8,16 @@
                         <div class="row align-items-center justify-content-between">
                             <div class="col-lg-5 col-md-6">
                                 <div class="heading_s1">
-                                    <h3>Subscribe Our Newsletter</h3>
+                                    <h3>Abonnez-vous à notre newsletter</h3>
                                 </div>
-                                <p>Rejoignez la famille Centrale du mobilier ! Le meilleur moyen de garder contact et d'être au courant de nos ventes privées et bons plans.
+                                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières nouvelles sur l'emailing. Notre communication mensuelle vous informera des dernières mise a jour sur notre plateforme
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="newsletter_form">
                                     <form wire:submit.prevent='inscription_newsletter'>
                                         <input type="text" required="" class="form-control" wire:model="email"
-                                            placeholder="Enter Email Address">
+                                            placeholder="Entrer l'adresse e-mail">
                                         <button type="submit" class="btn-send2" name="submit" value="Submit"><i
                                                 class="icon-envelope-letter"></i></button>
                                     </form>
@@ -52,37 +52,32 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="widget">
-                                <h6 class="widget_title">Quick Links</h6>
+                                <h6 class="widget_title">Liens rapides</h6>
                                 <ul class="widget_links">
-                                    <li><a href="#">home</a></li>
-                                    <li><a href="#">login</a></li>
-                                    <li><a href="#">sign up</a></li>
-                                    <li><a href="#">shop</a></li>
+                                    <li><a href="#">Accueil</a></li>
+                                    <li><a href="#">Connexion</a></li>
+                                    <li><a href="#">Inscription</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="widget">
+                                <h6 class="widget_title">Informations</h6>
+                                <ul class="widget_links">
+                                    <li><a href="#">Colocation</a></li>
+                                    <li><a href="#">Location</a></li>
                                     <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="widget">
-                                <h6 class="widget_title">Information</h6>
+                                <h6 class="widget_title">Mon Compte</h6>
                                 <ul class="widget_links">
-                                    <li><a href="#">Term Of Service</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Return policy</a></li>
-                                    <li><a href="#">Your Account</a></li>
-                                    <li><a href="#">Suppliers</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="widget">
-                                <h6 class="widget_title">My Account</h6>
-                                <ul class="widget_links">
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="#">Discount</a></li>
-                                    <li><a href="#">Returns</a></li>
-                                    <li><a href="#">Orders History</a></li>
-                                    <li><a href="#">Order Tracking</a></li>
+                                    <li><a href="#">Mon compte</a></li>
+                                    <li><a href="#">dashborad</a></li>
+                                    <li><a href="#">History location</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -91,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="middle_footer mb-4 mb-md-5">
+    {{-- <div class="middle_footer mb-4 mb-md-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -114,9 +109,9 @@
                                         <i class="ti-email"></i>
                                     </div>
                                     <div class="icon_box_content">
-                                        <h5>Email us</h5>
-                                        <p><a href="mailto:vente@centraledumobilier.com">vente@centraledumobilier.com</a> </br> <a
-                                                href="mailto:info@centraledumobilier.com">infos@centraledumobilier.com</a></p>
+                                        <h5>Email</h5>
+                                        <p><a href="mailto:alissouanani@gmail.com">alissouanani@gmail.com</a> </br> <a
+                                                href="mailto:alissoufernando.com">alissoufernando.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -136,14 +131,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="bottom_footer bg_dark4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-md-0 text-center text-md-start">© 2020 All Rights Reserved by MAMARI</p>
+                    <p class="mb-md-0 text-center text-md-start">© 2020 All Rights Reserved by STUDENT-COLOC</p>
                 </div>
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <ul class="footer_payment text-center text-md-end">
                         <li><a href="#"><img src="{{asset('assets/site/assets/images/visa.png')}}" alt="visa"></a></li>
                         <li><a href="#"><img src="{{asset('assets/site/assets/images/discover.png')}}" alt="discover"></a></li>
@@ -151,7 +146,7 @@
                         <li><a href="#"><img src="{{asset('assets/site/assets/images/paypal.png')}}" alt="paypal"></a></li>
                         <li><a href="#"><img src="{{asset('assets/site/assets/images/amarican_express.png')}}" alt="amarican_express"></a></li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

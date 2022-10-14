@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\User;
 
+use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
@@ -11,10 +12,11 @@ class UserComponent extends Component
 {
     use PasswordValidationRules;
     public $name;
-    public $firstname;
+    public $phone;
     public $email;
     public $password;
     public $user_id;
+    public $roless =[];
 
     protected $listeners = ['deleteConfirmation' => 'deleteUsers'];
 
@@ -25,9 +27,9 @@ class UserComponent extends Component
         $this->resetErrorBag();
         $this->resetValidation();
         if($this->user_id){
-            $this->reset(['name', 'firstname', 'email','user_id']);
+            $this->reset(['name', 'phone', 'email','user_id']);
         }
-        $this->reset(['name', 'firstname', 'email', 'password']);
+        $this->reset(['name', 'phone', 'email', 'password']);
     }
 
 
@@ -36,13 +38,13 @@ class UserComponent extends Component
         if ($this->user_id) {
             $this->validateOnly($fields, [
                 'name' =>  ['required'],
-                'firstname' =>  ['required'],
+                'phone' =>  ['required'],
                 'email' =>  ['required'],
             ]);
         } else {
             $this->validateOnly($fields, [
                 'name' =>  ['required'],
-                'firstname' =>  ['required'],
+                'phone' =>  ['required'],
                 'email' =>  ['required'],
                 'password' => ['required'],
             ]);
@@ -56,14 +58,14 @@ class UserComponent extends Component
 
             $this->validate([
                 'name' => ['required',],
-                'firstname' =>  ['required'],
+                'phone' =>  ['required'],
                 'email' => ['required',],
             ]);
             // dd('ok');
         } else {
             $this->validate([
                 'name' =>  ['required'],
-                'firstname' =>  ['required'],
+                'phone' =>  ['required'],
                 'email' =>  ['required'],
                 'password' => ['required'],
             ]);
@@ -77,16 +79,21 @@ class UserComponent extends Component
         if($this->user_id) {
 
             $myUser->name = $this->name;
-            $myUser->firstname = $this->firstname;
+            $myUser->phone = $this->phone;
             $myUser->email = $this->email;
+            $myUser->roles()->sync($this->roless);
             $myUser->save();
 
         } else {
             $myUser->name = $this->name;
-            $myUser->firstname = $this->firstname;
+            $myUser->phone = $this->phone;
             $myUser->email = $this->email;
             $myUser->password = Hash::make($this->password);
             $myUser->save();
+            $myUser = User::where('email' ,$this->email)->first();
+            $userRole = Role::where('nom' ,'visiteur')->first();
+            $myUser->roles()->attach($userRole);
+
         }
 
 
@@ -105,7 +112,7 @@ class UserComponent extends Component
         $this->user_id = $id;
         $myUser = User::findOrFail($this->user_id);
         $this->name = $myUser->name;
-        $this->firstname = $myUser->firstname;
+        $this->phone = $myUser->phone;
         $this->email = $myUser->email;
     }
 
@@ -125,9 +132,11 @@ class UserComponent extends Component
     }
     public function render()
     {
-        $user = User::latest()->get();
+        $users = User::latest()->get();
+        $roles = Role::latest()->get();
         return view('livewire.dashboard.user.user-component',[
-            'user' => $user
+            'users' => $users,
+            'roles' => $roles,
         ]);
     }
 }

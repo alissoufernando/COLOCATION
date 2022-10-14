@@ -16,14 +16,15 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('image')->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('line1')->nullable();
-            $table->string('line2')->nullable();
-            $table->string('city')->nullable();
-            $table->string('departement')->nullable();
-            $table->string('country')->nullable();
-            $table->string('zipcode')->nullable();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->date('birthday')->nullable();
+            $table->string('adresse')->nullable();
+            $table->string('profession')->nullable();
+            $table->string('link_facebook')->nullable();
+            $table->string('link_twitter')->nullable();
+            $table->string('link_instagram')->nullable();
             $table->timestamps();
         });
     }

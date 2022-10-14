@@ -4,9 +4,11 @@ namespace App\Models;
 
 use id;
 use App\Models\User;
+use App\Models\Ville;
 use App\Models\Review;
 use App\Models\Postuler;
 use App\Models\Affectation;
+use App\Models\Departement;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,8 +25,8 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'departement', 'commune', 'name',
-        'slug', 'short_description', 'description', 'disponibilite', 'normal_price','place_dispo','type_annonce','ville','categorie_id','user_id'
+        'departement_id', 'name',
+        'slug', 'short_description', 'description', 'disponibilite', 'normal_price','place_dispo','type_annonce','quartier','ville_id','categorie_id','user_id'
     ];
 
     /**
@@ -70,6 +72,16 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function ville()
+    {
+        return $this->belongsTo(Ville::class);
+    }
+
+    public function departement()
+    {
+        return $this->belongsTo(Departement::class);
     }
 
 }

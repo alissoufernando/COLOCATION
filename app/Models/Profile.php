@@ -9,14 +9,17 @@ class Profile extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'image',
+        'name',
         'user_id',
-        'mobile',
-        'line1',
-        'line2',
-        'city',
-        'departement',
-        'country',
-        'zipcode',
+        'email',
+        'phone',
+        'link_facebook',
+        'link_twitter',
+        'link_instagram',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

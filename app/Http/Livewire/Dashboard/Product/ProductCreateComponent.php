@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Dashboard\Product;
 
+use App\Models\Ville;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Departement;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +18,9 @@ class ProductCreateComponent extends Component
     public $short_description;
     public $description;
     public $normal_price;
-    public $departement;
-    public $ville;
+    public $ville_id;
     public $type_annonce;
-    public $commune;
+    public $quartier;
     public $disponibilite;
     public $place_dispo;
     public $user_id;
@@ -31,7 +32,7 @@ class ProductCreateComponent extends Component
         // Clean errors if were visible before
         $this->resetErrorBag();
         $this->resetValidation();
-        $this->reset(['ville', 'type_annonce','name', 'slug', 'normal_price', 'departement','commune', 'short_description', 'categorie_id','description','disponibilite','place_dispo', 'user_id']);
+        $this->reset(['ville_id', 'type_annonce','name', 'slug', 'normal_price','quartier', 'short_description', 'categorie_id','description','disponibilite','place_dispo', 'user_id']);
 
     }
     public function mount() {
@@ -50,13 +51,12 @@ class ProductCreateComponent extends Component
                 'name' =>  'required',
                 'slug' =>  'required',
                 'normal_price' =>  'required',
-                'departement' =>  'required',
-                'commune' =>  'required',
+                'quartier' =>  'required',
                 'short_description' =>  'required',
                 'categorie_id' =>  'required',
                 'description' => 'required',
                 'place_dispo' => 'required',
-                'ville' => 'required',
+                'ville_id' => 'required',
                 'type_annonce' => 'required',
 
             ]);
@@ -64,13 +64,12 @@ class ProductCreateComponent extends Component
         $product = new Product();
 
         $product->user_id = Auth::user()->id;
-        $product->commune = $this->commune;
+        $product->quartier = $this->quartier;
         $product->name = $this->name;
         $product->slug = $this->slug;
-        $product->ville = $this->ville;
+        $product->ville_id = $this->ville_id;
         $product->type_annonce = $this->type_annonce;
         $product->normal_price = $this->normal_price;
-        $product->departement = $this->departement;
         $product->disponibilite = $this->disponibilite;
         $product->place_dispo = $this->place_dispo;
         $product->short_description = $this->short_description;
@@ -88,10 +87,16 @@ class ProductCreateComponent extends Component
     public function render()
     {
 
+        $villes = Ville::latest()->get();
+
+        $departements = Departement::latest()->get();
+
         $categorie = Category::all();
 
         return view('livewire.dashboard.product.product-create-component',[
             'categorie' => $categorie,
+            'departements' => $departements,
+            'villes' => $villes,
         ]);
     }
 }

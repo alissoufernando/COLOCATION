@@ -45,7 +45,7 @@
         <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow carousel_style2"
                 data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/a2.jpg')}}">
+                    <div class="carousel-item active background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/5.jpg')}}">
                         <div class="banner_slide_content banner_content_inner">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/a1.jpg')}}">
+                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/3.jpg')}}">
                         <div class="banner_slide_content banner_content_inner">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -73,13 +73,9 @@
                                             <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
                                                 data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Centrale du mobilier!!</h2>
+                                                data-animation-delay="0.3s">Bienvenue !!</h2>
                                             <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s"> est reconnu comme une entreprise de longévité prestigieuse
-
-                                                par l'Administration des petites et moyennes entreprises  et
-
-                                                continue sa valeur en tant qu'entreprise de deuxième génération.</h4>
+                                                data-animation-delay="0.4s">Sur notre site de recherche de coloc</h4>
 
                                         </div>
                                     </div>
@@ -96,72 +92,9 @@
                                             <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
                                                 data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Nos tables !!</h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Trouves des tables de conférence MEX sur mesure pour vous</h4>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/2.jpg')}}">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-7 col-md-10">
-                                        <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
-                                            <h2 class="staggered-animation" data-animation="fadeInDown"
                                                 data-animation-delay="0.3s">Bienvenue !!</h2>
                                             <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Nous sommes sûrs que vous constaterez que nos coffres-forts sont fidèles à la sécurité des clients.
-
-                                                Avec une fiabilité éprouvée dans plus de 50 ans d'expérience, nous sommes convaincus d'être votre meilleur partenaire commercial.
-                                            </h4>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/3.jpg')}}">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-7 col-md-10">
-                                        <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
-                                            <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Nous sommes </h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s"> les représentants exclusif au Bénin et dans la sous région de la gamme MEX
-                                            </h4>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/4.jpg')}}">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-7 col-md-10">
-                                        <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
-                                            <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Nous avons !!</h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">
-                                                des comptoirs Mex sur mesure pour votre Hall d'accueil.
-                                            </h4>
+                                                data-animation-delay="0.4s">Sur notre site de recherche de coloc</h4>
 
                                         </div>
                                     </div>
@@ -286,23 +219,25 @@
                                </div>
                            </div>
                            <div class="product_info">
-                               <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $products_latests->id])}}">{{$products_latests->name}}</a></h6>
+                               <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $products_latests->id])}}">{{$products_latests->categorie->name}}</a></h6>
                                <div class="product_price">
                                    <span class="price">{{number_format($products_latests->normal_price,2,"."," ")}} FCFA</span>
 
                                </div>
-                               <div class="rating_wrap">
+                               {{-- <div class="rating_wrap">
                                    <div class="rating">
                                        <div class="product_rate" style="width:80%"></div>
                                    </div>
                                    <span class="rating_num">(21)</span>
-                               </div>
+                               </div> --}}
+                               <div class="rating_wrap">
+                                    <div>{{ $products_latests->place_dispo }} place(s) disponible(s)</div>
+                                </div>
                                <div class="pr_desc">
-                                   <p>{{$products_latests->short_description}}</p>
+                                   <p>{!! $products_latests->short_description !!}</p>
                                </div>
                                <div class="add-to-cart">
-                                   <a href="#"  data-bs-toggle="modal" wire:click.prevent='getElementById({{$products_latests->id}})' data-bs-target="#exampleModalCenter" class="btn btn-fill-out btn-radius btn-sm"><i class="icon-basket-loaded"></i>
-                                       Contacter</a>
+                                   <a href="#"  data-bs-toggle="modal" wire:click.prevent='getElementById({{$products_latests->id}})' data-bs-target="#exampleModalCenter" class="btn btn-fill-out btn-radius btn-sm"> <i class="ti-phone"></i> Contacter</a>
                                </div>
                            </div>
                        </div>
@@ -325,75 +260,41 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-8">
                         <div class="heading_s1 text-center">
-                            <h2>Latest News</h2>
+                            <h2>Derniers actualités</h2>
                         </div>
-                        <p class="leads text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore.</p>
+                        <p class="leads text-center">Vie étudiante: Conseils actualites</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @foreach ($articles as $article)
                     <div class="col-lg-4 col-md-6">
                         <div class="blog_post blog_style1 box_shadow1">
                             <div class="blog_img">
-                                <a href="blog-single.html">
-                                    <img src="assets/images/furniture_blog_img1.jpg" alt="furniture_blog_img1">
+
+                                <a href="{{route('site.detail-article',['id' => $article->id])}}">
+                                    @empty ($article->path)
+                                    <img src="{{asset('assets/images/product/default.png')}}" alt="{{$article->titre}}">
+                                    @else
+                                    <img src="{{asset('storage')}}/{{$article->path}}" alt="{{ $article->titre }}">
+                                    @endempty
                                 </a>
                             </div>
                             <div class="blog_content bg-white">
                                 <div class="blog_text">
-                                    <h5 class="blog_title"><a href="blog-single.html">But I must explain to you how all
-                                            this mistaken idea</a></h5>
+                                    <h5 class="blog_title"><a href="{{route('site.detail-article',['id' => $article->id])}}">{{$article->titre}}</a></h5>
                                     <ul class="list_none blog_meta">
-                                        <li><a href="#"><i class="ti-calendar"></i> April 14, 2018</a></li>
-                                        <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
+                                        <li><a href="{{route('site.detail-article',['id' => $article->id])}}"><i class="ti-calendar"></i>{{ $article->created_at->format('d M o') }}</a></li>
+                                        <li><a href="#"><i class="ti-user"></i>{{ $article->auteur }}</a></li>
+
                                     </ul>
-                                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                                        anything hidden in the text</p>
+                                    <div>{!! $article->short_description !!}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog_post blog_style1 box_shadow1">
-                            <div class="blog_img">
-                                <a href="blog-single.html">
-                                    <img src="assets/images/furniture_blog_img2.jpg" alt="furniture_blog_img2">
-                                </a>
-                            </div>
-                            <div class="blog_content bg-white">
-                                <div class="blog_text">
-                                    <h5 class="blog_title"><a href="blog-single.html">On the other hand we provide
-                                            denounce with righteous</a></h5>
-                                    <ul class="list_none blog_meta">
-                                        <li><a href="#"><i class="ti-calendar"></i> April 14, 2018</a></li>
-                                        <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                    </ul>
-                                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                                        anything hidden in the text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog_post blog_style1 box_shadow1">
-                            <div class="blog_img">
-                                <a href="blog-single.html">
-                                    <img src="assets/images/furniture_blog_img3.jpg" alt="furniture_blog_img3">
-                                </a>
-                            </div>
-                            <div class="blog_content bg-white">
-                                <div class="blog_text">
-                                    <h5 class="blog_title"><a href="blog-single.html">Why is a ticket to Lagos so
-                                            expensive?</a></h5>
-                                    <ul class="list_none blog_meta">
-                                        <li><a href="#"><i class="ti-calendar"></i> April 14, 2018</a></li>
-                                        <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
-                                    </ul>
-                                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                                        anything hidden in the text</p>
-                                </div>
-                            </div>
-                        </div>
+                    @endforeach
+                    <div>
+                        <a href="{{ route('site.articles') }}" class="btn btn-fill-out btn-radius btn-sm float-end">Voir plus</a>
                     </div>
                 </div>
             </div>

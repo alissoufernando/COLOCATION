@@ -24,7 +24,7 @@ class ShopComponent extends Component
     public $open1 = false;
 
     public $email, $user_id, $post;
-    public $categorie_id, $ville, $type_annonce, $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids;
+    public $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids;
 
     public function resetInputFieldss()
     {
@@ -70,13 +70,19 @@ class ShopComponent extends Component
     public function getElementById($id)
     {
 
-        $this->product_ids = $id;
+        if(Auth::check())
+        {
+            $this->product_ids = $id;
         // dd($this->product_ids);
 
 
         $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
+
+        }else{
+            return Redirect()->route('login');
+        }
 
     }
 
@@ -154,17 +160,17 @@ class ShopComponent extends Component
     {
         if($this->sorting == "date")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->orderBy('created_at', 'DESC')->paginate($this->pagesize);
+            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('created_at', 'DESC')->paginate($this->pagesize);
         }else if($this->sorting == "price")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
+            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
 
         }else if($this->sorting == "price-desc")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
+            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
 
         }else{
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->paginate($this->pagesize);
+            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->paginate($this->pagesize);
         }
         $category = Category::all();
         if(Auth::check())

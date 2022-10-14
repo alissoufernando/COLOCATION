@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Dashboard\Product;
 
+use App\Models\Ville;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Departement;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +17,10 @@ class ProductEditComponent extends Component
     public $short_description;
     public $description;
     public $normal_price;
-    public $department;
     public $type_annonce;
-    public $ville;
-    public $commune;
-    public $departement;
+    public $ville_id;
+    public $quartier;
+    public $departement_id;
     public $disponibilite;
     public $place_dispo;
     public $user_id, $product_id;
@@ -29,7 +30,7 @@ class ProductEditComponent extends Component
         // Clean errors if were visible before
         $this->resetErrorBag();
         $this->resetValidation();
-        $this->reset(['type_annonce', 'ville','name', 'slug', 'normal_price', 'departement','commune', 'short_description', 'categorie_id','description','disponibilite','place_dispo', 'user_id']);
+        $this->reset(['type_annonce', 'ville_id','name', 'slug', 'normal_price','quartier', 'short_description', 'categorie_id','description','disponibilite','place_dispo', 'user_id']);
     }
     public function mount($id) {
 
@@ -39,14 +40,13 @@ class ProductEditComponent extends Component
         $this->name = $myProduct->name;
         $this->slug =  $myProduct->slug;
         $this->normal_price = $myProduct->normal_price;
-        $this->departement = $myProduct->departement;
-        $this->commune = $myProduct->commune;
-        $this->ville = $myProduct->ville;
+        $this->departement_id = $myProduct->departement_id;
+        $this->quartier = $myProduct->quartier;
+        $this->ville_id = $myProduct->ville_id;
         $this->type_annonce = $myProduct->type_annonce;
         $this->short_description = $myProduct->short_description;
         $this->categorie_id = $myProduct->categorie_id;
         $this->description = $myProduct->description;
-        $this->department = $myProduct->department;
         $this->disponibilite = $myProduct->disponibilite;
         $this->place_dispo = $myProduct->place_dispo;
         $this->user_id = $myProduct->user_id;
@@ -64,15 +64,13 @@ class ProductEditComponent extends Component
             'name' =>  'required',
             'slug' =>  'required',
             'normal_price' =>  'required',
-            'departement' =>  'required',
-            'commune' =>  'required',
+            'quartier' =>  'required',
             'short_description' =>  'required',
             'categorie_id' =>  'required',
             'description' => 'required',
             'place_dispo' => 'required',
-            'description' => 'required',
             'type_annonce' => 'required',
-            'ville' => 'required',
+            'ville_id' => 'required',
         ]);
 
 
@@ -83,13 +81,12 @@ class ProductEditComponent extends Component
             $myProduct->user_id = $this->user_id;
 
         }
-        $myProduct->commune = $this->commune;
+        $myProduct->quartier = $this->quartier;
         $myProduct->name = $this->name;
         $myProduct->slug = $this->slug;
         $myProduct->normal_price = $this->normal_price;
-        $myProduct->departement = $this->departement;
         $myProduct->disponibilite = $this->disponibilite;
-        $myProduct->ville = $this->ville;
+        $myProduct->ville_id = $this->ville_id;
         $myProduct->type_annonce = $this->type_annonce;
         $myProduct->place_dispo = $this->place_dispo;
         $myProduct->short_description = $this->short_description;
@@ -104,9 +101,13 @@ class ProductEditComponent extends Component
 
     public function render()
     {
+        $villes = Ville::latest()->get();
+        $departements = Departement::latest()->get();
         $categorie = Category::all();
         return view('livewire.dashboard.product.product-edit-component',[
             'categorie' => $categorie,
+            'departements' => $departements,
+            'villes' => $villes,
         ]);
     }
 }

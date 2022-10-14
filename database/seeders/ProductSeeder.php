@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Ville;
 use App\Models\Product;
 use App\Models\Category;
 use Faker\Factory as Faker;
@@ -23,18 +25,36 @@ class ProductSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Product::create([
-                'sku' => 'DIGI' . $faker->unique()->numberBetween(100, 500),
+                'type_annonce' => 'COLOCATION',
                 'name' => $productName,
                 'slug' => Str::slug($faker->unique()->words($nb = 2, $asText = true)),
                 'description' => $faker->text(500),
-                'quantity' => $faker->numberBetween(100, 200),
-                'quantity_alert' => $faker->numberBetween(100, 200),
-                'status_stock' => 'instock',
+                'short_description' => $faker->text(200),
+                'place_dispo' => $faker->numberBetween(1, 5),
+                'quartier' => $faker->city(),
                 'normal_price' => mt_rand(1000, 10000),
-                'sale_price' => mt_rand(999, 5000) - 182,
-                'status' => $faker->randomElement(array(true, false)),
-                'featured' => $faker->randomElement(array(true, false)),
+                'disponibilite' => 1,
+                'ville_id' => Ville::all()->random()->id,
                 'categorie_id' => Category::all()->random()->id,
+                'user_id' => User::all()->random()->id,
+
+            ]);
+        }
+
+        for ($i = 0; $i < 10; $i++) {
+            Product::create([
+                'type_annonce' => 'LOCATION',
+                'name' => $productName,
+                'slug' => Str::slug($faker->unique()->words($nb = 2, $asText = true)),
+                'description' => $faker->text(500),
+                'short_description' => $faker->text(200),
+                'place_dispo' => $faker->numberBetween(1, 5),
+                'quartier' => $faker->city(),
+                'normal_price' => mt_rand(1000, 10000),
+                'disponibilite' => 1,
+                'ville_id' => Ville::all()->random()->id,
+                'categorie_id' => Category::all()->random()->id,
+                'user_id' => User::all()->random()->id,
             ]);
         }
     }

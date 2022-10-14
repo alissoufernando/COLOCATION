@@ -39,13 +39,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="page-title">
-                        <h1>Boutique</h1>
+                        <h1>Annonces</h1>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <ol class="breadcrumb justify-content-md-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Boutique</a></li>
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Annonces</a></li>
                     </ol>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                              </div>
                          </div>
                          <div class="product_info">
-                             <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->name}}</a></h6>
+                             <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
                              <div class="product_price">
                                  <span class="price">{{$product->normal_price }} FCFA</span>
                                  <div class="on_sale">
@@ -128,13 +128,10 @@
                                  </div>
                              </div>
                              <div class="rating_wrap">
-                                 <div class="rating">
-                                     <div class="product_rate" style="width:80%"></div>
-                                 </div>
-                                 <span class="rating_num">(21)</span>
-                             </div>
+                                <div>{{ $product->place_dispo }} place(s) disponible(s)</div>
+                            </div>
                              <div class="pr_desc">
-                                 <p>{{$product->short_description }}</p>
+                                 <p>{!! $product->short_description !!}</p>
                              </div>
                              <div class="pr_switch_wrap">
                                  <div class="product_color_switch">
@@ -222,14 +219,14 @@
     	<div class="row align-items-center">
             <div class="col-md-6">
                 <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
+                    <h3>Abonnez-vous à notre newsletter</h3>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="newsletter_form">
                     <form wire:submit.prevent='inscription_newsletter'>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address" wire:model="email">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        <input type="text" required="" class="form-control rounded-0" placeholder="Entrer l'adresse e-mail" wire:model="email">
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">S'abonner</button>
                     </form>
                 </div>
             </div>

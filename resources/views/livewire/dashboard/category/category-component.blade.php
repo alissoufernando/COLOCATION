@@ -7,7 +7,7 @@
 @section('breadcrumb-title', 'Catégories')
 @section('breadcrumb-items')
 <li class="breadcrumb-item">Tableau de bord</li>
-<li class="breadcrumb-item active">Liste des Catégories</li>
+<li class="breadcrumb-item active">Liste des Catégories de chambre</li>
 @endsection
 <div>
     <!-- Container-fluid starts-->
@@ -20,7 +20,7 @@
                         @if (Session::has('message'))
                         <div class="alert alert-success">{{Session::get('message')}}</div>
                     @endif
-                        <h5 class="d-inline">Liste des Catégories</h5>
+                        <h5 class="d-inline">Liste des Catégories de chambre</h5>
                         <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn  btn-primary btn-sm float-end">Ajouter</a>
 
                     </div>
@@ -33,7 +33,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Slug</th>
-                                <th>Menu</th>
+                                {{-- <th>Menu</th> --}}
                                 <th>Actions</th>
                                 </tr>
                             </thead>
@@ -46,7 +46,7 @@
                                     <td>{{$i ++}}</td>
                                     <td>{{$categories->name}}</td>
                                     <td>{{$categories->slug}}</td>
-                                    <td  class="text-center">
+                                    {{-- <td  class="text-center">
                                         @if ($categories->menu == 0)
 
                                         <span class="fw-bold">c'est pas un menu</span>
@@ -71,7 +71,7 @@
                                             width:30%; ">Oui</button>
                                         </form>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                     <td>
 
                                     <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" wire:click.prevent='getElementById({{$categories->id}})'>  <i class="fa fa-edit m-5 text-warning"></i> </a>

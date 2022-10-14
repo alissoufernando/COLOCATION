@@ -39,14 +39,13 @@
         <div class="row align-items-center">
         	<div class="col-md-6">
                 <div class="page-title">
-            		<h1>Wishlist</h1>
+            		<h1>Favoris</h1>
                 </div>
             </div>
             <div class="col-md-6 minimenu">
                 <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">Wishlist</li>
+                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="breadcrumb-item active">Favoris</li>
                 </ol>
             </div>
         </div>
@@ -126,14 +125,14 @@
     	<div class="row align-items-center">
             <div class="col-md-6">
                 <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
+                    <h3>Abonnez-vous à notre newsletter</h3>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="newsletter_form">
                     <form wire:submit.prevent='inscription_newsletter'>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address" wire:model="email">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        <input type="text" required="" class="form-control rounded-0" placeholder="Entrer l'adresse e-mail" wire:model="email">
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">S'abonner</button>
                     </form>
                 </div>
             </div>

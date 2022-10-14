@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ImageUser extends Model
 {
     use HasFactory;
+    protected $table= 'image_users';
+    protected $fillable = [
+        'path', 'user_id'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

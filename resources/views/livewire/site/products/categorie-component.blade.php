@@ -42,13 +42,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="page-title">
-                            <h1>Boutique</h1>
+                            <h1>Annonce</h1>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <ol class="breadcrumb justify-content-md-end">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="#">Boutique</a></li>
+                            <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                            <li class="breadcrumb-item active"><a href="#">Annonce</a></li>
                         </ol>
                     </div>
                 </div>
@@ -74,24 +74,21 @@
                                     <div class="product_header_left">
                                         <div class="custom_select">
                                             <select class="form-control form-control-sm" wire:model="sorting">
-                                                <option value="default">Default sorting</option>
-                                                <option value="date">Sort by date</option>
-                                                <option value="price">Sort by price: low to high</option>
-                                                <option value="price-desc">Sort by price: high to low</option>
+                                                <option value="default">Tri par défaut</option>
+                                                <option value="date">Trier par date</option>
+                                                <option value="price">Trier par prix : dans l'ordre croissant</option>
+                                                <option value="price-desc">Trier par prix : dans l'ordre décroissant</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="product_header_right">
                                         <div class="products_view">
-                                            <a href="javascript:Void(0);" class="shorting_icon grid"><i
-                                                    class="ti-view-grid"></i></a>
-                                            <a href="javascript:Void(0);" class="shorting_icon list active"><i
-                                                    class="ti-layout-list-thumb"></i></a>
+                                            <a href="javascript:Void(0);" class="shorting_icon grid"><i class="ti-view-grid"></i></a>
+                                            <a href="javascript:Void(0);" class="shorting_icon list active"><i class="ti-layout-list-thumb"></i></a>
                                         </div>
                                         <div class="custom_select">
                                             <select class="form-control form-control-sm" wire:model="pagesize">
-                                                <option value="">Showing</option>
-                                                <option value="3">3</option>
+                                                <option value="">Afficher</option>
                                                 <option value="6">6</option>
                                                 <option value="9">9</option>
                                                 <option value="12">12</option>
@@ -129,8 +126,8 @@
                                         @endempty
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="#"><i
-                                                            class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li class="add-to-cart"><a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter"><i
+                                                            class=""></i> Contacter</a></li>
                                                 {{-- <li><a href="" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
                                       <li><a href="" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
                                                 @if ($witems->contains($product->id))
@@ -159,10 +156,7 @@
                                             </div>
                                         </div>
                                         <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width:80%"></div>
-                                            </div>
-                                            <span class="rating_num">(21)</span>
+                                            <div>{{ $product->place_dispo }} place(s) disponible(s)</div>
                                         </div>
                                         <div class="pr_desc">
                                             <p>{{ $product->short_description }}</p>
@@ -176,8 +170,7 @@
                                         </div>
                                         <div class="list_product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a><i
-                                                            class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li class="add-to-cart"><a data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter"><i class=" "></i> Contacter</a></li>
                                                 {{-- <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
                                       <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
                                                 <li><a href="#"><i class="icon-heart"></i></a></li>
@@ -244,16 +237,16 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="heading_s1 mb-md-0 heading_light">
-                        <h3>Subscribe Our Newsletter</h3>
+                        <h3>Abonnez-vous à notre newsletter</h3>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="newsletter_form">
                         <form wire:submit.prevent='inscription_newsletter'>
                             <input type="text" required="" class="form-control rounded-0"
-                                placeholder="Enter Email Address" wire:model="email">
+                                placeholder="Entrer l'adresse e-mail" wire:model="email">
                             <button type="submit" class="btn btn-dark rounded-0" name="submit"
-                                value="Submit">Subscribe</button>
+                                value="Submit">S'abonner</button>
                         </form>
                     </div>
                 </div>
@@ -264,6 +257,8 @@
 
 </div>
 <!-- END MAIN CONTENT -->
+@include('livewire.site.partials.modal-Contact')
+
 @section('script-super')
     <script>
         var slider = document.getElementById('slider');

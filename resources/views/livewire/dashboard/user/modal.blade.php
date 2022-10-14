@@ -27,18 +27,47 @@
                                       </div>
                                   </div>
                                   <div class="col-md-12">
-                                      <div class="mb-3">
-                                          <label class="form-label" for="firstname">Prénoms:</label>
-                                          <input class="form-control form-control-lg" id="firstname" type="text"
-                                              placeholder="le prenom" wire:model.lazy='firstname'>
-                                      </div>
-                                  </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="phone">Phone:</label>
+                                        <input class="form-control form-control-lg" id="phone" type="tel"
+                                            placeholder="prénom de l'utilisateur" wire:model.lazy='phone'>
+                                    </div>
+                                </div>
+
                                   <div class="col-md-12">
                                       <div class="mb-3">
                                           <label class="form-label" for="email">Email:</label>
                                           <input class="form-control form-control-lg" id="email" type="text"
                                               placeholder="l'email" wire:model.lazy='email'>
                                       </div>
+                                  </div>
+
+
+                                  <div class="col-md-12">
+                                      <div class="form-group form-check mb-3">
+                                          <span class="input-group-text mb-3" id="">Les rôles</span>
+                                          @foreach ($roles as $role)
+                                        {{-- <input type="checkbox" class="form-check" name="roles" wire:model="roless"  value="{{$role->id}}" id="{{ $role->id}}"
+                                        @foreach ($user->roles as $userRole)
+                                            @if ($userRole->id == $role->id)
+                                                checked
+                                            @endif
+                                        @endforeach >
+                                        <label for="{{$role->id}}" class="from-check-label">{{ $role->nom}}</label> --}}
+
+                                        <label class="d-block" for="chk-ani">
+                                            <input class="checkbox_animated mb-3"
+                                                type="checkbox" value="{{$role->id}}" id="rolesss"
+                                                wire:model="roless"
+                                                @foreach ($user->roles as $userRole)
+                                                @if ($userRole->id == $role->id)
+                                               
+                                                    checked
+                                                @endif
+                                                @endforeach > {{ $role->nom}}
+                                        </label>
+                                        @endforeach
+                                    </div>
                                   </div>
 
                               </div>
@@ -55,9 +84,9 @@
                                   </div>
                                   <div class="col-md-12">
                                       <div class="mb-3">
-                                          <label class="form-label" for="firstname">Prénoms:</label>
-                                          <input class="form-control form-control-lg" id="firstname" type="text"
-                                              placeholder="prénom de l'utilisateur" wire:model.lazy='firstname'>
+                                          <label class="form-label" for="phone">Phone:</label>
+                                          <input class="form-control form-control-lg" id="phone" type="tel"
+                                              placeholder="prénom de l'utilisateur" wire:model.lazy='phone'>
                                       </div>
                                   </div>
                                   <div class="col-md-12">
@@ -74,7 +103,6 @@
                                               wire:model.lazy='password'>
                                       </div>
                                   </div>
-
                               </div>
                           </div>
                       @endif

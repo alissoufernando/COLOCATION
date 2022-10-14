@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('firstname')->nullable();
             $table->string('name');
             $table->string('phone');
-            $table->string('phone_whatsapp');
+            $table->string('phone_whatsapp')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

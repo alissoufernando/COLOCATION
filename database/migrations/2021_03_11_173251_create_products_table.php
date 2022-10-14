@@ -17,15 +17,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('departement');
-            $table->string('commune');
-            $table->string('ville');
             $table->string('type_annonce');
+            $table->string('quartier');
             $table->text('description')->nullable();
             $table->text('short_description')->nullable();
             $table->decimal('normal_price', 10, 3);
             $table->boolean('disponibilite');
             $table->unsignedInteger('place_dispo');
+            $table->foreignId('ville_id')->constrained('villes')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('categorie_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
 

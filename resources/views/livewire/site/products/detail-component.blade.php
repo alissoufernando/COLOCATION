@@ -46,8 +46,8 @@
                     </div>
                     <div class="col-md-6">
                         <ol class="breadcrumb justify-content-md-end">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="">Produit</a></li>
+                            <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                            <li class="breadcrumb-item"><a href="">Annonce</a></li>
                             <li class="breadcrumb-item active">Détails l'annonce</li>
                         </ol>
                     </div>
@@ -138,82 +138,67 @@
                                             @endphp
                                             <div class="rating">
                                                 @foreach ($products->reviews->where('product_id', $products->id) as $review)
-                                                    @php
-                                                        $savgrating = $savgrating + $review->rating;
-                                                    @endphp
+                                                @php
+                                                    $savgrating = $savgrating + $review->rating;
+                                                @endphp
                                                 @endforeach
                                                 @for ($i = 1; $i <= 5; $i++)
-                                                    @if ($i <= $savgrating)
-                                                        <div class="product_rate" style="width:80%"></div>
-                                                    @endif
+                                                @if ($i <= $savgrating)
+                                                    <div class="product_rate" style="width:80%"></div>
+                                                @endif
                                                 @endfor
                                             </div>
-                                            <span
-                                                class="rating_num">({{ $products->reviews->where('product_id', $products->id)->count() }})</span>
+                                                <span class="rating_num">({{ $products->reviews->where('product_id', $products->id)->count() }})</span>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p>{{ $products->short_description }}</p>
-                                            </div>
+                                        <div class="pr_desc">
+                                            {!! $products->short_description !!}
                                         </div>
-
-                                        <ul class="product-meta">
-                                            <li>Nom du propriètaire : <a href="#">{{ $products->user->name }}</a>
-                                            </li>
-                                            <li>Tpe de location : <a href="#">{{ $products->type_annonce }}</a>
-                                            </li>
-                                            <li>Ville : <a href="#">{{ $products->ville }}</a></li>
-                                            <li>Disponible? : <a href="#">
-                                                    @if ($products->disponibilite == 1)
-                                                        OUI
-                                                    @else
-                                                        NON
-                                                    @endif
-                                                </a></li>
-                                            <li>Place Libre : <a href="#">{{ $products->place_dispo }}</a></li>
-                                            <li>Type de chambre : <a
-                                                    href="#">{{ $products->categorie->name }}</a></li>
-                                            <li>Tags : <a href="#" rel="tag">Cloth</a>, <a href="#"
-                                                    rel="tag">printed</a> </li>
-                                        </ul>
-
-                                        <div class="product_share">
-                                            <span>Share:</span>
-                                            <ul class="social_icons">
-                                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a>
+                                        <div class="product_sort_info">
+                                            <ul class="product-meta">
+                                                <li>Nom du propriètaire : <a href="#">{{ $products->user->name }}</a>
                                                 </li>
-                                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a>
+                                                <li>Tpe de location : <a href="#">{{ $products->type_annonce }}</a>
                                                 </li>
+                                                <li>Departement : <a href="#">{{ $products->ville->departement->name }}</a></li>
+                                                <li>Ville : <a href="#">{{ $products->ville->name }}</a></li>
+                                                <li>Quartier : <a href="#">{{ $products->quartier }}</a></li>
+                                                <li>Disponible? : <a href="#">
+                                                        @if ($products->disponibilite == 1)
+                                                            OUI
+                                                        @else
+                                                            NON
+                                                        @endif
+                                                    </a></li>
+                                                <li>Place Libre : <a href="#">{{ $products->place_dispo }}</a></li>
+                                                <li>Type de chambre : <a href="#">{{ $products->categorie->name }}</a></li>
+                                                <li>Tags : <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a> </li>
                                             </ul>
                                         </div>
 
-                                        <hr />
-                                        <div class="cart_extra">
-
-                                            <div class="cart_btn">
-                                                <button class="btn btn-fill-out btn-addtocart" type="button"><i
-                                                        class="icon-basket-loaded"></i> Appeler</button>
-                                                <a class="add_compare" href="#"><i
-                                                        class="icon-shuffle"></i></a>
-                                                @if ($witems->contains($products->id))
-                                                    <a class="add_wishlist" href="#"
-                                                        wire:click.prevent="removeFromWishList({{ $products->id }})"><i
-                                                            class="icon-heart" style="color: red;"></i></a>
-                                                @else
-                                                    <a class="add_wishlist" href="#"
-                                                        wire:click.prevent="addToWishlist({{ $products->id }},'{{ $products->name }}',{{ $products->normal_price }})"><i
-                                                            class="icon-heart"></i></a>
-                                                @endif
-
-                                            </div>
-                                        </div>
-                                        <hr />
-
                                     </div>
+                                    <hr />
+                                    <div class="cart_extra">
+                                        <div class="cart_btn">
+                                            <a data-bs-toggle="modal" wire:click.prevent='getElementById({{$products->id}})' data-bs-target="#exampleModalCenter" class="btn btn-fill-out" type="button"><i
+                                                    class=""></i> Appeler</a>
+                                            <a class="add_compare" href="#"><i
+                                                    class="icon-shuffle"></i></a>
+                                            @if ($witems->contains($products->id))
+                                                <a class="add_wishlist" href="#"
+                                                    wire:click.prevent="removeFromWishList({{ $products->id }})"><i
+                                                        class="icon-heart" style="color: red;"></i></a>
+                                            @else
+                                                <a class="add_wishlist" href="#"
+                                                    wire:click.prevent="addToWishlist({{ $products->id }},'{{ $products->name }}',{{ $products->normal_price }})"><i
+                                                        class="icon-heart"></i></a>
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                    <hr />
+
                                 </div>
+                            </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
@@ -245,27 +230,12 @@
                                         <div class="tab-content shop_info_tab">
                                             <div class="tab-pane fade show active" id="Description" role="tabpanel"
                                                 aria-labelledby="Description-tab">
-                                                <p>{{ $products->description }}</p>
+                                                <p>{!! $products->description !!}</p>
                                             </div>
                                             <div class="tab-pane fade" id="Additional-info" role="tabpanel"
                                                 aria-labelledby="Additional-info-tab">
                                                 <table class="table table-bordered">
-                                                    {{-- <tr>
-                                	<td>Capacity</td>
-                                	<td>5 Kg</td>
-                            	</tr>
-                                <tr>
-                                    <td>Color</td>
-                                    <td>Black, Brown, Red,</td>
-                                </tr>
-                                <tr>
-                                    <td>Water Resistant</td>
-                                    <td>Yes</td>
-                                </tr>
-                                <tr>
-                                    <td>Material</td>
-                                    <td>Artificial Leather</td>
-                                </tr> --}}
+
                                                     <h2>Aucune informations ici</h2>
                                                 </table>
                                             </div>
@@ -341,7 +311,7 @@
 
                                                         <div class="form-group col-12 mb-3">
                                                             <button type="submit" class="btn btn-fill-out"
-                                                                name="submit" value="Submit">Submit Review</button>
+                                                                name="submit" value="Submit">Ajouter</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -395,7 +365,7 @@
                                                     <ul class="list_none pr_action_btn">
                                                         {{-- <li><a href="shop-compare.html" class="popup-ajax"><i
                                                     class="icon-shuffle"></i></a></li>
-                                        <li><a href="shop-quick-view.html" class="popup-ajax"><i
+                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
                                                     class="icon-magnifier-add"></i></a></li> --}}
                                                         @if ($witems->contains($products_relateds->id))
                                                             <li><a href="#"
@@ -412,7 +382,7 @@
                                             </div>
                                             <div class="product_info">
                                                 <h6 class="product_title"><a
-                                                        href="{{ route('site.detail-produit', ['id' => $products_relateds->id]) }}">{{ $products_relateds->name }}</a>
+                                                        href="{{ route('site.detail-produit', ['id' => $products_relateds->id]) }}">{{ $products_relateds->categorie->name }}</a>
                                                 </h6>
                                                 <div class="product_price">
                                                     <span class="price">{{ $products_relateds->normal_price }}
@@ -420,18 +390,13 @@
 
                                                 </div>
                                                 <div class="rating_wrap">
-                                                    <div class="rating">
-                                                        <div class="product_rate" style="width:80%"></div>
-                                                    </div>
-                                                    <span class="rating_num">(21)</span>
+                                                    <div>{{ $products_relateds->place_dispo }} place(s) disponible(s)</div>
                                                 </div>
                                                 <div class="pr_desc">
-                                                    <p>{{ $products_relateds->description }}</p>
+                                                    <p>{!! $products_relateds->short_description !!}</p>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <a href="#" class="btn btn-fill-out btn-radius btn-sm"><i
-                                                            class="icon-basket-loaded"></i>
-                                                        Add To Cart</a>
+                                                    <a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$products_relateds->id}})' data-bs-target="#exampleModalCenter"class="btn btn-fill-out btn-radius btn-sm">Contacter</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -456,16 +421,16 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="heading_s1 mb-md-0 heading_light">
-                            <h3>Subscribe Our Newsletter</h3>
+                            <h3>Abonnez-vous à notre newsletter</h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="newsletter_form">
                             <form wire:submit.prevent='inscription_newsletter'>
                                 <input type="text" required="" class="form-control rounded-0"
-                                    placeholder="Enter Email Address" wire:model="email">
+                                    placeholder="Entrer l'adresse e-mail" wire:model="email">
                                 <button type="submit" class="btn btn-dark rounded-0" name="submit"
-                                    value="Submit">Subscribe</button>
+                                    value="Submit">S'abonner</button>
                             </form>
                         </div>
                     </div>
@@ -476,6 +441,8 @@
 
     </div>
     <!-- END MAIN CONTENT -->
+    @include('livewire.site.partials.modal-Contact')
+
 </div>
 
 @push('custom-scripts')

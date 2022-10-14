@@ -38,13 +38,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6 ">
                     <div class="page-title " >
-                        <h1>Boutique</h1>
+                        <h1>Annonces</h1>
                     </div>
                 </div>
                 <div class="col-md-6 ">
                     <ol class="breadcrumb justify-content-md-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Boutique</a></li>
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Annonces</a></li>
                     </ol>
                 </div>
             </div>
@@ -70,10 +70,10 @@
                             <div class="product_header_left">
                                 <div class="custom_select">
                                     <select class="form-control form-control-sm" wire:model="sorting">
-                                        <option value="default">Default sorting</option>
-                                        <option value="date">Sort by date</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
+                                        <option value="default">Tri par défaut</option>
+                                        <option value="date">Trier par date</option>
+                                        <option value="price">Trier par prix : dans l'ordre croissant</option>
+                                        <option value="price-desc">Trier par prix : dans l'ordre décroissant</option>
                                     </select>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="custom_select">
                                     <select class="form-control form-control-sm" wire:model="pagesize">
-                                        <option value="">Showing</option>
+                                        <option value="">Afficher</option>
                                         <option value="6">6</option>
                                         <option value="9">9</option>
                                         <option value="12">12</option>
@@ -118,7 +118,7 @@
                             @endempty
                               <div class="product_action_box">
                                   <ul class="list_none pr_action_btn">
-                                      <li class="add-to-cart"><a href="#" ><i class="icon-basket-loaded"></i> Contacter</a></li>
+                                      <li class="add-to-cart"><a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter" ><i class=""></i> Contacter</a></li>
                                       {{-- <li><a href="" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
                                       <li><a href="" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
                                       @if ($witems->contains($product->id))
@@ -131,32 +131,29 @@
                               </div>
                           </div>
                           <div class="product_info">
-                              <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->name}}</a></h6>
+                              <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
                               <div class="product_price">
                                   <span class="price">{{$product->normal_price}} FCFA</span>
                               </div>
                               <div class="rating_wrap">
-                                  <div class="rating">
-                                      <div class="product_rate" style="width:80%"></div>
-                                  </div>
-                                  <span class="rating_num">(21)</span>
-                              </div>
+                                <div>{{ $product->place_dispo }} place(s) disponible(s)</div>
+                                </div>
                               <div class="pr_desc">
-                                  <p>{{$product->description }}</p>
+                                  <p>{!! $product->short_description !!}</p>
                               </div>
                               <div class="pr_switch_wrap">
-                                  <div class="product_color_switch">
+                                  {{-- <div class="product_color_switch">
                                       <span class="active" data-color="#87554B"></span>
                                       <span data-color="#333333"></span>
                                       <span data-color="#DA323F"></span>
-                                  </div>
+                                  </div> --}}
                               </div>
                               <div class="list_product_action_box">
-                                  <ul class="list_none pr_action_btn">
-                                      <li class="add-to-cart "><a data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="icon-basket-loaded"></i> Contacter</a></li>
-                                      <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
+                                  <ul class="list_none pr_action_btn justify-content-center">
+                                      <li class="add-to-cart "><a data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter""><i class=""></i> Contacter</a></li>
+                                      {{-- <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
                                       <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                      <li><a href="#"><i class="icon-heart"></i></a></li>
+                                      <li><a href="#"><i class="icon-heart"></i></a></li> --}}
                                   </ul>
                               </div>
                           </div>
@@ -172,15 +169,12 @@
             <div class="col-lg-3 order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
             	<div class="sidebar">
                 	<div class="widget">
-                        <h5 class="widget_title">Categories</h5>
+                        <h5 class="widget_title">Catégories</h5>
                         <ul class="widget_categories" >
                             @foreach($category as $categorys)
-
-                                <li>
-                                    <a href="{{route('site.produit-categorie',['id' => $categorys->id])}}">{{$categorys->name}}</a>
-
-                                </li>
-
+                            <li style="margin-left: 10px">▶
+                                <a href="{{route('site.produit-categorie',['id' => $categorys->id])}}"><span class="categories_name">{{$categorys->name}}</span></a>
+                            </li>
                             @endforeach
                         </ul>
                     </div>
@@ -192,7 +186,7 @@
                         </div>
 
                     </div>
-                    <div class="widget">
+                    {{-- <div class="widget">
                         <h5 class="widget_title">Promotion</h5>
                         <div class="shop_banner">
                             <div class="banner_img overlay_bg_20">
@@ -204,7 +198,7 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -218,14 +212,14 @@
     	<div class="row align-items-center">
             <div class="col-md-6">
                 <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
+                    <h3>Abonnez-vous à notre newsletter</h3>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="newsletter_form">
                     <form wire:submit.prevent='inscription_newsletter'>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address" wire:model="email">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        <input type="text" required="" class="form-control rounded-0" placeholder="Entrer l'adresse e-mail" wire:model="email">
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">S'abonner</button>
                     </form>
                 </div>
             </div>

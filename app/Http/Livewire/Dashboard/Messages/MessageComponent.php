@@ -2,13 +2,16 @@
 
 namespace App\Http\Livewire\Dashboard\Messages;
 
+use App\Models\User;
 use App\Models\Message;
 use Livewire\Component;
+use App\Service\UserMessage;
 use Illuminate\Support\Facades\Auth;
 
 class MessageComponent extends Component
 {
-    public $destinataire_id;
+
+    public $destinataire_id , $name, $rechercherNames =[];
     public $auteur_id;
     public $message;
 
@@ -17,11 +20,20 @@ class MessageComponent extends Component
         // Clean errors if were visible before
         $this->resetErrorBag();
         $this->resetValidation();
-        $this->reset(['message', 'auteur_id','destinataire_id']);
+        $this->reset(['message']);
 
     }
-    public function mount() {
-        $this->disponibilite = 1;
+
+    public function updatedName($value)
+    {
+        $this->rechercherNames = UserMessage::rechercherUserNameMessage($value);
+
+    }
+
+    public function getId($id) {
+
+        $this->destinataire_id = $id;
+        // dd($this->destinataire_id);
     }
 
     public function saveMessage()
@@ -33,7 +45,7 @@ class MessageComponent extends Component
         $MyMessage = new Message();
 
         $MyMessage->auteur_id = Auth::user()->id;
-        $MyMessage->destinataire_id = $this->destinataire_id;
+        $MyMessage->distinataire_id = $this->destinataire_id;
         $MyMessage->message = $this->message;
         $MyMessage->save();
        $this->resetInputFields();
@@ -41,6 +53,34 @@ class MessageComponent extends Component
     }
     public function render()
     {
-        return view('livewire.dashboard.messages.message-component');
+        $users = Message::all();
+        // foreach($users as $user)
+        // {
+
+            dd($users->message_destinataires );
+        // }
+        // tous les messages don je suis l'auteur ou le destinataire
+        $mes_messages = Message::where('auteur_id', Auth::user()->id)->orWhere('distinataire_id', Auth::user()->id)->distinct()->get();
+        // dd($mes_messages);
+        if($this->destinataire_id)
+        {
+            $messages_auteur = Message::where('auteur_id', Auth::user()->id)->where('distinataire_id',$this->destinataire_id)->get();
+            $messages_destinataire = Message::where('auteur_id', $this->destinataire_id)->where('distinataire_id',Auth::user()->id)->get();
+            $userM = User::where('id',$this->destinataire_id)->first();
+        }else
+        {
+            $userM = null;
+            $messages_destinataire = null;
+            $messages_auteur = null;
+        }
+
+
+        return view('livewire.dashboard.messages.message-component',[
+            'users' => $users,
+            'userM' => $userM,
+            'messages_auteur' => $messages_auteur,
+            'messages_destinataire' => $messages_destinataire,
+            'mes_messages' => $mes_messages,
+        ]);
     }
 }

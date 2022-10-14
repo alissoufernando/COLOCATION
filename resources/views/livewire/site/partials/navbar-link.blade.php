@@ -5,7 +5,7 @@
     @foreach ($categorieMenu as $categorieMenus)
     <li><a class="nav-link nav_item {{ (request()->is('site/produit-categorie/')) ? 'active' : '' }}" href="{{route('site.produit-categorie',['id' => $categorieMenus->id])}}">{{$categorieMenus->name}}</a></li>
     @endforeach
-    <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.shop' ? 'active' : '' }}" href="{{route('site.shop')}}">Co-location</a></li>
+    <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.colocation' ? 'active' : '' }}" href="{{route('site.colocation')}}">Colocation</a></li>
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.shop' ? 'active' : '' }}" href="{{route('site.shop')}}">Location</a></li>
 
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.contact' ? 'active' : '' }}" href="{{route('site.contact')}}">Contact</a></li>
@@ -16,7 +16,7 @@
 
     <li><a class="nav-link nav_item {{  request('id')== $categorieMenus->id? 'active' : '' }}" href="{{route('site.produit-categorie',['id' => $categorieMenus->id])}}">{{$categorieMenus->name}}</a></li>
     @endforeach
-    <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.shop' ? 'active' : '' }}" href="{{route('site.shop')}}">Co-location</a></li>
+    <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.colocation' ? 'active' : '' }}" href="{{route('site.colocation')}}">Colocation</a></li>
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.shop' ? 'active' : '' }}" href="{{route('site.shop')}}">Location</a></li>
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.contact' ? 'active' : '' }}" href="{{route('site.contact')}}">Contact</a></li>
     @can('admin-admin')

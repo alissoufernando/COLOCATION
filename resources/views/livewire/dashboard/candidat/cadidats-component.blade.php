@@ -66,7 +66,7 @@
                                             <li>Categorie: {{ $postuler->product->categorie->name }}</li>
                                             <li>Types d'annonce: {{ $postuler->product->type_annonce }}</li>
                                             <li>Place disponible: {{ $postuler->product->place_dispo }}</li>
-                                            <li>Ville de l'appartement: {{ $postuler->product->ville }}</li>
+                                            <li>Ville de l'appartement: {{ $postuler->product->ville->name }}</li>
                                         </ul>
                                     </td>
                                     <td>{{$postuler->message}}</td>

@@ -4,9 +4,11 @@ namespace App\Models;
 
 use App\Models\Role;
 use App\Models\Email;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Profile;
 use App\Models\Postuler;
+use App\Models\ImageUser;
 use App\Models\Newsletter;
 use App\Models\Affectation;
 use Laravel\Sanctum\HasApiTokens;
@@ -92,10 +94,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class);
     }
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
+
     public function profile()
     {
         return $this->hasOne(Profile::class);
@@ -128,10 +127,22 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Postuler::class);
     }
+
     public function product()
     {
         return $this->belongsTo(Product::class);
     }
+    public function image_user()
+    {
+        return $this->hasOne(ImageUser::class);
+    }
+
+    public function message_destinataires()
+    {
+        return $this->belongsToMany(Message::class, 'distinataire_id');
+    }
+
+
     // public function hasAnyRole(array $roles)
     // {
     //     return $this->roles()->whereIn('nom', $roles)->first();

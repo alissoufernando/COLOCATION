@@ -39,14 +39,13 @@
         <div class="row align-items-center">
         	<div class="col-md-6">
                 <div class="page-title">
-            		<h1>My Account</h1>
+            		<h1>Mon Compte</h1>
                 </div>
             </div>
             <div class="col-md-6">
                 <ol class="breadcrumb justify-content-md-end">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active">My Account</li>
+                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="breadcrumb-item active">Mon Compte</li>
                 </ol>
             </div>
         </div>
@@ -79,7 +78,7 @@
                       <li class="nav-item">
                     <form action="{{route('logout')}}" method="post">
                         @csrf
-                        <button class="nav-link" type="submit"><i class="ti-lock"></i>Logout</button>
+                        <button class="nav-link" type="submit"><i class="ti-lock"></i>Déconnexion</button>
                     </form>
                       </li>
                     </ul>
@@ -123,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                  	
+
 
 				</div>
 			</div>
@@ -138,14 +137,14 @@
     	<div class="row align-items-center">
             <div class="col-md-6">
                 <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
+                    <h3>Abonnez-vous à notre newsletter</h3>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="newsletter_form">
                     <form>
-                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        <input type="text" required="" class="form-control rounded-0" placeholder="Entrer l'adresse e-mail">
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">S'abonner</button>
                     </form>
                 </div>
             </div>

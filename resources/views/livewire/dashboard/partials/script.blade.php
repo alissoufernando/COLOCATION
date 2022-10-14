@@ -1,3 +1,5 @@
+<script src="https://cdn.tiny.cloud/1/funsboobt7jrtr248tf6ytbzoleqlwq7xx3232ascdfvdk73/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
 <!-- latest jquery-->
 <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
 <!-- Bootstrap js-->
@@ -22,7 +24,7 @@
 <script src="{{asset('assets/js/typeahead-search/handlebars.js')}}"></script>
 <script src="{{asset('assets/js/typeahead-search/typeahead-custom.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
-<script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script>
+{{-- <script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script> --}}
 <script>
     var bs_rtl_js = "{{asset('assets/css/bootstrap.rtl.min.css')}}";
 </script>

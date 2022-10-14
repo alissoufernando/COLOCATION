@@ -6,6 +6,7 @@ use Cart;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Postuler;
 use App\Models\Newsletter;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,68 @@ class CategorieComponent extends Component
     public $max_price;
     public $open = false;
     public $open1 = false;
-    public $email, $user_id;
+    public $email, $user_id, $post;
+    public $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids;
+
+    public function resetInputFieldss()
+    {
+        // Clean errors if were visible before
+        $this->resetErrorBag();
+        $this->resetValidation();
+
+        $this->reset(['date_de_sortie', 'date_entre', 'indetermine', 'message', 'user_id', 'product_id']);
+    }
+
+    public function savePostule()
+    {
+        $this->validate([
+            'message' =>  ['required'],
+            'date_entre' =>  ['required'],
+
+        ]);
+        // dd($this->message);
+
+        $postuler = new Postuler();
+        $postuler->user_id = Auth::user()->id;
+        $postuler->date_entre = $this->date_entre;
+        $postuler->product_id = $this->product_id;
+        $postuler->message = $this->message;
+
+
+        if($this->date_de_sortie)
+        {
+            $postuler->date_de_sortie = $this->date_de_sortie;
+        }
+
+        if($this->indetermine)
+        {
+            $postuler->indetermine = $this->indetermine;
+        }
+
+        $postuler->save();
+
+       $this->resetInputFieldss();
+
+    }
+
+    public function getElementById($id)
+    {
+
+        if(Auth::check())
+        {
+            $this->product_ids = $id;
+        // dd($this->product_ids);
+
+
+        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        // $this->post = $this->post->
+        // dd($this->post->reponse);
+
+        }else{
+            return Redirect()->route('login');
+        }
+
+    }
 
     public function resetInputFields()
     {

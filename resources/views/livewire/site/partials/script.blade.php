@@ -1,3 +1,5 @@
+<script src="https://cdn.tiny.cloud/1/funsboobt7jrtr248tf6ytbzoleqlwq7xx3232ascdfvdk73/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
 <!-- Alpine js -->
 <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 <!-- Latest jQuery -->

@@ -31,8 +31,6 @@
                     </a>
                     <ul class="language-dropdown onhover-show-div p-20">
                       <li><a href="{{ route('lang', 'en' )}}" data-lng="en" class="{{ (App::getLocale()  == 'en') ? 'active' : ''}}"><i class="flag-icon flag-icon-is"></i> English</a></li>
-                      <li><a href="{{ route('lang', 'es' )}}" data-lng="es" class="{{ (App::getLocale()  == 'es') ? 'active' : ''}}"><i class="flag-icon flag-icon-um"></i> Española</a></li>
-                      <li><a href="{{ route('lang', 'pt' )}}" data-lng="pt" class="{{ (App::getLocale()  == 'pt') ? 'active' : ''}}"><i class="flag-icon flag-icon-uy"></i> Português</a></li>
                       <li><a href="{{ route('lang', 'fr' )}}" data-lng="fr" class="{{ (App::getLocale()  == 'fr') ? 'active' : ''}}"><i class="flag-icon flag-icon-nz"></i> Française</a></li>
                     </ul>
               </li>
@@ -68,20 +66,22 @@
               </li>
               <li><a href="#"><i class="right_side_toggle" data-feather="message-circle"></i><span class="dot"></span></a></li>
               <li class="onhover-dropdown">
-                <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle" src="../assets/images/dashboard/user.png" alt="header-user">
+                <div class="media align-items-center">
+                    @empty(Auth::user()->image_user->path)
+                    <img class="align-self-center pull-right img-50 rounded-circle" src="../assets/images/user/1.png" alt="header-user">
+                    @else
+                    <img class="align-self-center pull-right img-50 rounded-circle" src="{{asset('storage')}}/{{Auth::user()->image_user->path}}" alt="{{ Auth::user()->name }}">
+                    @endempty
                   <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div p-20">
-                  <li><a href="#"><i data-feather="user"></i>                                    Edit Profile</a></li>
-                  <li><a href="#"><i data-feather="mail"></i>                                    Inbox</a></li>
-                  <li><a href="#"><i data-feather="lock"></i>                                    Lock Screen</a></li>
-                  <li><a href="#"><i data-feather="settings"></i>                                    Settings</a></li>
+                  <li><a href="#"><i data-feather="home"></i>Accueil</a></li>
+                  <li><a href="#"><i data-feather="user"></i>Mon compte</a></li>
                   <li>
                   <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <button type="submit"><i data-feather="log-out"></i>Logout</button>
-
-                </form>
+                    <button type="submit" class="btn  btn-primary btn-sm ">Déconnexion</button>
+                    </form>
                 </li>
                 </ul>
               </li>

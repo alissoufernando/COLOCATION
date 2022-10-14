@@ -3,19 +3,20 @@
 namespace App\Http\Livewire\Site;
 
 use Cart;
+use App\Models\Article;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
-use App\Models\Newsletter;
-use App\Models\Parametre;
 use App\Models\Postuler;
+use App\Models\Parametre;
+use App\Models\Newsletter;
 use Illuminate\Support\Facades\Auth;
 
 
 class WelcomeComponent extends Component
 {
     public $email, $user_id, $post;
-    public $categorie_id, $ville, $type_annonce, $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids;
+    public $categorie_id, $ville, $type_annonce, $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids, $auteurAnnonce;
 
     public function resetInputFieldss()
     {
@@ -60,14 +61,21 @@ class WelcomeComponent extends Component
 
     public function getElementById($id)
     {
+        if(Auth::check())
+        {
+            $this->product_ids = $id;
 
-        $this->product_ids = $id;
-        // dd($this->product_ids);
-
-
+            // requete pour trouver l'auteur d'une annonce
+        $this->auteurAnnonce = Product::where('id', $this->product_ids)->first();
+        // dd($this->auteurAnnonce->user->name);
         $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
-        // $this->post = $this->post->
-        // dd($this->post->reponse);
+
+
+        }else{
+            return Redirect()->route('login');
+        }
+
+
 
     }
 
@@ -123,6 +131,8 @@ dd($products);
     {
         $products = Product::inRandomOrder()->with('images')->limit(4)->get();
         $products_latest = Product::latest()->with('images')->limit(4)->get();
+        $articles = Article::latest()->limit(3)->get();
+
         $category = Category::latest()->get();
         $parametre = Parametre::find(1);
         $categorieMenu = Category::where('menu',1)->get();
@@ -137,6 +147,7 @@ dd($products);
             'products_latest' => $products_latest,
             'parametre' => $parametre,
             'categorieMenu' => $categorieMenu,
+            'articles' => $articles,
         ])->layout('layouts.site');
     }
 }

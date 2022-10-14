@@ -34,8 +34,9 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Image</th>
                                         <th>Nom</th>
-                                        <th>Prénoms</th>
+                                        <th>Téléphone</th>
                                         <th>Email</th>
                                         <th>Actions</th>
                                     </tr>
@@ -44,22 +45,28 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($user as $users)
+                                    @foreach ($users as $user)
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $users->name }}</td>
-                                            <td>{{ $users->firstname }}</td>
-                                            <td>{{ $users->email }}</td>
+                                            <td>
+                                                @empty($user->image_user->path)
+                                                <img class="" src="../assets/images/user/1.png" alt="" width="40" height="40">
+                                                @else
+                                                <img class="" src="{{asset('storage')}}/{{$user->image_user->path}}" alt="" width="40" height="40">
+                                                @endempty
+                                            </td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->phone }}</td>
+                                            <td>{{ $user->email }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" data-bs-target="#ModalUser"
-                                                    wire:click.prevent='getElementById({{ $users->id }})'> <i
+                                                    wire:click.prevent='getElementById({{ $user->id }})'> <i
                                                         class="fa fa-edit m-5 text-warning"></i> </a>
-                                                <a wire:click.prevent="deleteUser({{ $users->id }})"> <i
+                                                <a wire:click.prevent="deleteUser({{ $user->id }})"> <i
                                                         class="fa fa-trash-o fa-1x text-danger"></i> </a>
                                             </td>
                                         </tr>
                                     @endforeach
-
 
                                 </tbody>
                             </table>
@@ -81,4 +88,12 @@
     <script src="{{ asset('assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/js/datatable/datatables/datatable.custom.js') }}"></script>
     {{-- @include('livewire.dashboard.partials.confirmation-de-suppression') --}}
+    <script>
+        // $("#rolesss").on('change', function() {
+        //     @this.roless = $(this).val();
+        // });
+
+
+
+    </script>
 @endsection

@@ -32,7 +32,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Departement</th>
-                  <th>Commune</th>
+                  <th>Ville</th>
                   <th>Disponibilité</th>
                   <th>Nombre de place</th>
                   <th>Prix de location</th>
@@ -47,8 +47,8 @@
                   <tr>
                     <td>{{$i ++}}</td>
                     <td>{{$products->name}}</td>
-                    <td>{{$products->departement}}</td>
-                    <td>{{$products->commune}}</td>
+                    <td>{{$products->ville->departement->name}}</td>
+                    <td>{{$products->ville->name}}</td>
                     <td>{{$products->disponibilite}}</td>
                     <td>{{$products->place_dispo}}</td>
                     <td>{{$products->normal_price}}</td>

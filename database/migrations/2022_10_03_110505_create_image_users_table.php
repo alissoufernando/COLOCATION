@@ -16,7 +16,7 @@ class CreateImageUsersTable extends Migration
         Schema::create('image_users', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@
                     <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="linearicons-magnifier"></i></a>
                         @include('livewire.site.products.header-search-component')
                     </li>
-                    
+
                     <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
                     </li>
@@ -39,13 +39,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="page-title">
-                        <h1>Login</h1>
+                        <h1>Connéxion</h1>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <ol class="breadcrumb justify-content-md-end">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Login</li>
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active">Connéxion</li>
                     </ol>
                 </div>
             </div>
@@ -61,32 +61,32 @@
                 <div class="login_wrap">
             		<div class="padding_eight_all bg-white">
                         <div class="heading_s1">
-                            <h3>Login</h3>
+                            <h3>Connéxion</h3>
                         </div>
                         <form method="post" action="{{route('login')}}">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" required="" class="form-control" name="email" placeholder="Your Email" :value="old('email')" required autofocus >
+                                <input type="text" required="" class="form-control" name="email" placeholder="Votre Email" :value="old('email')" required autofocus >
                             </div>
                             <div class="form-group mb-3">
-                                <input class="form-control" type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                                <input class="form-control" type="password" name="password" placeholder="mot de passe" required autocomplete="current-password">
                             </div>
                             <div class="login_footer form-group mb-3">
                                 <div class="chek-form">
                                     <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember_me" value="">
-                                        <label class="form-check-label" for="remember_me"><span>Remember me</span></label>
+                                        <label class="form-check-label" for="remember_me"><span>Souvinir de moi</span></label>
                                     </div>
                                 </div>
                                 @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}">Forgot password?</a>
+                                <a href="{{ route('password.request') }}">Mot de passe ?</a>
                                 @endif
                             </div>
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-fill-out btn-block" name="login">Login</button>
+                                <button type="submit" class="btn btn-fill-out btn-block" name="login">Connéxion</button>
                             </div>
                         </form>
-                        <div class="form-note text-center">Don't Have an Account? <a href="{{route('register')}}">Sign up now</a></div>
+                        <div class="form-note text-center">Vous n'avez pas de compte ? <a href="{{route('register')}}">Inscription</a></div>
                     </div>
                 </div>
             </div>
@@ -101,14 +101,14 @@
     	<div class="row align-items-center">
             <div class="col-md-6">
                 <div class="heading_s1 mb-md-0 heading_light">
-                    <h3>Subscribe Our Newsletter</h3>
+                    <h3>Abonnez-vous à notre newsletter</h3>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="newsletter_form">
                     <form>
                         <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
-                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">S'abonner</button>
                     </form>
                 </div>
             </div>
