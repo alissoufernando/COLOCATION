@@ -12,7 +12,6 @@
     	<div class="container">
             <nav class="navbar navbar-expand-lg" id="nav_media">
                 @include('livewire.site.partials.logo')
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">
                     <span class="ion-android-menu"></span>
                 </button>
@@ -24,9 +23,9 @@
                         @include('livewire.site.products.header-search-component')
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -37,15 +36,16 @@
     <div class="breadcrumb_section bg_gray page-title-mini">
         <div class="container minimenu"><!-- STRART CONTAINER -->
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="page-title">
+                <div class="col-md-6 ">
+                    <div class="page-title " >
                         <h1>Annonces</h1>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <ol class="breadcrumb justify-content-md-end">
                         <li class="breadcrumb-item"><a href="#">Accueil</a></li>
                         <li class="breadcrumb-item active"><a href="#">Annonces</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Rechercher</a></li>
                     </ol>
                 </div>
             </div>
@@ -57,8 +57,8 @@
 <!-- START MAIN CONTENT -->
 <div class="main_content">
     @if (Session::has('message'))
-                    <div class="alert alert-success">{{Session::get('message')}}</div>
-                @endif
+    <div class="alert alert-success">{{Session::get('message')}}</div>
+    @endif
 
 <!-- START SECTION SHOP -->
 <div class="section">
@@ -71,10 +71,10 @@
                             <div class="product_header_left">
                                 <div class="custom_select">
                                     <select class="form-control form-control-sm" wire:model="sorting">
-                                        <option value="default">Default sorting</option>
-                                        <option value="date">Sort by newness</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
+                                        <option value="default">Tri par défaut</option>
+                                        <option value="date">Trier par date</option>
+                                        <option value="price">Trier par prix : dans l'ordre croissant</option>
+                                        <option value="price-desc">Trier par prix : dans l'ordre décroissant</option>
                                     </select>
                                 </div>
                             </div>
@@ -85,7 +85,8 @@
                                 </div>
                                 <div class="custom_select">
                                     <select class="form-control form-control-sm" wire:model="pagesize">
-                                        <option value="">Showing</option>
+                                        <option value="">Afficher</option>
+                                        <option value="6">6</option>
                                         <option value="9">9</option>
                                         <option value="12">12</option>
                                         <option value="18">18</option>
@@ -96,92 +97,78 @@
                     </div>
                 </div>
                 <div class="row shop_container list">
-                    @if ($products->count() > 0)
-                    @foreach ($products as $product)
-                    <div class="col-md-4 col-6">
-                     <div class="product">
-                         <div class="product_img">
-                            @if ($product->images->first()->thumbnail)
-                            <a href="{{route('site.detail-produit', ['id' => $product->id])}}">
-                             <img src="{{asset('storage/galerie')}}/{{$product->images->first()->thumbnail}}" alt="{{$product->name}}">
-                             </a>
-                            @else
+                    @php
+                        $witems = Cart::instance('wishlist')->content()->pluck('id');
+                    @endphp
+
+                  @forelse ($products as $product)
+                  <div class="col-md-4 col-6">
+                      <div class="product">
+                          <div class="product_img">
+                            @empty ($product->images->first()->thumbnail)
                             <a href="{{route('site.detail-produit', ['id' => $product->id])}}">
                                 <img src="{{asset('assets/images/product/default.png')}}" alt="{{$product->name}}">
                             </a>
-                            @endif
-                             <div class="product_action_box">
-                                 <ul class="list_none pr_action_btn">
-                                     <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                     {{-- <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                     <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
-                                     <li><a href="#"><i class="icon-heart"></i></a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                         <div class="product_info">
-                             <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
-                             <div class="product_price">
-                                 <span class="price">{{$product->normal_price }} FCFA</span>
-                                 <div class="on_sale">
-                                     <span>35% Off</span>
-                                 </div>
-                             </div>
-                             <div class="rating_wrap">
+                            @else
+                            @php
+                            $images = explode(",",$product->images->first()->thumbnail);
+                            @endphp
+                            <a href="{{route('site.detail-produit', ['id' => $product->id])}}">
+                             <img src="{{asset('storage/galerie')}}/{{$images[0]}}" alt="{{$product->name}}">
+                             </a>
+                            @endempty
+                              <div class="product_action_box">
+                                  <ul class="list_none pr_action_btn">
+                                      <li class="add-to-cart"><a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter" ><i class=""></i> Contacter</a></li>
+
+                                      @if ($witems->contains($product->id))
+                                      <li><a href="#" wire:click.prevent ="removeFromWishList({{$product->id}})"><i class="icon-heart" style="background-color: red;"></i></a></li>
+                                      @else
+                                      <li><a href="#" wire:click.prevent ="addToWishlist({{$product->id}},'{{$product->name}}',{{$product->normal_price}})"><i class="icon-heart"></i></a></li>
+                                      @endif
+
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="product_info">
+                              <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
+                              <div class="product_price">
+                                  <span class="price">{{$product->normal_price}} FCFA / mois</span>
+                              </div>
+                              <div class="rating_wrap">
                                 <div>{{ $product->place_dispo }} place(s) disponible(s)</div>
                             </div>
-                             <div class="pr_desc">
-                                 <p>{!! $product->short_description !!}</p>
-                             </div>
-                             <div class="pr_switch_wrap">
-                                 <div class="product_color_switch">
-                                     <span class="active" data-color="#87554B"></span>
-                                     <span data-color="#333333"></span>
-                                     <span data-color="#DA323F"></span>
-                                 </div>
-                             </div>
-                             <div class="list_product_action_box">
-                                 <ul class="list_none pr_action_btn">
-                                     <li class="add-to-cart"><a><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                     {{-- <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                     <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
-                                     <li><a href="#"><i class="icon-heart"></i></a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                    @endforeach
-                    @else
-                    <p>Aucun produit n'a été trouvé'</p>
-                    @endif
+                              <div class="pr_desc">
+                                  <p>{!! $product->short_description !!}</p>
+                              </div>
+                              <div class="pr_switch_wrap">
 
+                              </div>
+                              <div class="list_product_action_box">
+                                  <ul class="list_none pr_action_btn justify-content-center">
+                                      <li class="add-to-cart mt-3"><a data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter"><i class=""></i> Contacter</a></li>
 
-
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  @empty
+                  <p>Aucun produit n'est dans la base de données</p>
+                 @endforelse
+                 {{$products->links()}}
                 </div>
-        		<div class="row">
-                    <div class="col-12">
-                        <ul class="pagination mt-3 justify-content-center pagination_style1">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="linearicons-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+
         	</div>
             <div class="col-lg-3 order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
             	<div class="sidebar">
                 	<div class="widget">
-                        <h5 class="widget_title">Categories</h5>
+                        <h5 class="widget_title">Catégories</h5>
                         <ul class="widget_categories" >
                             @foreach($category as $categorys)
-
-                                <li>
-                                    <a href="{{route('site.produit-categorie',['id' => $categorys->id])}}">{{$categorys->name}}</a>
-
+                                <li style="margin-left: 10px">▶
+                                    <a href="{{route('site.produit-categorie',['id' => $categorys->id])}}"><span class="categories_name">{{$categorys->name}}</span></a>
                                 </li>
-
                             @endforeach
                         </ul>
                     </div>
@@ -192,19 +179,6 @@
                             <div id="slider" wire:ignore ></div>
                         </div>
 
-                    </div>
-                    <div class="widget">
-                        <h5 class="widget_title">Promotion</h5>
-                        <div class="shop_banner">
-                            <div class="banner_img overlay_bg_20">
-                                <img src="{{asset('assets/images/product/default.png')}}" alt="sidebar_banner_img">
-                            </div>
-                            <div class="shop_bn_content2 text_white">
-                                <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                <a href="#" class="btn btn-white rounded-0 btn-sm text-uppercase">Louer</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -237,16 +211,18 @@
 
 </div>
 <!-- END MAIN CONTENT -->
+@include('livewire.site.partials.modal-Contact')
+
 @section('script-super')
 <script>
 
     var slider = document.getElementById('slider');
     noUiSlider.create(slider,{
-        start : [1, 1000],
+        start : [1, 100000],
         connect : true,
         range : {
             'min' : 1,
-            'max' : 1000,
+            'max' : 100000,
         },
 
         pips : {

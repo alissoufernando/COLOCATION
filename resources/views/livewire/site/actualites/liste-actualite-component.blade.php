@@ -23,9 +23,9 @@
                         @include('livewire.site.products.header-search-component')
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -86,22 +86,17 @@
                                         <li><a href="#"><i class="ti-user"></i> posté par {{ $article->auteur }}</a></li>
                                     </ul>
                                     <p>{!! $article->short_description !!}</p>
-                                    <a href="{{route('site.detail-article',['id' => $article->id])}}" class="btn btn-fill-line border-2 btn-xs rounded-0">Voir plus</a>
+                                    <a href="{{route('site.detail-article',['id' => $article->id])}}" class="btn btn-fill-out btn-radius btn-xs">Voir plus</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
+
                 </div>
                 <div class="row">
-                    <div class="col-12 mt-2 mt-md-4">
-                        <ul class="pagination pagination_style1 justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i class="linearicons-arrow-left"></i></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="linearicons-arrow-right"></i></a></li>
-                        </ul>
+                    <div class="col-12 mt-2 mt-md-4 justify-content-center">
+                        {{$articles->links()}}
                     </div>
                 </div>
             </div>
@@ -110,7 +105,7 @@
                 	<div class="widget">
                         <div class="search_form">
                             <form>
-                                <input required="" class="form-control" placeholder="Search..." type="text">
+                                <input required="" class="form-control" placeholder="Rechercher...." type="text">
                                 <button type="submit" title="Subscribe" class="btn icon_search" name="submit" value="Submit">
                                     <i class="ion-ios-search-strong"></i>
                                 </button>

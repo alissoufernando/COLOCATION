@@ -24,9 +24,9 @@
                         @include('livewire.site.products.header-search-component')
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>

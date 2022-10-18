@@ -30,9 +30,9 @@
 
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -51,12 +51,15 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-7 col-md-10">
                                         <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
+
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Bienvenue !!</h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Sur notre site de recherche de coloc</h4>
+                                                data-animation-delay="0.3s">Bienvenue sur "STUDENT-COLOC"</h2>
+                                            <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
+                                                data-animation-delay="0.4s">Trouvez des colocations dans tout le Bénin.</h4>
+                                            <div class="mt-3">
+                                                <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
+                                                    <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver des colocataires</a>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -70,12 +73,14 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-7 col-md-10">
                                         <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Bienvenue !!</h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Sur notre site de recherche de coloc</h4>
+                                                data-animation-delay="0.3s">Plateforme totalement gratuite</h2>
+                                            <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
+                                                data-animation-delay="0.4s">Aucune commission arbitraire, le service rendu est gratuit.</h4>
+                                            <div class="mt-3">
+                                                <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
+                                                    <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver des colocataires</a>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -89,12 +94,14 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-7 col-md-10">
                                         <div class="banner_content text_white text-center">
-                                            <h5 class="mb-3 bg_strip staggered-animation text-uppercase"
-                                                data-animation="fadeInDown" data-animation-delay="0.2s">Être satisfait a partir 90.00 FCFA</h5>
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
-                                                data-animation-delay="0.3s">Bienvenue !!</h2>
-                                            <h4 class="staggered-animation" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Sur notre site de recherche de coloc</h4>
+                                            data-animation-delay="0.3s">Recherche avancée</h2>
+                                        <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
+                                            data-animation-delay="0.4s">Trouvez rapidement une personne qui vous correspond</h4>
+                                        <div class="mt-3">
+                                            <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
+                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver des colocataires</a>
+                                        </div>
 
                                         </div>
                                     </div>
@@ -130,17 +137,19 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-9 col-md-8">
-                                    <form action="" wire:submit.prevent='rechercher'>
+                                    <form action="{{ route('site.search-colocation-avance') }}" >
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <select name="" id="" class="form-control form-control-sm recher" id="recher2" wire:model="ville" required>
+                                                <select name="ville_id" id="ville_id" class="form-control form-control-sm form-select js-example-basic-single" wire:model="ville_id" required>
                                                     <option value="">Ville</option>
-                                                    <option value="calavi">calavi</option>
+                                                    @foreach ($villes as $ville)
+                                                    <option value="{{$ville->id}}">{{$ville->name}}</option>
+                                                    @endforeach
 
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <select name="" id="" class="form-control form-control-sm recher" id="recher3" wire:model="type_annonce" required>
+                                                <select name="type_annonce" id="" class="form-control form-control-sm recher" id="recher3" wire:model="type_annonce" required>
                                                     <option value="">Type de location</option>
                                                     <option value="LOCATION">Location</option>
                                                     <option value="COLOCATION">Colocation</option>
@@ -148,7 +157,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <select name="" id="" class="form-control form-control-sm recher" id="recher1" wire:model="categorie_id" required>
+                                                <select name="categorie_id" id="categorie_id" class="form-control form-control-sm form-select js-example-basic-single" wire:model="categorie_id" required>
                                                     <option value="">Type de chambre</option>
                                                     @foreach ($category as $categories)
                                                     <option value="{{$categories->id}}">{{$categories->name}}</option>
@@ -178,7 +187,7 @@
                         <div class="heading_s4 text-center">
                             <h2>Nos derniers annonces</h2>
                         </div>
-                        <p class="text-center leads">Nos meubles sont adaptés à tous les secteurs d’activité et à toutes les configurations de locaux. Que vous aménagiez un bureau individuel ou des bureaux partagés, nous avons la solution.</p>
+                        <p class="text-center leads">Un colocataire heureux est un colocataire qui reste plus longtemps! Notre priorité est la mise en relation de qualité</p>
                     </div>
                 </div>
                 <div class="row shop_container">
@@ -206,10 +215,7 @@
                                @endempty
                                <div class="product_action_box">
                                    <ul class="list_none pr_action_btn">
-                                       {{-- <li><a href="" class="popup-ajax"><i
-                                                   class="icon-shuffle"></i></a></li>
-                                       <li><a href="" class="popup-ajax"><i
-                                                   class="icon-magnifier-add"></i></a></li> --}}
+
                                        @if ($witems->contains($products_latests->id))
                                        <li><a href="#" wire:click.prevent ="removeFromWishList({{$products_latests->id}})" ><i class="icon-heart" style="background-color: red;"></i></a></li>
                                        @else
@@ -221,15 +227,10 @@
                            <div class="product_info">
                                <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $products_latests->id])}}">{{$products_latests->categorie->name}}</a></h6>
                                <div class="product_price">
-                                   <span class="price">{{number_format($products_latests->normal_price,2,"."," ")}} FCFA</span>
+                                   <span class="price">{{number_format($products_latests->normal_price,2,"."," ")}} FCFA / mois</span>
 
                                </div>
-                               {{-- <div class="rating_wrap">
-                                   <div class="rating">
-                                       <div class="product_rate" style="width:80%"></div>
-                                   </div>
-                                   <span class="rating_num">(21)</span>
-                               </div> --}}
+
                                <div class="rating_wrap">
                                     <div>{{ $products_latests->place_dispo }} place(s) disponible(s)</div>
                                 </div>
@@ -294,7 +295,7 @@
                     </div>
                     @endforeach
                     <div>
-                        <a href="{{ route('site.articles') }}" class="btn btn-fill-out btn-radius btn-sm float-end">Voir plus</a>
+                        <a href="{{ route('site.articles') }}" class="btn btn-fill-out btn-radius btn-xs float-end">Voir plus</a>
                     </div>
                 </div>
             </div>
@@ -306,3 +307,23 @@
     @include('livewire.site.partials.modal-Contact')
 
 </div>
+
+@section('custom-scripts')
+<script src="{{ asset('assets/js/select2/select2.full.min.js') }}"></script>
+<script src="{{ asset('assets/js/select2/select2-custom.js') }}"></script>
+
+<script>
+    $("#categorie_id").on('change', function() {
+        @this.categorie_id = $(this).val();
+    });
+
+    $("#ville_id").on('change', function() {
+        @this.ville_id = $(this).val();
+    });
+
+    // $("#departement_id").on('change',function() {
+    //     @this.departement_id = $(this).val();
+    // });
+
+</script>
+@endsection

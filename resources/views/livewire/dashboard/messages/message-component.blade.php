@@ -69,7 +69,11 @@
                       @else
                       <ul class="list">
                         @foreach ($users as $user)
-                        @if ($user->id != Auth::user()->id && (user))
+                        {{-- @php
+                            dd($user->auteur->auteur_id)
+                            dd($user->id != Auth::user()->id && ($user->auteur->auteur_id == Auth::user()->id || $user->auteur->distinataire_id == Auth::user()->id));
+                        @endphp --}}
+                        @if ($user->id != Auth::user()->id)
                         <li wire:click.prevent='getId({{$user->id}})' style="cursor: pointer" class="clearfix">
                             @empty ($user->image_user->path)
                             <img class="rounded-circle user-image" src="{{ asset('assets/images/user/1.png') }}" alt="">
@@ -83,7 +87,6 @@
                             @else
                             <div class="status-circle offline"></div>
                             @endif
-
                             <div class="about">
                               <div class="name">{{ $user->name }}</div>
                               <div class="status">Hello Name</div>

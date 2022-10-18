@@ -33,6 +33,7 @@ use App\Http\Livewire\Site\Actualites\ListeActualiteComponent;
 use App\Http\Livewire\Dashboard\Product\ProductCreateComponent;
 use App\Http\Livewire\Site\Actualites\DetailActualiteComponent;
 use App\Http\Livewire\Dashboard\Messages\MessageAnnonceComponent;
+use App\Http\Livewire\Site\Products\RechercheColocationComponent;
 use App\Http\Livewire\Dashboard\Actualites\CreationActualiteComponent;
 use App\Http\Livewire\Dashboard\Actualites\ModificationActualiteComponent;
 
@@ -65,6 +66,8 @@ Route::prefix('site')->group(function () {
     Route::get('/locations', ShopComponent::class)->name('site.shop');
     Route::get('/colocations', ColocationComponent::class)->name('site.colocation');
     Route::get('/search', SearchComponent::class)->name('site.search');
+    Route::get('/search-colocation', RechercheColocationComponent::class)->name('site.search-colocation-avance');
+
 
 
     Route::get('/detail-article/{id}', DetailActualiteComponent::class)->name('site.detail-article');

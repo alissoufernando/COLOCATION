@@ -23,9 +23,9 @@
                         @include('livewire.site.products.header-search-component')
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -119,8 +119,7 @@
                               <div class="product_action_box">
                                   <ul class="list_none pr_action_btn">
                                       <li class="add-to-cart"><a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter" ><i class=""></i> Contacter</a></li>
-                                      {{-- <li><a href="" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                      <li><a href="" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li> --}}
+
                                       @if ($witems->contains($product->id))
                                       <li><a href="#" wire:click.prevent ="removeFromWishList({{$product->id}})"><i class="icon-heart" style="background-color: red;"></i></a></li>
                                       @else
@@ -133,7 +132,7 @@
                           <div class="product_info">
                               <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
                               <div class="product_price">
-                                  <span class="price">{{$product->normal_price}} FCFA</span>
+                                  <span class="price">{{$product->normal_price}} FCFA / mois</span>
                               </div>
                               <div class="rating_wrap">
                                 <div>{{ $product->place_dispo }} place(s) disponible(s)</div>
@@ -142,18 +141,12 @@
                                   <p>{!! $product->short_description !!}</p>
                               </div>
                               <div class="pr_switch_wrap">
-                                  {{-- <div class="product_color_switch">
-                                      <span class="active" data-color="#87554B"></span>
-                                      <span data-color="#333333"></span>
-                                      <span data-color="#DA323F"></span>
-                                  </div> --}}
+
                               </div>
                               <div class="list_product_action_box">
                                   <ul class="list_none pr_action_btn justify-content-center">
                                       <li class="add-to-cart mt-3"><a data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter"><i class=""></i> Contacter</a></li>
-                                      {{-- <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                      <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                      <li><a href="#"><i class="icon-heart"></i></a></li> --}}
+
                                   </ul>
                               </div>
                           </div>
@@ -186,19 +179,7 @@
                         </div>
 
                     </div>
-                    {{-- <div class="widget">
-                        <h5 class="widget_title">Promotion</h5>
-                        <div class="shop_banner">
-                            <div class="banner_img overlay_bg_20">
-                                <img src="{{asset('assets/images/product/default.png')}}" alt="sidebar_banner_img">
-                            </div>
-                            <div class="shop_bn_content2 text_white">
-                                <h5 class="text-uppercase shop_subtitle">New Collection</h5>
-                                <h3 class="text-uppercase shop_title">Sale 30% Off</h3>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-white rounded-0 btn-sm text-uppercase">Shop Now</a>
-                            </div>
-                        </div>
-                    </div> --}}
+                   
                 </div>
             </div>
         </div>

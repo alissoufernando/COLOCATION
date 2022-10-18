@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class MessageComponent extends Component
 {
 
-    public $destinataire_id , $name, $rechercherNames =[];
+    public $destinataire_id , $name, $rechercherNames =[], $mesUeserMessage = [];
     public $auteur_id;
     public $message;
 
@@ -53,12 +53,21 @@ class MessageComponent extends Component
     }
     public function render()
     {
-        $users = Message::all();
-        // foreach($users as $user)
+        $users  = User::latest()->distinct()->get();
+        // foreach($userss as $user)
         // {
+        // dd($user->auteur['auteur_id']);
 
-            dd($users->message_destinataires );
+            // && ($user->auteur->auteur_id == Auth::user()->id || $user->auteur->distinataire_id == Auth::user()->id)
+            // dd($user->auteur->auteur_id == Auth::user()->id || $user->auteur->distinataire_id == Auth::user()->id);
+            // if($user->id != Auth::user()->id && ($user->auteur['auteur_id'] == Auth::user()->id || $user->auteur['distinataire_id'] == Auth::user()->id))
+            // {
+            //     // $this->mesUeserMessage = $user->id;
+            //     array_push($this->mesUeserMessage, $user->id);
+            // }
+
         // }
+        // dd($this->mesUeserMessage);
         // tous les messages don je suis l'auteur ou le destinataire
         $mes_messages = Message::where('auteur_id', Auth::user()->id)->orWhere('distinataire_id', Auth::user()->id)->distinct()->get();
         // dd($mes_messages);
@@ -67,6 +76,7 @@ class MessageComponent extends Component
             $messages_auteur = Message::where('auteur_id', Auth::user()->id)->where('distinataire_id',$this->destinataire_id)->get();
             $messages_destinataire = Message::where('auteur_id', $this->destinataire_id)->where('distinataire_id',Auth::user()->id)->get();
             $userM = User::where('id',$this->destinataire_id)->first();
+            // dd($userM->auteurs);
         }else
         {
             $userM = null;

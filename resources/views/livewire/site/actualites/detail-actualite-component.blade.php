@@ -23,9 +23,9 @@ v<div>
                         @include('livewire.site.products.header-search-component')
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -116,7 +116,7 @@ v<div>
                 	<div class="widget">
                         <div class="search_form">
                             <form>
-                                <input required="" class="form-control" placeholder="Search..." type="text">
+                                <input required="" class="form-control" placeholder="Rechercher......." type="text">
                                 <button type="submit" title="Subscribe" class="btn icon_search" name="submit" value="Submit">
                                     <i class="ion-ios-search-strong"></i>
                                 </button>
@@ -124,7 +124,7 @@ v<div>
                         </div>
                     </div>
                 	<div class="widget">
-                    	<h5 class="widget_title">Recent Article</h5>
+                    	<h5 class="widget_title">Récents Article</h5>
                         <ul class="widget_recent_post">
                             @foreach ($article_recents as $article_recent)
                             <li>

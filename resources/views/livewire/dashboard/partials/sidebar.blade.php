@@ -1,7 +1,7 @@
 <!-- Page Sidebar Start-->
 <div class="page-sidebar">
   <div class="main-header-left d-none d-lg-block">
-    <div class="logo-wrapper"><a href="/"><img src="{{asset('assets/images/endless-logo.png')}}" alt=""></a></div>
+    <div class="logo-wrapper"><a href="/"><img src="{{asset('assets/site/assets/images/logo_sb_1.png')}}" alt="logo" width="100" height="100"></a></div>
   </div>
   <div class="sidebar custom-scrollbar">
 

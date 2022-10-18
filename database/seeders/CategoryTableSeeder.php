@@ -19,15 +19,15 @@ class CategoryTableSeeder extends Seeder
         $faker = Faker::create();
 
         $categories = [
-            'Rentrée coucher',
+            'Entrée coucher',
             'Une chambre salon',
             'Deux chambres salon',
             'Trois chambres salon',
-            'Rentrée coucher semi sanitaire',
+            'Entrée coucher semi sanitaire',
             'Une chambre salon semi sanitaire',
             'Deux chambres salon semi sanitaire',
             'Trois chambres salon semi sanitaire',
-            'Rentrée coucher sanitaire',
+            'Entrée coucher sanitaire',
             'Une chambre salon sanitaire',
             'Deux chambres salon sanitaire',
             'Trois chambres salon sanitaire',

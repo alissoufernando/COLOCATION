@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class ContactForm extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $name, $email, $phone, $comment;
+    protected $nameUseur, $email, $phone, $id_;
     public $subject;
     /**
      * Create a new message instance.
@@ -33,7 +33,7 @@ class ContactForm extends Mailable
      */
     public function build()
     {
-    
+
         return $this->from($this->email)->subject($this->subject)->view('livewire.site.contact.emails-contact')->with([
             'email' => $this->email,
             'name' => $this->name,

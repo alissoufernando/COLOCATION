@@ -8,8 +8,10 @@
         <meta name="keywords" content="admin template, endless admin template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="pixelstrap">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-        <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
+        {{-- <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon"> --}}
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/site/assets/images/logo_1.jpg') }}">
+
         <title>@yield('title') | STUDENT-COLOC</title>
         <!-- Google font-->
         @include('livewire.dashboard.partials.style')

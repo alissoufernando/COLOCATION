@@ -4,12 +4,14 @@ namespace App\Http\Livewire\Dashboard\Candidat;
 
 use Livewire\Component;
 use App\Models\Postuler;
+use App\Mail\ReponseDemande;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CadidatsComponent extends Component
 {
 
-    public $postuler_id;
+    public $postuler_id, $mydemande;
     public $reponse;
     public $user_id;
     public $deleteIdBeingRemoved = null;
@@ -21,8 +23,12 @@ class CadidatsComponent extends Component
         $this->reponse = "Refusé";
 
         $myPostuler = Postuler::findOrFail($this->postuler_id);
+        // dd($myPostuler->user->email);
         $myPostuler->reponse = $this->reponse;
         $myPostuler->save();
+
+        Mail::to($myPostuler->user->email)->send( new ReponseDemande($this->postuler_id));
+
 
         return redirect()->route('admin.candidature-index');
 

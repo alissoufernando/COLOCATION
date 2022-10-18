@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Site;
 
 use Cart;
+use App\Models\Ville;
 use App\Models\Article;
 use App\Models\Product;
 use Livewire\Component;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 class WelcomeComponent extends Component
 {
     public $email, $user_id, $post;
-    public $categorie_id, $ville, $type_annonce, $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids, $auteurAnnonce;
+    public $categorie_id, $ville_id, $type_annonce, $date_de_sortie, $date_entre, $indetermine, $message, $product_id, $product_ids, $auteurAnnonce;
 
     public function resetInputFieldss()
     {
@@ -134,6 +135,8 @@ dd($products);
         $articles = Article::latest()->limit(3)->get();
 
         $category = Category::latest()->get();
+        $villes = Ville::latest()->get();
+
         $parametre = Parametre::find(1);
         $categorieMenu = Category::where('menu',1)->get();
         if(Auth::check())
@@ -148,6 +151,7 @@ dd($products);
             'parametre' => $parametre,
             'categorieMenu' => $categorieMenu,
             'articles' => $articles,
+            'villes' => $villes,
         ])->layout('layouts.site');
     }
 }

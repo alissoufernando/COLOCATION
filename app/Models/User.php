@@ -137,12 +137,15 @@ class User extends Authenticatable
         return $this->hasOne(ImageUser::class);
     }
 
-    public function message_destinataires()
+    public function auteur()
     {
-        return $this->belongsToMany(Message::class, 'distinataire_id');
+        return $this->hasOne(Message::class, 'auteur_id');
     }
+    public function destinataire()
+    {
+        return $this->hasOne(Message::class, 'distinataire_id');
 
-
+    }
     // public function hasAnyRole(array $roles)
     // {
     //     return $this->roles()->whereIn('nom', $roles)->first();

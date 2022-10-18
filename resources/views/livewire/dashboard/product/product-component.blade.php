@@ -49,7 +49,13 @@
                     <td>{{$products->name}}</td>
                     <td>{{$products->ville->departement->name}}</td>
                     <td>{{$products->ville->name}}</td>
-                    <td>{{$products->disponibilite}}</td>
+                    <td>{{$products->disponibilite}}
+                        <div class="media-body text-right icon-state">
+                            <label class="switch">
+                              <input type="checkbox" checked=""><span class="switch-state"></span>
+                            </label>
+                          </div>
+                    </td>
                     <td>{{$products->place_dispo}}</td>
                     <td>{{$products->normal_price}}</td>
                     <td>

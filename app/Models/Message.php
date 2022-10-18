@@ -13,8 +13,12 @@ class Message extends Model
     protected $fillable = [
         'message', 'destinataire_id', 'auteur_id'
     ];
-    public function message_auteurs()
+    public function auteurs()
     {
-        return $this->belongsToMany(User::class, 'auteur_id');
+        return $this->belongsTo(User::class, 'auteur_id');
+    }
+    public function destinataires()
+    {
+        return $this->belongsToMany(User::class, 'distinataire_id');
     }
 }

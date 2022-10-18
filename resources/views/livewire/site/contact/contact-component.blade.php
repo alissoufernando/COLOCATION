@@ -26,9 +26,9 @@
 
                     </li>
 
-                    <li class="dropdown cart_dropdown">
+                    {{-- <li class="dropdown cart_dropdown">
                         @livewire('site.products.wish-count-component')
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -112,7 +112,7 @@
             	<div class="heading_s1">
                 	<h2>Contactez-nous</h2>
                 </div>
-                <p class="leads">Contacter nous pour réserver les locations spéciales. Nous sommes là pour vous. </p>
+                <p class="leads">Decrivez nous votre projet nous vous contacterons très rapidement.</p>
                 <div class="field_form">
                     <form wire:submit.prevent="sendMessage">
                         <div class="row">

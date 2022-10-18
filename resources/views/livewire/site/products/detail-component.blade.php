@@ -25,9 +25,9 @@
                                     class="linearicons-magnifier"></i></a>
                             @include('livewire.site.products.header-search-component')
                         </li>
-                        <li class="dropdown cart_dropdown">
+                        {{-- <li class="dropdown cart_dropdown">
                             @livewire('site.products.wish-count-component')
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -130,7 +130,7 @@
                                     <div class="product_description">
                                         <h4 class="product_title"><a href="#">{{ $products->name }}</a></h4>
                                         <div class="product_price">
-                                            <span class="price">{{ $products->normal_price }} FCFA</span>
+                                            <span class="price">{{ $products->normal_price }} FCFA / mois</span>
                                         </div>
                                         <div class="rating_wrap">
                                             @php
@@ -335,7 +335,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="heading_s1">
-                            <h3>Releted Products</h3>
+                            <h3>Annonces Similaires</h3>
                         </div>
                         <div class="row shop_container">
                             {{-- <div wire:ignore class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'> --}}
@@ -386,7 +386,7 @@
                                                 </h6>
                                                 <div class="product_price">
                                                     <span class="price">{{ $products_relateds->normal_price }}
-                                                        FCFA</span>
+                                                        FCFA / mois</span>
 
                                                 </div>
                                                 <div class="rating_wrap">
