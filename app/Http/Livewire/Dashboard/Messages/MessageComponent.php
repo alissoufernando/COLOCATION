@@ -17,7 +17,7 @@ class MessageComponent extends Component
 
     public function resetInputFields()
     {
-        // Clean errors if were visible before
+        // Nettoyer les erreurs si elles étaient visibles auparavant ou vider la variable message apres l'envoi
         $this->resetErrorBag();
         $this->resetValidation();
         $this->reset(['message']);
@@ -26,16 +26,20 @@ class MessageComponent extends Component
 
     public function updatedName($value)
     {
-        $this->rechercherNames = UserMessage::rechercherUserNameMessage($value);
+        // rechercher par nom pour les messages en utilisant un service
+        // $this->rechercherNames = UserMessage::rechercherUserNameMessage($value);
+        // rechercher par nom pour les messages en utilisant juste une request
+        $this->rechercherNames = User::where('name', 'like', '%'.$value.'%')->get();
 
     }
 
     public function getId($id) {
-
+        // recuperation de Id du destinataire d'un message
         $this->destinataire_id = $id;
         // dd($this->destinataire_id);
     }
 
+    // cette fonction me permet de sauvegarder les messages
     public function saveMessage()
     {
             $this->validate([
@@ -53,7 +57,7 @@ class MessageComponent extends Component
     }
     public function render()
     {
-        $users  = User::latest()->distinct()->get();
+        // $users  = User::latest()->distinct()->get();
         // foreach($userss as $user)
         // {
         // dd($user->auteur['auteur_id']);
@@ -68,9 +72,37 @@ class MessageComponent extends Component
 
         // }
         // dd($this->mesUeserMessage);
-        // tous les messages don je suis l'auteur ou le destinataire
-        $mes_messages = Message::where('auteur_id', Auth::user()->id)->orWhere('distinataire_id', Auth::user()->id)->distinct()->get();
+        // tous les messages ou l'utilisateur connecté est l'auteur ou le destinataire
+        $mes_messages = Message::where('auteur_id', Auth::user()->id)->orWhere('distinataire_id', Auth::user()->id)->get();
         // dd($mes_messages);
+
+        // recuperation de l'ID des auteurs et destinataires des messages sauf l'utilisateur connecté
+        foreach($mes_messages as $mes_message)
+        {
+            if($mes_message->auteur_id != Auth::user()->id)
+            {
+                array_push($this->mesUeserMessage, $mes_message->auteur_id);
+
+            }
+
+            if($mes_message->distinataire_id != Auth::user()->id)
+            {
+                array_push($this->mesUeserMessage, $mes_message->distinataire_id);
+
+            }
+        }
+        // recuperation du tableau d'ID sans les doublons
+        $uniqueMesUeserMessage = array_unique($this->mesUeserMessage);
+        // request pour trouver toute personne ayant converser avec l'utisateur connecté
+        $users  = User::whereIn('id',$uniqueMesUeserMessage)->get();
+        // foreach($users as $user)
+        // {
+        //     $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
+        //     dd($mes->message);
+
+        // }
+
+
         if($this->destinataire_id)
         {
             $messages_auteur = Message::where('auteur_id', Auth::user()->id)->where('distinataire_id',$this->destinataire_id)->get();
@@ -83,7 +115,6 @@ class MessageComponent extends Component
             $messages_destinataire = null;
             $messages_auteur = null;
         }
-
 
         return view('livewire.dashboard.messages.message-component',[
             'users' => $users,

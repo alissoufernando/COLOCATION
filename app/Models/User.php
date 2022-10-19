@@ -137,13 +137,13 @@ class User extends Authenticatable
         return $this->hasOne(ImageUser::class);
     }
 
-    public function auteur()
+    public function auteurs()
     {
-        return $this->hasOne(Message::class, 'auteur_id');
+        return $this->hasMany(Message::class, 'auteur_id');
     }
-    public function destinataire()
+    public function destinataires()
     {
-        return $this->hasOne(Message::class, 'distinataire_id');
+        return $this->hasMany(Message::class, 'distinataire_id');
 
     }
     // public function hasAnyRole(array $roles)

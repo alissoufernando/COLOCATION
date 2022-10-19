@@ -27,7 +27,7 @@
                     <img alt="" src="{{asset('storage')}}/{{$ImageUser->path}}">
                     @endempty
                 </div>
-                  <div class="icon-wrapper" wire:click.prevent="getId({{$userProfile->id}})" data-bs-toggle="modal" data-bs-target="#ModalImage" ><i class="icofont icofont-pencil-alt-5"></i></div>
+                  <div class="icon-wrapper" data-bs-toggle="modal" data-bs-target="#ModalImage" wire:click.prevent="getId({{$userProfile->id}})"><i class="icofont icofont-pencil-alt-5"></i></div>
                 </div>
                 <div class="info">
                   <div class="row">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
                       <div class="user-designation">
-                        <div class="title"><a target="_blank" href="user-profile.html">{{ $userProfile->name }}</a></div>
+                        <div class="title">{{ $userProfile->name }}</div>
                         <div class="desc mt-2">{{ $userProfile->profession }}</div>
                       </div>
                     </div>

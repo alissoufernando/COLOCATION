@@ -84,6 +84,8 @@ class UserComponent extends Component
             $myUser->roles()->sync($this->roless);
             $myUser->save();
 
+            return redirect()->route('admin.user-index');
+
         } else {
             $myUser->name = $this->name;
             $myUser->phone = $this->phone;
@@ -93,6 +95,8 @@ class UserComponent extends Component
             $myUser = User::where('email' ,$this->email)->first();
             $userRole = Role::where('nom' ,'visiteur')->first();
             $myUser->roles()->attach($userRole);
+            
+            return redirect()->route('admin.user-index');
 
         }
 
