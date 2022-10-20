@@ -58,10 +58,12 @@
                             @endif
                             <div class="about">
                               <div class="name">{{ $user->name }}</div>
-                              @php
+                              {{-- @php
                                 $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
-                              @endphp
-                              <div class="status">{{ $message->message }}</div>
+                              @endphp --}}
+                              {{-- <div class="status">{{ $message->message }}</div> --}}
+                              <div class="status">mon message</div>
+
                             </div>
                         </li>
                         @endforeach

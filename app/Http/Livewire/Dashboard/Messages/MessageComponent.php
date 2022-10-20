@@ -36,7 +36,6 @@ class MessageComponent extends Component
     public function getId($id) {
         // recuperation de Id du destinataire d'un message
         $this->destinataire_id = $id;
-        // dd($this->destinataire_id);
     }
 
     // cette fonction me permet de sauvegarder les messages
@@ -71,10 +70,8 @@ class MessageComponent extends Component
             // }
 
         // }
-        // dd($this->mesUeserMessage);
         // tous les messages ou l'utilisateur connecté est l'auteur ou le destinataire
         $mes_messages = Message::where('auteur_id', Auth::user()->id)->orWhere('distinataire_id', Auth::user()->id)->get();
-        // dd($mes_messages);
 
         // recuperation de l'ID des auteurs et destinataires des messages sauf l'utilisateur connecté
         foreach($mes_messages as $mes_message)
@@ -98,17 +95,15 @@ class MessageComponent extends Component
         // foreach($users as $user)
         // {
         //     $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
-        //     dd($mes->message);
+        //     dd($message);
 
         // }
-
 
         if($this->destinataire_id)
         {
             $messages_auteur = Message::where('auteur_id', Auth::user()->id)->where('distinataire_id',$this->destinataire_id)->get();
             $messages_destinataire = Message::where('auteur_id', $this->destinataire_id)->where('distinataire_id',Auth::user()->id)->get();
             $userM = User::where('id',$this->destinataire_id)->first();
-            // dd($userM->auteurs);
         }else
         {
             $userM = null;
