@@ -102,8 +102,8 @@
 
                   @forelse ($products as $product)
                   <div class="col-md-4 col-6">
-                      <div class="product">
-                          <div class="product_img">
+                      <div class="product text-center">
+                          <div class="div_image product_img">
                             @empty ($product->images->first()->thumbnail)
                             <a href="{{route('site.detail-produit', ['id' => $product->id])}}">
                                 <img src="{{asset('assets/images/product/default.png')}}" alt="{{$product->name}}">
@@ -119,7 +119,7 @@
                               <div class="product_action_box">
                                   <ul class="list_none pr_action_btn">
                                       <li class="add-to-cart"><a href="#" data-bs-toggle="modal" wire:click.prevent='getElementById({{$product->id}})' data-bs-target="#exampleModalCenter" ><i class=""></i> Contacter</a></li>
-                                      
+
                                       @if ($witems->contains($product->id))
                                       <li><a href="#" wire:click.prevent ="removeFromWishList({{$product->id}})"><i class="icon-heart" style="background-color: red;"></i></a></li>
                                       @else

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class MessageComponent extends Component
 {
 
-    public $destinataire_id , $name, $rechercherNames =[], $mesUeserMessage = [];
+    public $destinataire_id , $name, $rechercherNames =[], $mesUeserMessage = [], $dernierMessage =[];
     public $auteur_id;
     public $message;
 
@@ -94,9 +94,10 @@ class MessageComponent extends Component
         $users  = User::whereIn('id',$uniqueMesUeserMessage)->get();
         // foreach($users as $user)
         // {
+        //     $this->dernierMessage = [];
         //     $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
         //     dd($message);
-
+        //     array_push($this->dernierMessage, $message->message);
         // }
 
         if($this->destinataire_id)

@@ -30,6 +30,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th>Image</th>
                   <th>Name</th>
                   <th>Departement</th>
                   <th>Ville</th>
@@ -46,6 +47,16 @@
                   @foreach ($product as $products)
                   <tr>
                     <td>{{$i ++}}</td>
+                    <td>
+                    @empty ($products->images->first()->thumbnail)
+                    <img src="{{asset('assets/images/product/default.png')}}" alt="{{$products->name}}" width="80" height="80">
+                    @else
+                     @php
+                     $images = explode(",",$products->images->first()->thumbnail);
+                     @endphp
+                    <img src="{{asset('storage/galerie')}}/{{$images[0]}}" alt="{{$products->name}}" width="80" height="80">
+                    @endempty
+                    </td>
                     <td>{{$products->name}}</td>
                     <td>{{$products->ville->departement->name}}</td>
                     <td>{{$products->ville->name}}</td>

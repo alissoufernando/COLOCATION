@@ -42,14 +42,13 @@
                       </div>
                       @empty($rechercherNames)
                       <ul class="list">
-                        @foreach ($users as $user)
-                        <li wire:click.prevent='getId({{$user->id}})' style="cursor: pointer" class="clearfix">
+                          {{-- @for ($i= 0; $i < count($this->dernierMessage); $i++) --}}
+                          @foreach ($users as $user)
+                          <li wire:click.prevent='getId({{$user->id}})' style="cursor: pointer" class="clearfix">
                             @empty ($user->image_user->path)
                             <img class="rounded-circle user-image" src="{{ asset('assets/images/user/1.png') }}" alt="">
-
                             @else
                             <img class="rounded-circle user-image" src="{{asset('storage')}}/{{$user->image_user->path}}" alt="">
-
                             @endempty
                             @if (Auth::user()->id == $user->id)
                             <div class="status-circle online"></div>
@@ -57,16 +56,19 @@
                             <div class="status-circle offline"></div>
                             @endif
                             <div class="about">
-                              <div class="name">{{ $user->name }}</div>
-                              {{-- @php
-                                $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
-                              @endphp --}}
-                              {{-- <div class="status">{{ $message->message }}</div> --}}
-                              <div class="status">mon message</div>
-
+                                <div class="name">{{ $user->name }}</div>
+                                {{-- @php
+                                    $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
+                                    @endphp --}}
+                                    {{-- <div class="status">{{ $message->message }}</div> --}}
+                              <div class="status">Salut !!</div>
                             </div>
                         </li>
-                        @endforeach
+                        {{-- @php
+                            $this->i += 1;
+                            @endphp --}}
+                            @endforeach
+                            {{-- @endfor --}}
                       </ul>
 
                       @else
@@ -89,8 +91,9 @@
 
                             <div class="about">
                               <div class="name">{{ $rechercherName->name }}</div>
-                              <div class="status">Hello Name</div>
+                              <div class="status">Salut !!</div>
                             </div>
+
                         </li>
                         @endif
                         @endforeach

@@ -18,8 +18,8 @@
                 <div class="card rounded-0">
                     <div class="  card-header">
                         @if (Session::has('message'))
-                        <div class="alert alert-success">{{Session::get('message')}}</div>
-                    @endif
+                            <div class="alert alert-success">{{Session::get('message')}}</div>
+                        @endif
                         <h5 class="d-inline">Liste des Catégories</h5>
 
                     </div>
