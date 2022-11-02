@@ -109,6 +109,10 @@ class User extends Authenticatable
     {
         return $this->roles()->where('nom', "Super Administrateur")->first();
     }
+    public function isetudiant()
+    {
+        return $this->roles()->where('nom', "Etudiant")->first();
+    }
 
     public function affectation()
     {

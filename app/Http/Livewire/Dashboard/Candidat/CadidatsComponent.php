@@ -54,8 +54,9 @@ class CadidatsComponent extends Component
 
     public function deletePostulers()
     {
-        $myProduct = Postuler::findOrFail($this->deleteIdBeingRemoved);
-        $myProduct->delete();
+        $myPostuler = Postuler::findOrFail($this->deleteIdBeingRemoved);
+        $myPostuler->isDelete = 1;
+        $myPostuler->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Cette candidature à été supprimer']);
 
     }
@@ -66,7 +67,7 @@ class CadidatsComponent extends Component
     }
     public function render()
     {
-        $postulers = Postuler::latest()->get();
+        $postulers = Postuler::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         $this->user_id = Auth::user()->id;
         // $postulers = Postuler::where('$post->product->user->id')
         return view('livewire.dashboard.candidat.cadidats-component',[

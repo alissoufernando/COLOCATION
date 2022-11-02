@@ -17,6 +17,8 @@ class CreateNewslettersTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->foreignId('user_id')->constrained();
+            $table->boolean('isDelete')->default(0);
+
             $table->boolean('statut')->default(1);
             $table->timestamps();
         });

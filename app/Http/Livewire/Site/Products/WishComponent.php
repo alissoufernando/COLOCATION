@@ -56,7 +56,7 @@ class WishComponent extends Component
         {
             Cart::instance('wishlist')->store(Auth::user()->email);
         }
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.products.wish-component',[
             'categorieMenu' => $categorieMenu,

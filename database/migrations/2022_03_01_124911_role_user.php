@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('role_id')->constrained();
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

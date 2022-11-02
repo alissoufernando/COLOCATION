@@ -96,7 +96,7 @@ class ProductImageComponent extends Component
 
                 Image::make($image->getRealPath())->save($path_thumb);
                 Image::make($image->getRealPath())->save($path_full);
-               
+
                 array_push($array_full, $filename_full);
                 array_push($array_thumb, $filename_thumb);
 
@@ -135,7 +135,7 @@ class ProductImageComponent extends Component
     }
     public function render()
     {
-        $product = Product::where('id', $this->product_id)->with('images')->first();
+        $product = Product::where('isDelete', 0)->where('id', $this->product_id)->with('images')->first();
         return view('livewire.dashboard.product.product-image-component', [
             'product' => $product,
         ]);

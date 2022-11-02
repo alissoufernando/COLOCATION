@@ -114,7 +114,7 @@
                                                 <p> <b>departement</b> {{$user->profile->departement}}</p>
                                                 <p> <b>country</b> {{$user->profile->country}}</p>
                                                 <p> <b>zipcode</b> {{$user->profile->zipcode}}</p>
-                                                <a href="#"wire:click.prevent='getElementById({{$user->profile->id}})' class="btn btn-fill-out float-end" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</a>
+                                                <a wire:click.prevent='getElementById({{$user->profile->id}})' class="btn btn-fill-out float-end" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</a>
                                             </div>
                                         </div>
                                     </div>

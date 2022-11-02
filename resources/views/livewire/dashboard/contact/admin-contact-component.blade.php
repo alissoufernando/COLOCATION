@@ -50,7 +50,7 @@
                                     <td>{{$contacts->comment}}</td>
                                     <td>
 
-                                    <a href="#" wire:click.prevent="deleteContact({{$contacts->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteContact({{$contacts->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
                                 </tr>
 
                                 @endforeach
@@ -71,6 +71,9 @@
 
 
 @section('scripts')
+<script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/tooltip-init.js') }}"></script>
+<script src="{{ asset('assets/js/popover-custom.js') }}"></script>
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 @endsection

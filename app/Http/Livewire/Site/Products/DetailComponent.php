@@ -71,7 +71,7 @@ class DetailComponent extends Component
         // dd($this->product_ids);
 
 
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
 
@@ -173,9 +173,9 @@ class DetailComponent extends Component
     public function render()
     {
 
-        $product = Product::where('id', $this->product_id)->with('images')->get();
-        $products_related = Product::where('categorie_id', $product->first()->categorie_id)->inRandomOrder()->with('images')->limit(4)->get();
-        $categorieMenu = Category::where('menu',1)->get();
+        $product = Product::where('isDelete', 0)->where('disponibilite', 1)->where('id', $this->product_id)->with('images')->get();
+        $products_related = Product::where('isDelete', 0)->where('categorie_id', $product->first()->categorie_id)->inRandomOrder()->with('images')->limit(4)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
         // foreach($product as $products)
         // {
 

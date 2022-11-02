@@ -20,6 +20,8 @@ class CreatePostulersTable extends Migration
             $table->date('date_de_sortie')->nullable();
             $table->string('message');
             $table->string('reponse')->nullable();
+            $table->boolean('isDelete')->default(0);
+
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

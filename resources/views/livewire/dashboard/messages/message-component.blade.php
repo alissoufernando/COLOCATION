@@ -53,7 +53,7 @@
                             @if (Auth::user()->id == $user->id)
                             <div class="status-circle online"></div>
                             @else
-                            <div class="status-circle offline"></div>
+                            <div class="status-circle online"></div>
                             @endif
                             <div class="about">
                                 <div class="name">{{ $user->name }}</div>
@@ -61,6 +61,11 @@
                                     $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last();
                                     @endphp --}}
                                     {{-- <div class="status">{{ $message->message }}</div> --}}
+                                    {{-- @php
+                                        dd($message->where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last()->message );
+                                    @endphp --}}
+                              {{-- <div class="status">{{ $message->where('id', $user->id)->first() }}</div> --}}
+
                               <div class="status">Salut !!</div>
                             </div>
                         </li>
@@ -91,7 +96,11 @@
 
                             <div class="about">
                               <div class="name">{{ $rechercherName->name }}</div>
+        {{-- $message = Message::where('auteur_id', $user->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $user->id)->get()->last(); --}}
+
+                              {{-- <div class="status">{{$message->where('auteur_id', $rechercherName->id)->where('distinataire_id', Auth::user()->id)->orWhere('auteur_id', Auth::user()->id)->where('distinataire_id', $rechercherName->id)->get()->last()->message}}</div> --}}
                               <div class="status">Salut !!</div>
+
                             </div>
 
                         </li>

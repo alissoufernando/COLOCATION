@@ -17,6 +17,8 @@ class CreateMessagesTable extends Migration
             $table->string('message');
             $table->foreignId('distinataire_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('auteur_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

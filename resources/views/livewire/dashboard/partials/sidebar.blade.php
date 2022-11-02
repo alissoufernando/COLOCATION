@@ -7,40 +7,53 @@
 
     <ul class="sidebar-menu">
         <li>
-            <a href="{{route('welcome')}}" class="sidebar-header {{ Route::currentRouteName()== 'welcome' ? 'active' : '' }}"><i data-feather="home"></i><span>Home</span></i>
+            <a href="{{route('welcome')}}" class="sidebar-header {{ Route::currentRouteName()== 'welcome' ? 'active' : '' }}"><i data-feather="home"></i><span>Accueil</span></i>
             </a>
         </li>
         <li>
-            <a href="{{route('site.my-account')}}" class="sidebar-header {{ Route::currentRouteName()== 'site.my-account' ? 'active' : '' }}"><i data-feather="home"></i><span>Mon Compte</span></i>
+            <a href="{{route('dashboard')}}" class="sidebar-header {{ Route::currentRouteName()== 'dashboard' ? 'active' : '' }}"><i data-feather="clipboard"></i><span>Dashboard</span></i>
             </a>
         </li>
-        <li><a href="{{route('admin.product-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.product-index' ? 'active' : '' }}"><i data-feather="home"></i> <span>Produits</span></a></li>
-        <li><a href="{{route('admin.article-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.article-index' ? 'active' : '' }}"><i data-feather="home"></i> <span>Articles</span></a></li>
-        <li><a href="{{route('admin.category-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.category-index' ? 'active' : '' }}"><i data-feather="home"></i> <span>Catégories</span> </a></li>
-        <li><a href="{{route('admin.candidature-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.candidature-index' ? 'active' : '' }}"><i data-feather="home"></i><span>Candidatures</span> </a></li>
-        <li><a href="{{route('mes-messages')}}" class="sidebar-header {{ Route::currentRouteName()== 'mes-messages' ? 'active' : '' }}"><i data-feather="home"></i><span>Messages</span> </a></li>
-      {{-- <li class="{{request()->route()->getPrefix() == '/admin' ? 'active' : '' }}">
-        <a class="sidebar-header" ><i data-feather="home"></i><span>{{ trans('lang.Dashboard') }}</span>
-          <span class="badge rounded-pill badge-primary">6</span><i class="fa fa-angle-right pull-right"></i>
-        </a>
-        <ul class="sidebar-submenu">
-
-
-        </ul>
-      </li> --}}
-
-
-        <li class="{{request()->route()->getPrefix() == '/administration' ? 'active' : '' }}">
-          <a class="sidebar-header" ><i data-feather="user"></i><span>Administration</span><i class="fa fa-angle-right pull-right"></i>
-          </a>
-          <ul class="sidebar-submenu">
-            <li><a href="{{route('admin.user-index')}}" class="{{ Route::currentRouteName()== 'admin.user-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Users</a></li>
-            <li><a href="{{route('admin.role-index')}}" class="{{ Route::currentRouteName()== 'admin.role-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Rôles</a></li>
-            <li><a href="{{route('admin.contact-index')}}" class="{{ Route::currentRouteName()== 'admin.contact-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Contacts</a></li>
-            <li><a href="{{route('admin.parametre-index')}}" class="{{ Route::currentRouteName()== 'admin.parametre-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Parametres</a></li>
-
-          </ul>
+        <li>
+            <a href="{{route('site.my-account')}}" class="sidebar-header {{ Route::currentRouteName()== 'site.my-account' ? 'active' : '' }}"><i data-feather="users"></i><span>Mon Compte</span></i>
+            </a>
         </li>
+        @can('etudiant')
+        <li><a href="{{route('admin.mesproduct-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.mesproduct-index' ? 'active' : '' }}"><i data-feather="briefcase"></i> <span>Mes Annonces</span></a></li>
+        <li><a href="{{route('admin.candidature-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.candidature-index' ? 'active' : '' }}"><i data-feather="command"></i><span>Mes Candidats</span> </a></li>
+        @endcan
+
+        <li><a href="{{route('mes-messages')}}" class="sidebar-header {{ Route::currentRouteName()== 'mes-messages' ? 'active' : '' }}"><i data-feather="message-circle"></i><span>Messages</span> </a></li>
+        {{-- <li class="{{request()->route()->getPrefix() == '/admin' ? 'active' : '' }}">
+            <a class="sidebar-header" ><i data-feather="home"></i><span>{{ trans('lang.Dashboard') }}</span>
+                <span class="badge rounded-pill badge-primary">6</span><i class="fa fa-angle-right pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+
+
+            </ul>
+        </li> --}}
+
+        @can('admin-admin')
+        <li><a href="{{route('admin.category-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.category-index' ? 'active' : '' }}"><i data-feather="flag"></i> <span>Catégories</span> </a></li>
+        <li><a href="{{route('admin.article-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.article-index' ? 'active' : '' }}"><i data-feather="file-text"></i> <span>Articles</span></a></li>
+        <li><a href="{{route('admin.departement-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.departement-index' ? 'active' : '' }}"><i data-feather="flag"></i> <span>Departements</span> </a></li>
+        <li><a href="{{route('admin.product-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.product-index' ? 'active' : '' }}"><i data-feather="briefcase"></i> <span>Annonces</span></a></li>
+        <li><a href="{{route('admin.toutescandidature-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.toutescandidature-index' ? 'active' : '' }}"><i data-feather="command"></i><span>Candidatures</span> </a></li>
+        <li><a href="{{route('admin.ville-index')}}" class="sidebar-header {{ Route::currentRouteName()== 'admin.ville-index' ? 'active' : '' }}"><i data-feather="flag"></i> <span>Villes</span> </a></li>
+        <li class="{{request()->route()->getPrefix() == '/administration' ? 'active' : '' }}">
+            <a class="sidebar-header" ><i data-feather="folder-plus"></i><span>Administration</span><i class="fa fa-angle-right pull-right"></i>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="{{route('admin.user-index')}}" class="{{ Route::currentRouteName()== 'admin.user-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Users</a></li>
+              <li><a href="{{route('admin.role-index')}}" class="{{ Route::currentRouteName()== 'admin.role-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Rôles</a></li>
+              <li><a href="{{route('admin.contact-index')}}" class="{{ Route::currentRouteName()== 'admin.contact-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Contacts</a></li>
+              <li><a href="{{route('admin.parametre-index')}}" class="{{ Route::currentRouteName()== 'admin.parametre-index' ? 'active' : '' }}"><i class="fa fa-circle"></i>Parametres</a></li>
+
+            </ul>
+          </li>
+        @endcan
+
 
 
 

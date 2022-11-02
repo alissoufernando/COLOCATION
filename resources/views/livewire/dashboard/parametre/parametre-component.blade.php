@@ -67,8 +67,8 @@
                                     <td>{{$parametres->adress}}</td>
                                     <td>{{$parametres->google}}</td>
                                     <td>
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#ModalParametre" wire:click.prevent='getElementById({{$parametres->id}})'>  <i class="fa fa-edit m-5 text-warning"></i> </a>
-                                        <a href="#" wire:click.prevent="deleteParametre({{$parametres->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Modification" href="" data-bs-toggle="modal" data-bs-target="#ModalParametre" wire:click.prevent='getElementById({{$parametres->id}})'>  <i class="fa fa-edit fa-2x m-5 text-warning"></i> </a>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteParametre({{$parametres->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
                                         </td>
                                 </tr>
 
@@ -93,6 +93,9 @@
 
 
 @section('scripts')
+<script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/tooltip-init.js') }}"></script>
+<script src="{{ asset('assets/js/popover-custom.js') }}"></script>
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 

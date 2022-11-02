@@ -78,7 +78,7 @@ class CategorieComponent extends Component
         // dd($this->product_ids);
 
 
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
 
@@ -164,7 +164,7 @@ class CategorieComponent extends Component
         $filter = "";
         if($this->category_id)
         {
-            $categorys = Category::where('id', $this->category_id)->first();
+            $categorys = Category::where('isDelete', 0)->where('id', $this->category_id)->first();
             $category_id = $categorys->id;
             $category_name = $categorys->name;
             $filter = "";
@@ -173,20 +173,20 @@ class CategorieComponent extends Component
 
         if($this->sorting == "date")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('created_at', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('created_at', 'DESC')->paginate($this->pagesize);
         }else if($this->sorting == "price")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
 
         }else if($this->sorting == "price-desc")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
 
         }else{
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where($filter.'categorie_id', $category_id)->paginate($this->pagesize);
         }
-        $category = Category::all();
-        $categorieMenu = Category::where('menu',1)->get();
+        $category = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.products.categorie-component',[
             'products' => $products,

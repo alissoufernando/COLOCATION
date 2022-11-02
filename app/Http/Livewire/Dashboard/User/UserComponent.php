@@ -6,7 +6,9 @@ use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Actions\Fortify\PasswordValidationRules;
+use App\Mail\NewUser;
 
 class UserComponent extends Component
 {
@@ -14,9 +16,9 @@ class UserComponent extends Component
     public $name;
     public $phone;
     public $email;
-    public $password;
+    public $password = "coloc@student@12345";
     public $user_id;
-    public $roless =[];
+    public $myUserE, $rolessU =[];
 
     protected $listeners = ['deleteConfirmation' => 'deleteUsers'];
 
@@ -46,14 +48,13 @@ class UserComponent extends Component
                 'name' =>  ['required'],
                 'phone' =>  ['required'],
                 'email' =>  ['required'],
-                'password' => ['required'],
             ]);
         }
 
     }
     public function saveUser()
     {
-
+        // dd($this->rolessU);:
         if ($this->user_id) {
 
             $this->validate([
@@ -67,7 +68,6 @@ class UserComponent extends Component
                 'name' =>  ['required'],
                 'phone' =>  ['required'],
                 'email' =>  ['required'],
-                'password' => ['required'],
             ]);
         }
         $myUser = new User();
@@ -81,22 +81,24 @@ class UserComponent extends Component
             $myUser->name = $this->name;
             $myUser->phone = $this->phone;
             $myUser->email = $this->email;
-            $myUser->roles()->sync($this->roless);
+            // $myUser->roles()->sync($this->rolessU);
             $myUser->save();
 
-            return redirect()->route('admin.user-index');
+            // return redirect()->route('admin.user-index');
 
         } else {
             $myUser->name = $this->name;
             $myUser->phone = $this->phone;
             $myUser->email = $this->email;
             $myUser->password = Hash::make($this->password);
+            Mail::to($this->email)->send( new NewUser($this->name, $this->email,$this->phone,$this->password));
             $myUser->save();
             $myUser = User::where('email' ,$this->email)->first();
-            $userRole = Role::where('nom' ,'visiteur')->first();
+            $userRole = Role::where('nom' ,'Etudiant')->first();
             $myUser->roles()->attach($userRole);
-            
+
             return redirect()->route('admin.user-index');
+
 
         }
 
@@ -114,10 +116,13 @@ class UserComponent extends Component
     public function getElementById($id)
     {
         $this->user_id = $id;
-        $myUser = User::findOrFail($this->user_id);
-        $this->name = $myUser->name;
-        $this->phone = $myUser->phone;
-        $this->email = $myUser->email;
+        $this->myUserE = User::findOrFail($this->user_id);
+        // $this->roless = explode(",", $this->myUserE->roles()->get()->pluck('id'));
+        // dd($this->roless);
+
+        $this->name = $this->myUserE->name;
+        $this->phone = $this->myUserE->phone;
+        $this->email = $this->myUserE->email;
     }
 
 
@@ -130,14 +135,15 @@ class UserComponent extends Component
     public function deleteUsers()
     {
         $myUser = User::findOrFail($this->deleteIdBeingRemoved);
-        $myUser->delete();
+        $myUser->isDelete = 1;
+        $myUser->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Cet utilisateur à été supprimer']);
 
     }
     public function render()
     {
-        $users = User::latest()->get();
-        $roles = Role::latest()->get();
+        $users = User::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $roles = Role::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         return view('livewire.dashboard.user.user-component',[
             'users' => $users,
             'roles' => $roles,

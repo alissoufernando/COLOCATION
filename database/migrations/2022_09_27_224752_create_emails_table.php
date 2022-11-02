@@ -15,6 +15,8 @@ class CreateEmailsTable extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

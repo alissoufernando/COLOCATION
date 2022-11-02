@@ -164,7 +164,8 @@ class ParametreComponent extends Component
     public function deleteParametres()
     {
         $myCoupon = Parametre::findOrFail($this->deleteIdBeingRemoved);
-        $myCoupon->delete();
+        $myProduct->isDelete = 1;
+        $myProduct->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Ce parametre à été supprimer']);
 
     }

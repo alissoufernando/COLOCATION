@@ -17,9 +17,9 @@ class DetailActualiteComponent extends Component
     }
     public function render()
     {
-        $article = Article::where('id', $this->article_id )->first();
-        $article_recents = Article::latest()->limit(3)->get();
-        $categorieMenu = Category::where('menu',1)->get();
+        $article = Article::where('isDelete', 0)->where('id', $this->article_id )->first();
+        $article_recents = Article::where('isDelete', 0)->orderBy('created_at','DESC')->limit(3)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
 
         return view('livewire.site.actualites.detail-actualite-component',[

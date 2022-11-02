@@ -227,18 +227,24 @@ class ProfilComponent extends Component
     {
 
 
-        $myCarousel = Profile::findOrFail($this->deleteIdBeingRemoved);
-        $myCarousel->delete();
+        $myProfile = Profile::findOrFail($this->deleteIdBeingRemoved);
+        $myProfile->isDelete = 1;
+        $myProfile->save();
         $this->dispatchBrowserEvent('deleted', ['message' => 'Ce profile à été supprimer']);
     }
     public function render()
     {
-        $ImageUser = ImageUser::where('user_id', Auth::user()->id)->first();
-        $userProfile = Profile::where('user_id', Auth::user()->id)->first();
-        $users = User::where('id', Auth::user()->id)->first();
+        $ImageUser = ImageUser::where('isDelete', 0)->where('user_id', Auth::user()->id)->first();
+        $userPr = Profile::where('isDelete', 0)->where('user_id', Auth::user()->id)->first();
+        $users = User::where('isDelete', 0)->where('id', Auth::user()->id)->first();
 
-        if(!$userProfile)
+        if($userPr)
         {
+
+            $userProfile = Profile::where('isDelete', 0)->where('user_id', Auth::user()->id)->first();
+
+        }else{
+
             $profile = new Profile();
             $profile->user_id = Auth::user()->id;
             $profile->name = $users->name;
@@ -251,6 +257,7 @@ class ProfilComponent extends Component
             $profile->birthday = now();
             $profile->profession = "None";
             $profile->save();
+            $userProfile = Profile::where('isDelete', 0)->where('user_id', Auth::user()->id)->first();
         }
         // dd(Auth::user()->image_user->path);
         $user = User::find(Auth::user()->id);

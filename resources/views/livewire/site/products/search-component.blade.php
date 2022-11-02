@@ -154,7 +154,7 @@
                       </div>
                   </div>
                   @empty
-                  <p>Aucun produit n'est dans la base de données</p>
+                  <p>Aucun resultat n'est trouvé pour " {{ $this->search }} "</p>
                  @endforelse
                  {{$products->links()}}
                 </div>

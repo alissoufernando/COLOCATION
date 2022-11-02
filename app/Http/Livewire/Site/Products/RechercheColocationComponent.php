@@ -38,14 +38,14 @@ class RechercheColocationComponent extends Component
     public function mount(Request $request)
     {
         $this->sorting = "default";
-        $this->pagesize = 12;
+        $this->pagesize = 3;
         // $this->fill(request()->only('search'));
         $this->ville_id = $request->ville_id;
         $this->categorie_id = $request->categorie_id;
         $this->type_annonce = $request->type_annonce;
         // dd($request->ville_id);
         $this->min_price = 1;
-        $this->max_price = 1000;
+        $this->max_price = 10000;
     }
 
     public function savePostule()
@@ -89,7 +89,7 @@ class RechercheColocationComponent extends Component
         // dd($this->product_ids);
 
 
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
 
@@ -147,20 +147,20 @@ class RechercheColocationComponent extends Component
 
         if($this->sorting == "date")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('created_at', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('created_at', 'DESC')->paginate($this->pagesize);
         }else if($this->sorting == "price")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
 
         }else if($this->sorting == "price-desc")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
 
         }else{
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville_id', $this->ville_id)->paginate($this->pagesize);
         }
-        $category = Category::latest()->get();
-        $categorieMenu = Category::where('menu',1)->get();
+        $category = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
         return view('livewire.site.products.recherche-colocation-component',[
             'products' => $products,
             'category' => $category,

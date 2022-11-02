@@ -16,8 +16,8 @@ class HeaderSearchComponent extends Component
     }
     public function render()
     {
-        $category = Category::all();
-        $categorieMenu = Category::where('menu',1)->get();
+        $category = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.products.header-search-component',[
             'category' => $category,

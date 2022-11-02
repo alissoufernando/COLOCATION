@@ -45,17 +45,8 @@ class ContactComponent extends Component
         $contact->phone = $this->phone;
         $contact->comment = $this->comment;
 
-        if($this->subject == "demande de proforma")
-        {
-            Mail::to('vente@centraledumobilier.com')->send( new ContactForm($this->name, $this->email,$this->phone,$this->comment,$this->subject));
-        }elseif($this->subject == "échange administratif et autre informations")
-        {
-            Mail::to('infos@centraledumobilier.com')->send( new ContactForm($this->name, $this->email,$this->phone,$this->comment,$this->subject));
-        }
-        else
-        {
-            Mail::to('sav@centraledumobilier.com')->send( new ContactForm($this->name, $this->email,$this->phone,$this->comment,$this->subject));
-        }
+
+        Mail::to('colocStudent@adm.com')->send( new ContactForm($this->name, $this->email,$this->phone,$this->comment,$this->subject));
 
         $contact->save();
         session()->flash('message', 'Merci, Votre message à été envoyé.');
@@ -64,7 +55,7 @@ class ContactComponent extends Component
     }
     public function render()
     {
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.contact.contact-component',[
             'categorieMenu' => $categorieMenu,

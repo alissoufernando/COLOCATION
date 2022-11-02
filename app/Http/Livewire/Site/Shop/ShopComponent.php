@@ -76,7 +76,7 @@ class ShopComponent extends Component
         // dd($this->product_ids);
 
 
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
 
@@ -160,24 +160,24 @@ class ShopComponent extends Component
     {
         if($this->sorting == "date")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('created_at', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('created_at', 'DESC')->paginate($this->pagesize);
         }else if($this->sorting == "price")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'ASC')->paginate($this->pagesize);
 
         }else if($this->sorting == "price-desc")
         {
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->orderBy('normal_price', 'DESC')->paginate($this->pagesize);
 
         }else{
-            $products = Product::whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->paginate($this->pagesize);
+            $products = Product::where('isDelete', 0)->where('disponibilite', 1)->whereBetween('normal_price', [$this->min_price, $this->max_price])->where('type_annonce', 'LOCATION')->paginate($this->pagesize);
         }
-        $category = Category::all();
+        $category = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         if(Auth::check())
         {
             Cart::instance('wishlist')->store(Auth::user()->email);
         }
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
         return view('livewire.site.shop.shop-component',[
             'products' => $products,
             'category' => $category,

@@ -21,13 +21,14 @@ class ActualiteComponent extends Component
     public function deleteArticles()
     {
         $myArticle = Article::findOrFail($this->deleteIdBeingRemoved);
-        $myArticle->delete();
+        $myArticle->isDelete = 1;
+        $myArticle->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Ce article à été supprimer']);
 
     }
     public function render()
     {
-        $articles = Article::latest()->get();
+        $articles = Article::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         return view('livewire.dashboard.actualites.actualite-component',[
             'articles' => $articles,
         ]);

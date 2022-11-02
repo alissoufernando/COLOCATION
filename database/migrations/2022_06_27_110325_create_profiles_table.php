@@ -25,6 +25,8 @@ class CreateProfilesTable extends Migration
             $table->string('link_facebook')->nullable();
             $table->string('link_twitter')->nullable();
             $table->string('link_instagram')->nullable();
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

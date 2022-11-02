@@ -90,13 +90,14 @@ class RoleComponent extends Component
 
 
         $myRole = Role::findOrFail($this->deleteIdBeingRemoved);
-        $myRole->delete();
+        $myRole->isDelete = 1;
+        $myRole->save();
         $this->dispatchBrowserEvent('deleted', ['message' => 'Ce rôle à été supprimer']);
     }
 
     public function render()
     {
-        $roles =Role::latest()->get();
+        $roles =Role::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         return view('livewire.dashboard.role.role-component',[
             'roles' => $roles,
         ]);

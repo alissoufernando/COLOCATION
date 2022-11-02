@@ -27,7 +27,7 @@
                       <div class="media static-top-widget">
                         <div class="align-self-center text-center"><i data-feather="navigation"></i></div>
                         <div class="media-body"><span class="m-0">Earnings</span>
-                          <h4 class="mb-0 counter">6659</h4><i class="icon-bg" data-feather="navigation"></i>
+                          <h4 class="mb-0 counter">{{ $articles->count() }}</h4><i class="icon-bg" data-feather="navigation"></i>
                         </div>
                       </div>
                     </div>
@@ -39,7 +39,7 @@
                       <div class="media static-top-widget">
                         <div class="align-self-center text-center"><i data-feather="box"></i></div>
                         <div class="media-body"><span class="m-0">Products</span>
-                          <h4 class="mb-0 counter">9856</h4><i class="icon-bg" data-feather="box"></i>
+                          <h4 class="mb-0 counter">{{ $products->count() }}</h4><i class="icon-bg" data-feather="box"></i>
                         </div>
                       </div>
                     </div>
@@ -51,7 +51,7 @@
                       <div class="media static-top-widget">
                         <div class="align-self-center text-center"><i data-feather="message-square"></i></div>
                         <div class="media-body"><span class="m-0">Messages</span>
-                          <h4 class="mb-0 counter">893</h4><i class="icon-bg" data-feather="message-square"></i>
+                          <h4 class="mb-0 counter">{{ $postulers->count() }}</h4><i class="icon-bg" data-feather="message-square"></i>
                         </div>
                       </div>
                     </div>
@@ -63,7 +63,7 @@
                       <div class="media static-top-widget">
                         <div class="align-self-center text-center"><i data-feather="users"></i></div>
                         <div class="media-body"><span class="m-0">New User</span>
-                          <h4 class="mb-0 counter">45631</h4><i class="icon-bg" data-feather="users"></i>
+                          <h4 class="mb-0 counter">{{ $users->count() }}</h4><i class="icon-bg" data-feather="users"></i>
                         </div>
                       </div>
                     </div>

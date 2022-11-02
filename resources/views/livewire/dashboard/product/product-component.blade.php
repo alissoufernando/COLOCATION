@@ -7,7 +7,7 @@
 @section('breadcrumb-title', 'Annonces')
 @section('breadcrumb-items')
 <li class="breadcrumb-item">Tableau de bord</li>
-<li class="breadcrumb-item active">Liste de mes Annonces</li>
+<li class="breadcrumb-item active">Liste des Annonces</li>
 @endsection
 
 <!-- Container-fluid starts-->
@@ -20,7 +20,7 @@
             @if (Session::has('message'))
             <div class="alert alert-success">{{Session::get('message')}}</div>
         @endif
-        <h5 class="d-inline">Liste de mes Annonces</h5>
+        <h5 class="d-inline">Liste des Annonces</h5>
         <a href="{{route('admin.product-create')}}" class="btn  btn-primary btn-sm float-end">Ajouter</a>
 
         </div>
@@ -70,9 +70,9 @@
                     <td>{{$products->place_dispo}}</td>
                     <td>{{$products->normal_price}}</td>
                     <td>
-                      <a href="{{route('admin.detail-produit',['id' => $products->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
-                      <a href="{{route('admin.product-edit',['id' => $products->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>
-                      <a href="#" wire:click.prevent="deleteProduct({{$products->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Détail" href="{{route('admin.detail-produit',['id' => $products->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Modification" href="{{route('admin.product-edit',['id' => $products->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteProduct({{$products->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
                     </td>
                   </tr>
                   @endforeach
@@ -90,6 +90,9 @@
 <!-- Container-fluid Ends-->
 
 @section('scripts')
+<script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/tooltip-init.js') }}"></script>
+<script src="{{ asset('assets/js/popover-custom.js') }}"></script>
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 @endsection

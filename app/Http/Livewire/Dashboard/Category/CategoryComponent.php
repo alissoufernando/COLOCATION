@@ -125,8 +125,9 @@ class CategoryComponent extends Component
 
     public function deleteCategorys()
     {
-        $myProduct = Category::findOrFail($this->deleteIdBeingRemoved);
-        $myProduct->delete();
+        $myCategorie = Category::findOrFail($this->deleteIdBeingRemoved);
+        $myCategorie->isDelete = 1;
+        $myCategorie->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Cette catégorie à été supprimer']);
 
     }
@@ -139,7 +140,7 @@ class CategoryComponent extends Component
 
     public function render()
     {
-        $categorie = Category::latest()->get();
+        $categorie = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         // dd('ok');
 
         return view('livewire.dashboard.category.category-component',[

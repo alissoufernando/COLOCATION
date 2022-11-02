@@ -26,6 +26,8 @@ class CreateParametresTable extends Migration
             $table->string('google');
             $table->string('instagram');
             $table->string('address');
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

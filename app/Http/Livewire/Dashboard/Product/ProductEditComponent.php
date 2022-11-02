@@ -101,9 +101,9 @@ class ProductEditComponent extends Component
 
     public function render()
     {
-        $villes = Ville::latest()->get();
-        $departements = Departement::latest()->get();
-        $categorie = Category::all();
+        $villes = Ville::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $departements = Departement::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $categorie = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         return view('livewire.dashboard.product.product-edit-component',[
             'categorie' => $categorie,
             'departements' => $departements,

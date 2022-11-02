@@ -21,6 +21,8 @@ class CreateArticlesTable extends Migration
             $table->string('auteur');
             $table->text('description');
             $table->text('short_description');
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

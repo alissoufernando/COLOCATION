@@ -22,14 +22,15 @@ class ProductComponent extends Component
     public function deleteProducts()
     {
         $myProduct = Product::findOrFail($this->deleteIdBeingRemoved);
-        $myProduct->delete();
+        $myProduct->isDelete = 1;
+        $myProduct->save();
         $this->dispatchBrowserEvent('deleted',['message' => 'Ce produit à été supprimer']);
 
     }
 
     public function render()
     {
-        $product = Product::latest()->get();
+        $product = Product::where('isDelete', 0)->orderBy('created_at','DESC')->get();
         return view('livewire.dashboard.product.product-component',[
             'product' => $product,
         ]);

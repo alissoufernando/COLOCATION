@@ -19,9 +19,9 @@
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.colocation' ? 'active' : '' }}" href="{{route('site.colocation')}}">Colocation</a></li>
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.shop' ? 'active' : '' }}" href="{{route('site.shop')}}">Location</a></li>
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'site.contact' ? 'active' : '' }}" href="{{route('site.contact')}}">Contact</a></li>
-    @can('admin-admin')
+    {{-- @can('admin-admin') --}}
     <li><a class="nav-link nav_item {{ Route::currentRouteName()== 'dashboard' ? 'active' : '' }}" href="{{route('dashboard')}}">Dashboard</a></li>
-    @endcan
+    {{-- @endcan --}}
     @endif
 </ul>
 

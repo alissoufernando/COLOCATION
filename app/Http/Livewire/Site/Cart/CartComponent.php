@@ -98,13 +98,13 @@ class CartComponent extends Component
 
     public function render()
     {
-       
+
         $this->setAmountForCheckout();
         if(Auth::check())
         {
             Cart::instance('cart')->store(Auth::user()->email);
         }
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.cart.cart-component',[
             'categorieMenu' => $categorieMenu,

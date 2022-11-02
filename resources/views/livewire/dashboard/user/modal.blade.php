@@ -57,15 +57,22 @@
 
                                         <label class="d-block" for="chk-ani">
                                             <input class="checkbox_animated mb-3"
-                                                type="checkbox" value="{{$role->id}}" id="rolesss"
-                                                wire:model="roless"
-                                                @foreach ($user->roles as $userRole)
+                                                type="checkbox" value="{{$role->id}}" id="rolesss" name="roless[]"
+                                                {{-- wire:model="roless" --}}
+                                                @foreach ($this->myUserE->roles as $userRole)
                                                 @if ($userRole->id == $role->id)
-                                               
+
                                                     checked
                                                 @endif
                                                 @endforeach > {{ $role->nom}}
                                         </label>
+
+
+                                        {{-- @foreach ($user->roles as $userRole)
+                                        @if ($userRole->id == $role->id)
+                                            checked
+                                        @endif
+                                    @endforeach> --}}
                                         @endforeach
                                     </div>
                                   </div>
@@ -94,13 +101,6 @@
                                           <label class="form-label" for="email">Email:</label>
                                           <input class="form-control form-control-lg" id="email" type="text"
                                               placeholder="email de l'utilisateur" wire:model.lazy='email'>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-12">
-                                      <div class="mb-3">
-                                          <label class="form-label" for="password">Mot de passe:</label>
-                                          <input class="form-control form-control-lg" id="password" type="password"
-                                              wire:model.lazy='password'>
                                       </div>
                                   </div>
                               </div>

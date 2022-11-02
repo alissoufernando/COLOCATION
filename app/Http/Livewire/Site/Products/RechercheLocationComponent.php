@@ -4,6 +4,10 @@ namespace App\Http\Livewire\Site\Products;
 
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Postuler;
+use App\Models\Newsletter;
+use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
 
 class RechercheLocationComponent extends Component
 {
@@ -69,7 +73,7 @@ class RechercheLocationComponent extends Component
         // dd($this->product_ids);
 
 
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
         // $this->post = $this->post->
         // dd($this->post->reponse);
 
@@ -134,7 +138,7 @@ class RechercheLocationComponent extends Component
         $products = Product::where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville', $this->ville)->get();
         dd($products);
         return view('livewire.site.products.recherche-location-component',[
-           
+
         ]);
     }
 }

@@ -17,6 +17,8 @@ class CreateVillesTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('departement_id')->constrained('departements');
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

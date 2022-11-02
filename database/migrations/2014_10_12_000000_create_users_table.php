@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('last_seen')->nullable();
             $table->rememberToken();
+            $table->boolean('isDelete')->default(0);
+
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->timestamps();

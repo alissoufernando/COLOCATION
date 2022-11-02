@@ -107,8 +107,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
-                                    <a href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                                    {{-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a> --}}
+                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
                                 </tr>
                                 @endif
                                 @endforeach
@@ -130,6 +130,9 @@
 
 
 @section('scripts')
+<script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/tooltip-init.js') }}"></script>
+<script src="{{ asset('assets/js/popover-custom.js') }}"></script>
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 @endsection

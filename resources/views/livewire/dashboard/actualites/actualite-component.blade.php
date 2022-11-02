@@ -51,9 +51,9 @@
                     <td>{{$article->titre}}</td>
                     <td>{{$article->short_description}}</td>
                     <td>
-                      <a href="{{route('site.detail-article',['id' => $article->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
-                      <a href="{{route('admin.article-edit',['id' => $article->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>
-                      <a href="#" wire:click.prevent="deleteArticle({{$article->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Détail" href="{{route('site.detail-article',['id' => $article->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Modification" href="{{route('admin.article-edit',['id' => $article->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteArticle({{$article->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
                     </td>
                   </tr>
                   @endforeach
@@ -71,6 +71,9 @@
 <!-- Container-fluid Ends-->
 
 @section('scripts')
+<script src="{{ asset('assets/js/bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/tooltip-init.js') }}"></script>
+<script src="{{ asset('assets/js/popover-custom.js') }}"></script>
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 @endsection

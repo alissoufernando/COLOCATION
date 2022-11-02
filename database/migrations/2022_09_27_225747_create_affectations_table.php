@@ -15,6 +15,8 @@ class CreateAffectationsTable extends Migration
     {
         Schema::create('affectations', function (Blueprint $table) {
             $table->id();
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

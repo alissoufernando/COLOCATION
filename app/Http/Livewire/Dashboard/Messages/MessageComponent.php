@@ -111,6 +111,9 @@ class MessageComponent extends Component
             $messages_destinataire = null;
             $messages_auteur = null;
         }
+        
+        $message = Message::all();
+
 
         return view('livewire.dashboard.messages.message-component',[
             'users' => $users,
@@ -118,6 +121,7 @@ class MessageComponent extends Component
             'messages_auteur' => $messages_auteur,
             'messages_destinataire' => $messages_destinataire,
             'mes_messages' => $mes_messages,
+            'message' => $message
         ]);
     }
 }

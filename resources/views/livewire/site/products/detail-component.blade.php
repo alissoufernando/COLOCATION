@@ -157,7 +157,7 @@
                                             <ul class="product-meta">
                                                 <li>Nom du propriètaire : <a href="#">{{ $products->user->name }}</a>
                                                 </li>
-                                                <li>Tpe de location : <a href="#">{{ $products->type_annonce }}</a>
+                                                <li>Type de location : <a href="#">{{ $products->type_annonce }}</a>
                                                 </li>
                                                 <li>Departement : <a href="#">{{ $products->ville->departement->name }}</a></li>
                                                 <li>Ville : <a href="#">{{ $products->ville->name }}</a></li>
@@ -171,7 +171,7 @@
                                                     </a></li>
                                                 <li>Place Libre : <a href="#">{{ $products->place_dispo }}</a></li>
                                                 <li>Type de chambre : <a href="#">{{ $products->categorie->name }}</a></li>
-                                                <li>Tags : <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a> </li>
+                                                {{-- <li>Tags : <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">printed</a> </li> --}}
                                             </ul>
                                         </div>
 
@@ -181,8 +181,8 @@
                                         <div class="cart_btn">
                                             <a data-bs-toggle="modal" wire:click.prevent='getElementById({{$products->id}})' data-bs-target="#exampleModalCenter" class="btn btn-fill-out" type="button"><i
                                                     class=""></i> Appeler</a>
-                                            <a class="add_compare" href="#"><i
-                                                    class="icon-shuffle"></i></a>
+                                            {{-- <a class="add_compare" href="#"><i
+                                                    class="icon-shuffle"></i></a> --}}
                                             @if ($witems->contains($products->id))
                                                 <a class="add_wishlist" href="#"
                                                     wire:click.prevent="removeFromWishList({{ $products->id }})"><i
@@ -337,7 +337,7 @@
                         <div class="heading_s1">
                             <h3>Annonces Similaires</h3>
                         </div>
-                        <div class="row shop_container">
+                        <div wire:ignore class="row shop_container">
                             {{-- <div wire:ignore class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'> --}}
                             @if ($products_related)
                                 @foreach ($products_related as $products_relateds)
@@ -406,9 +406,7 @@
                             @else
                                 <p>Aucun produit n'est dans la base de données</p>
                             @endif
-
-
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>

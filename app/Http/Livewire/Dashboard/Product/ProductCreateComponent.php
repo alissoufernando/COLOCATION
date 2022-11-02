@@ -87,11 +87,11 @@ class ProductCreateComponent extends Component
     public function render()
     {
 
-        $villes = Ville::latest()->get();
+        $villes = Ville::where('isDelete', 0)->orderBy('created_at','DESC')->get();
 
-        $departements = Departement::latest()->get();
+        $departements = Departement::where('isDelete', 0)->orderBy('created_at','DESC')->get();
 
-        $categorie = Category::all();
+        $categorie = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
 
         return view('livewire.dashboard.product.product-create-component',[
             'categorie' => $categorie,

@@ -36,6 +36,10 @@ use App\Http\Livewire\Dashboard\Messages\MessageAnnonceComponent;
 use App\Http\Livewire\Site\Products\RechercheColocationComponent;
 use App\Http\Livewire\Dashboard\Actualites\CreationActualiteComponent;
 use App\Http\Livewire\Dashboard\Actualites\ModificationActualiteComponent;
+use App\Http\Livewire\Dashboard\Candidat\CandidaturesComponent;
+use App\Http\Livewire\Dashboard\Departements\DepartementComponent;
+use App\Http\Livewire\Dashboard\Product\MesProductsComponent;
+use App\Http\Livewire\Dashboard\Villes\VilleComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,29 +81,35 @@ Route::prefix('site')->group(function () {
 
     Route::get('/shopping-wishlist', WishComponent::class)->name('site.shopping-wishlist');
 
-    Route::get('/mon-compte', ProfilComponent::class)->name('site.my-account');
 
 });
 
-     //Language Change
-     Route::get('lang/{locale}', function($locale){
-        if( !in_array($locale, ['en', 'es', 'pt', 'fr']) ) {
-          abort(400);
-        }
-        Session()->put('locale', $locale);
-        Session()->get('locale');
-        App::setLocale($locale);
-        return redirect()->back();
-      })->name('lang');
+//Language Change
+Route::get('lang/{locale}', function($locale){
+    if( !in_array($locale, ['en', 'es', 'pt', 'fr']) ) {
+        abort(400);
+    }
+    Session()->put('locale', $locale);
+    Session()->get('locale');
+    App::setLocale($locale);
+    return redirect()->back();
+})->name('lang');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),  'verified'])->group(function () {
+    Route::get('/mon-compte', ProfilComponent::class)->name('site.my-account');
         Route::prefix('admin')->group(function () {
-            Route::get('/liste-produits', ProductComponent::class)->name('admin.product-index');
+            Route::get('/listes-produits', ProductComponent::class)->name('admin.product-index');
+            Route::get('/listes-mes-produits', MesProductsComponent::class)->name('admin.mesproduct-index');
             Route::get('/product-create', ProductCreateComponent::class)->name('admin.product-create');
             Route::get('/product-edit/{id}', ProductEditComponent::class)->name('admin.product-edit');
             Route::get('/detail-produit/{id}', ProductImageComponent::class)->name('admin.detail-produit');
-            Route::get('/liste-categories', CategoryComponent::class)->name('admin.category-index');
-            Route::get('/liste-candidatues', CadidatsComponent::class)->name('admin.candidature-index');
+            Route::get('/listes-categories', CategoryComponent::class)->name('admin.category-index');
+            Route::get('/listes-candidatues', CadidatsComponent::class)->name('admin.candidature-index');
+            Route::get('/listes-toutes-candidatues', CandidaturesComponent::class)->name('admin.toutescandidature-index');
+
+            Route::get('/listes-villes', VilleComponent::class)->name('admin.ville-index');
+            Route::get('/listes-departements', DepartementComponent::class)->name('admin.departement-index');
+
             // route pour repondre et lancer une autre conversation
             Route::get('/mes-messages', MessageComponent::class)->name('mes-messages');
             //  route pour contacter le propriétaire d'une annonce
@@ -108,7 +118,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),  'verified']
 
             Route::get('/article-create', CreationActualiteComponent::class)->name('admin.article-create');
             Route::get('/article-edit/{id}', ModificationActualiteComponent::class)->name('admin.article-edit');
-            Route::get('/liste-articles', ActualiteComponent::class)->name('admin.article-index');
+            Route::get('/listes-articles', ActualiteComponent::class)->name('admin.article-index');
 
 
 

@@ -27,7 +27,7 @@
                     <img alt="" src="{{asset('storage')}}/{{$ImageUser->path}}">
                     @endempty
                 </div>
-                  <div class="icon-wrapper" data-bs-toggle="modal" data-bs-target="#ModalImage" wire:click.prevent="getId({{$userProfile->id}})"><i class="icofont icofont-pencil-alt-5"></i></div>
+                  <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5" data-bs-toggle="modal" data-bs-target="#ModalImage" wire:click.prevent="getId({{$userProfile->id}})"></i></div>
                 </div>
                 <div class="info">
                   <div class="row">

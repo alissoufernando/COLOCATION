@@ -162,7 +162,7 @@ class AccountComponent extends Component
     }
     public function render()
     {
-        $userProfile = Profile::where('user_id', Auth::user()->id)->first();
+        $userProfile = Profile::where('isDelete', 0)->where('user_id', Auth::user()->id)->first();
         if(!$userProfile)
         {
             $profile = new Profile();
@@ -170,7 +170,7 @@ class AccountComponent extends Component
             $profile->save();
         }
         $user = User::find(Auth::user()->id);
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
 
         return view('livewire.site.account.account-component',[
             'user' => $user,

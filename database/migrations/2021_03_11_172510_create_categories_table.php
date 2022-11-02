@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->boolean('menu')->default(0);
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->boolean('isDelete')->default(0);
+
             $table->timestamps();
         });
     }

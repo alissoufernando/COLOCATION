@@ -67,9 +67,9 @@ class WelcomeComponent extends Component
             $this->product_ids = $id;
 
             // requete pour trouver l'auteur d'une annonce
-        $this->auteurAnnonce = Product::where('id', $this->product_ids)->first();
+        $this->auteurAnnonce = Product::where('isDelete', 0)->where('id', $this->product_ids)->first();
         // dd($this->auteurAnnonce->user->name);
-        $this->post = Postuler::where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
+        $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
 
 
         }else{
@@ -82,7 +82,7 @@ class WelcomeComponent extends Component
 
     public function rechercher()
     {
-        $products = Product::where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville', $this->ville)->get();
+        $products = Product::where('isDelete', 0)->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville', $this->ville)->get();
 dd($products);
 
     }
@@ -130,15 +130,15 @@ dd($products);
     }
     public function render()
     {
-        $products = Product::inRandomOrder()->with('images')->limit(4)->get();
-        $products_latest = Product::latest()->with('images')->limit(4)->get();
-        $articles = Article::latest()->limit(3)->get();
+        $products = Product::where('isDelete', 0)->where('disponibilite', 1)->inRandomOrder()->with('images')->limit(4)->get();
+        $products_latest = Product::where('isDelete', 0)->where('disponibilite', 1)->orderBy('created_at','DESC')->with('images')->limit(4)->get();
+        $articles = Article::where('isDelete', 0)->orderBy('created_at','DESC')->limit(3)->get();
 
-        $category = Category::latest()->get();
-        $villes = Ville::latest()->get();
+        $category = Category::where('isDelete', 0)->orderBy('created_at','DESC')->get();
+        $villes = Ville::where('isDelete', 0)->orderBy('created_at','DESC')->get();
 
         $parametre = Parametre::find(1);
-        $categorieMenu = Category::where('menu',1)->get();
+        $categorieMenu = Category::where('isDelete', 0)->where('menu',1)->get();
         if(Auth::check())
         {
             Cart::instance('wishlist')->restore(Auth::user()->email);
