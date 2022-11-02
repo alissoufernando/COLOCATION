@@ -39,20 +39,16 @@
                 </tr>
                 <tr>
                   <td style="padding:0 35px;">
-                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Bienvenue sur Coloc Student
+                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;"> Bienvenue sur Coloc Student
                     </h1>
                     <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
-                        Votre compte a été créé sur <a href="{{ route('welcome') }}">colostudent.com</a> par l'agence. Vous trouverez ci-dessous les informations d'identification générées par votre système, <br><strong>Veuillez modifier
-                        le mot de passe immédiatement après la connexion</strong>.</p>
+
+                        Salut,<strong>{{ $name }}</strong> <br>
+
+                        Merci de vous être inscrit sur Coloc Student! Si jamais vous vous perdez, vous pouvez vous reconnecter avec l'adresse mail '{{ $email }}'.
+                        PS. Nous adorons parler Coloc Student à nos utilisateurs. Répondez à cet e-mail pour nous contacter directement, quelle qu'en soit la raison.
+                        Questions, commentaires, problèmes, suggestions, tous sont les bienvenus !</p>
                     <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
-                    <p style="color:#455056; font-size:15px;line-height:20px; margin:0; font-weight: 500;">
-                      <strong style="display: block;font-size: 20px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Nom</strong>{{ $name }}
-                      <strong style="display: block; font-size: 20px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">E-mail</strong>{{ $email }}
-                      <strong style="display: block; font-size: 20px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Téléphone</strong>{{ $phone }}
-                      <strong style="display: block; font-size: 20px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Password</strong>{{ $password }}
-
-                    </p>
-
                     <a href="{{ route('login') }}" style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Connéxion</a>
                   </td>
                 </tr>

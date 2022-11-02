@@ -34,9 +34,9 @@
                   <th>Name</th>
                   <th>Departement</th>
                   <th>Ville</th>
-                  <th>Disponibilité</th>
                   <th>Nombre de place</th>
                   <th>Prix de location</th>
+                  <th>Disponibilité</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -60,15 +60,14 @@
                     <td>{{$products->name}}</td>
                     <td>{{$products->ville->departement->name}}</td>
                     <td>{{$products->ville->name}}</td>
-                    <td>{{$products->disponibilite}}
-                        <div class="media-body text-right icon-state">
-                            <label class="switch">
-                              <input type="checkbox" checked=""><span class="switch-state"></span>
-                            </label>
-                          </div>
-                    </td>
                     <td>{{$products->place_dispo}}</td>
                     <td>{{$products->normal_price}}</td>
+                    <td>
+                        @livewire('toggle-switch-component', [
+                            'model' => $products,
+                            'field' => 'disponibilite'
+                            ])
+                    </td>
                     <td>
                       <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Détail" href="{{route('admin.detail-produit',['id' => $products->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
                       <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Modification" href="{{route('admin.product-edit',['id' => $products->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>

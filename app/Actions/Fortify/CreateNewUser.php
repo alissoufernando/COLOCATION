@@ -4,8 +4,10 @@ namespace App\Actions\Fortify;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Mail\NewUserLogin;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
@@ -39,5 +41,7 @@ class CreateNewUser implements CreatesNewUsers
         $user->roles()->attach($userRole);
 
         return $user;
+        Mail::to($this->email)->send( new NewUserLogin($input['name'], $input['email'],$input['phone']));
+
     }
 }

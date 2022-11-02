@@ -67,22 +67,30 @@
         </form>
         @else
         @if ($this->post->reponse == null)
-        <div class="text-center">
-            <h5>Pas de retour de votre future Colocataire</h5>
-        </div>
+        <div class="modal-header justify-content-center">
+            <h3 class="modal-title ">Traitement en cours</h3>
+            </div>
+            <div class="modal-body justify-content-center text-center">
+            <img src="{{ asset('assets/images/cours.png') }}" alt="" height="300" width="300">
+            <p class="text-center" >Votre demande est en cours de Traitement des données, veuillez partienter. Merci Pour votre partience.</p>
+            </div>
         @else
         @if ($this->post->reponse == "Validé")
             <div class="modal-header justify-content-center">
             <h3 class="modal-title ">Les moyens de contact</h3>
             </div>
-            <div class="modal-body justify-content-center">
-            <a href="tel:+2295185044" class="btn btn-fill-out btn-radius btn-sm"><i class="icon-headphone-alt"></i>Appeler</a>
-            {{-- <a href="https://wa.me/+2295185044?text=Bonjour," class="btn btn-fill-out btn-radius btn-sm"><i class="icon-comment-alt"></i>Wthatsapp</a> --}}
-            <a href="mailto:alissouanani@gmail.com" class="btn btn-fill-out btn-radius btn-sm"><i class="icon-email"></i>Mail</a>
-            <a href="{{route('contact.par-message',['id' => $this->auteurAnnonce->user->id])}}" class="btn btn-fill-out btn-radius btn-sm"><i class="fa fa-comment-o"></i>Chat</a>
+            <div class="modal-body justify-content-center text-center">
+            <a href="tel:+2295185044" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="icon-headphone-alt"></i>Appeler</a>
+            <a href="mailto:alissouanani@gmail.com" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="icon-email"></i>Mail</a>
+            <a href="{{route('contact.par-message',['id' => $this->auteurAnnonce->user->id])}}" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="fa fa-comment-o"></i>Chat</a>
             </div>
         @else
-        <h1>Désolé</h1>
+        <div class="modal-header justify-content-center">
+            <h3 class="modal-title ">Désolé !!</h3>
+            </div>
+            <div class="modal-body justify-content-center">
+            <img src="{{ asset('assets/images/desole.png') }}" alt="">
+            </div>
         @endif
         @endif
         @endempty
