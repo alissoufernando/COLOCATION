@@ -99,11 +99,9 @@ dd($products);
     public function inscription_newsletter(){
         $this->validate([
             'email' =>  ['required', 'unique:newsletters'],
-
         ]);
 
         $product = new Newsletter();
-
         $product->user_id = Auth::user()->id;
         $product->email = $this->email;
         $product->save();

@@ -26,8 +26,8 @@ class ModificationActualiteComponent extends Component
         $this->reset(['path', 'titre', 'slug', 'short_description','description','auteur','article_id']);
     }
     public function mount($id) {
-
-        $myArticle = Article::where('id', $id)->first();
+        $this->article_id = $id;
+        $myArticle = Article::find($this->article_id);
 
         $this->titre = $myArticle->titre;
         $this->slug =  $myArticle->slug;
@@ -54,7 +54,7 @@ class ModificationActualiteComponent extends Component
                     'description' => 'required',
                 ]);
 
-            $MyArticle = new Article();
+            $MyArticle = Article::find($this->article_id);
 
             $filenameImage = time() . '.' . $this->path->extension();
             $pathImage = $this->path->storeAs(
@@ -70,7 +70,7 @@ class ModificationActualiteComponent extends Component
             $MyArticle->description = $this->description;
             $MyArticle->save();
 
-        session()->flash('message', 'Enregistrement effectué avec succès.');
+        session()->flash('message', 'Modification effectué avec succès.');
         $this->resetInputFields();
 
     }

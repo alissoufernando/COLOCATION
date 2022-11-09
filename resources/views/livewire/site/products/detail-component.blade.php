@@ -283,35 +283,26 @@
                                                     <form class="row mt-3" wire:submit.prevent='addReview'>
                                                         <div class="form-group col-12 mb-3">
                                                             <div class="star_rating">
-                                                                <span data-value="1" onclick="getRatingValue(1)"><i
-                                                                        class="far fa-star"></i></span>
-                                                                <span data-value="2" onclick="getRatingValue(2)"><i
-                                                                        class="far fa-star"></i></span>
-                                                                <span data-value="3" onclick="getRatingValue(3)"><i
-                                                                        class="far fa-star"></i></span>
-                                                                <span data-value="4" onclick="getRatingValue(4)"><i
-                                                                        class="far fa-star"></i></span>
-                                                                <span data-value="5" onclick="getRatingValue(5)"><i
-                                                                        class="far fa-star"></i></span>
-
-                                                                <input type="hidden" name=""
-                                                                    wire:model="product_id">
+                                                                <span data-value="1" onclick="getRatingValue(1)"><i class="far fa-star" ></i></span>
+                                                                <span data-value="2" onclick="getRatingValue(2)"><i class="far fa-star"></i></span>
+                                                                <span data-value="3" onclick="getRatingValue(3)"><i class="far fa-star"></i></span>
+                                                                <span data-value="4" onclick="getRatingValue(4)"><i class="far fa-star"></i></span>
+                                                                <span data-value="5" onclick="getRatingValue(5)"><i class="far fa-star"></i></span>
 
                                                             </div>
                                                             @error('rating')
-                                                                <span class="text-danger">{{ $message }}</span>
+                                                            <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group col-12 mb-3">
                                                             <textarea placeholder="Your review *" class="form-control" name="message" rows="4" wire:model="comment"></textarea>
-                                                            @error('comment')
-                                                                <span class="text-danger">{{ $message }}</span>
-                                                            @enderror
+                                                                @error('comment')
+                                                                <span class="text-danger">{{$message}}</span>
+                                                                @enderror
                                                         </div>
 
                                                         <div class="form-group col-12 mb-3">
-                                                            <button type="submit" class="btn btn-fill-out"
-                                                                name="submit" value="Submit">Ajouter</button>
+                                                            <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
                                                         </div>
                                                     </form>
                                                 </div>

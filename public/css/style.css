@@ -14,8 +14,34 @@
     max-width: 100%;
     max-height: 100%;
 
+}
+.div_imageA img{
+    max-width: 100%;
+    max-height: 100%;
 
 }
+
+.div_imageA{
+    width: 100%;
+    height: 250px;
+    /* overflow: auto; */
+
+}
+
+.div_imageAR img{
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+.div_imageAR{
+    width: 30%;
+    height: 90px;
+    /* overflow: auto; */
+
+}
+
+
 #logo{
     height: 90px;
     width: 90px;

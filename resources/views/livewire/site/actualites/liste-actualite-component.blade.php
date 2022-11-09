@@ -68,7 +68,7 @@
                     @foreach ($articles as $article)
                     <div class="col-12">
                         <div class="blog_post blog_style2">
-                            <div class="blog_img">
+                            <div class="div_imageA blog_img">
                             <a href="{{route('site.detail-article',['id' => $article->id])}}">
                             @empty ($article->path)
                             <img src="{{asset('assets/images/product/default.png')}}" alt="{{$article->titre}}">
@@ -80,7 +80,7 @@
                             </div>
                             <div class="blog_content bg-white">
                                 <div class="blog_text">
-                                    <h6 class="blog_title"><a href="blog-single.html">{{ $article->titre }}</a></h6>
+                                    <h6 class="blog_title"><a href="{{route('site.detail-article',['id' => $article->id])}}">{{ $article->titre }}</a></h6>
                                     <ul class="list_none blog_meta">
                                         <li><a href="#"><i class="ti-calendar"></i> {{ $article->created_at->format('d M o') }}</a></li>
                                         <li><a href="#"><i class="ti-user"></i> posté par {{ $article->auteur }}</a></li>
@@ -119,8 +119,8 @@
                             <li>
                                 <div class="post_footer">
                                     <div class="post_img">
-                                        <a href="#">
-                                            @empty ($article_recents->path)
+                                        <a href="{{route('site.detail-article',['id' => $article_recent->id])}}">
+                                            @empty ($article_recent->path)
                                             <img src="{{asset('assets/images/product/default.png')}}" alt="{{$article->titre}}">
                                             @else
                                             <img src="{{asset('storage')}}/{{$article_recent->path}}" alt="{{ $article_recent->titre }}">

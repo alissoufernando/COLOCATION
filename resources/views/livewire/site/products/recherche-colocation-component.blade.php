@@ -154,7 +154,7 @@
                       </div>
                   </div>
                   @empty
-                  <p>Aucun resultat n'est trouvé pour cette recherche avvancée</p>
+                  <p>Aucun resultat n'est trouvé pour cette recherche avancée</p>
                  @endforelse
                  {{$products->links()}}
                 </div>

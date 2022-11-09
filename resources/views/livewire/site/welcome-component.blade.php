@@ -270,7 +270,7 @@
                     @foreach ($articles as $article)
                     <div class="col-lg-4 col-md-6">
                         <div class="blog_post blog_style1 box_shadow1">
-                            <div class="blog_img">
+                            <div class="div_imageA blog_img">
 
                                 <a href="{{route('site.detail-article',['id' => $article->id])}}">
                                     @empty ($article->path)

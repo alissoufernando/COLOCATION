@@ -131,7 +131,7 @@ v<div>
                                 <div class="post_footer">
                                     <div class="post_img">
                                         <a href="#">
-                                            @empty ($article_recents->path)
+                                            @empty ($article_recent->path)
                                             <img src="{{asset('assets/images/product/default.png')}}" alt="{{$article->titre}}">
                                             @else
                                             <img src="{{asset('storage')}}/{{$article_recent->path}}" alt="{{ $article_recent->titre }}">
