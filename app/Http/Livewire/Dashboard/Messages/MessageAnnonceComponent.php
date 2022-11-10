@@ -31,7 +31,7 @@ class MessageAnnonceComponent extends Component
 
     }
 
-    public function getId($id) {
+    public function mount($id) {
         // recuperation de Id du destinataire d'un message
         $this->destinataire_id = $id;
     }
@@ -54,7 +54,7 @@ class MessageAnnonceComponent extends Component
     }
     public function render()
     {
-        // $users  = User::latest()->distinct()->get();
+      // $users  = User::latest()->distinct()->get();
         // foreach($userss as $user)
         // {
         // dd($user->auteur['auteur_id']);
@@ -109,12 +109,16 @@ class MessageAnnonceComponent extends Component
             $messages_destinataire = null;
             $messages_auteur = null;
         }
+
+        $message = Message::all();
         return view('livewire.dashboard.messages.message-annonce-component',[
             'users' => $users,
             // 'userNameMassages' => $users,
             'userM' => $userM,
             'messages_auteur' => $messages_auteur,
             'messages_destinataire' => $messages_destinataire,
+            'message' => $message
+
         ]);
     }
 }

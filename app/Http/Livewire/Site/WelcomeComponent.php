@@ -83,7 +83,7 @@ class WelcomeComponent extends Component
     public function rechercher()
     {
         $products = Product::where('isDelete', 0)->where('type_annonce', $this->type_annonce)->where('categorie_id', $this->categorie_id)->where('ville', $this->ville)->get();
-dd($products);
+// dd($products);
 
     }
 

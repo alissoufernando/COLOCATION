@@ -15,12 +15,14 @@ class ProductComponent extends Component
 
     public function deleteProduct($id)
     {
+        // dd('ok');
         $this->deleteIdBeingRemoved = $id;
         $this->dispatchBrowserEvent('show-delete-confirmation');
     }
 
     public function deleteProducts()
     {
+
         $myProduct = Product::findOrFail($this->deleteIdBeingRemoved);
         $myProduct->isDelete = 1;
         $myProduct->save();

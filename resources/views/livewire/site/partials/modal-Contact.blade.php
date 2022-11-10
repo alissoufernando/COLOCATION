@@ -72,7 +72,7 @@
             </div>
             <div class="modal-body justify-content-center text-center">
             <img src="{{ asset('assets/images/cours.png') }}" alt="" height="300" width="300">
-            <p class="text-center" >Votre demande est en cours de Traitement des données, veuillez partienter. Merci Pour votre partience.</p>
+            <p class="text-center" >Votre demande est en cours de Traitement, veuillez partienter. Merci Pour votre partience.</p>
             </div>
         @else
         @if ($this->post->reponse == "Validé")

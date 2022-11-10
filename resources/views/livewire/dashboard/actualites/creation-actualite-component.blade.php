@@ -15,7 +15,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-            <h5 class="d-inline">Ajouter une Article</h5>
+            <h5 class="d-inline">Ajouter un Article</h5>
             <a href="{{route('admin.article-index')}}" class="btn  btn-primary btn-sm float-end">les articles</a>
             @if (Session::has('message'))
                 <div class="alert alert-success">{{Session::get('message')}}</div>

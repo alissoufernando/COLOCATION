@@ -20,6 +20,7 @@ class RechercheColocationComponent extends Component
     public $sorting;
     public $pagesize;
     public $search;
+    public $auteurAnnonce;
 
     public $min_price;
     public $max_price;
@@ -82,20 +83,21 @@ class RechercheColocationComponent extends Component
 
     public function getElementById($id)
     {
-
         if(Auth::check())
         {
             $this->product_ids = $id;
-        // dd($this->product_ids);
 
-
+            // requete pour trouver l'auteur d'une annonce
+        $this->auteurAnnonce = Product::where('isDelete', 0)->where('id', $this->product_ids)->first();
+        // dd($this->auteurAnnonce->user->name);
         $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
-        // $this->post = $this->post->
-        // dd($this->post->reponse);
+
 
         }else{
             return Redirect()->route('login');
         }
+
+
 
     }
 

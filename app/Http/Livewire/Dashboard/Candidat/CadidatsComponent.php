@@ -17,7 +17,7 @@ class CadidatsComponent extends Component
     public $deleteIdBeingRemoved = null;
     protected $listeners = ['deleteConfirmation' => 'deletePostulers'];
 
-    public function updateRepondre($id){
+    public function updateRefuse($id){
 
         $this->postuler_id = $id;
         $this->reponse = "Refusé";
@@ -30,11 +30,11 @@ class CadidatsComponent extends Component
         Mail::to($myPostuler->user->email)->send( new ReponseDemande($this->postuler_id));
 
 
-        return redirect()->route('admin.candidature-index');
+        // return redirect()->route('admin.toutescandidature-index');
 
     }
 
-    public function updateRepond($id){
+    public function updateValide($id){
 
         $this->postuler_id = $id;
         $this->reponse = "Validé";
@@ -42,7 +42,7 @@ class CadidatsComponent extends Component
         $myPostuler->reponse = $this->reponse;
         $myPostuler->save();
 
-        return redirect()->route('admin.candidature-index');
+        // return redirect()->route('admin.toutescandidature-index');
 
     }
 

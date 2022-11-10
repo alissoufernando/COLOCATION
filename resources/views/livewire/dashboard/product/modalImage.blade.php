@@ -27,7 +27,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label" for="fulls">Galerie du produit</label>:</label>
+                                    <label class="form-label" for="fulls">Galerie de l'annonce</label>
                                     <input class="form-control form-control-lg mb-3" id="fulls" type="file"
                                         accept=".jpg, .png, image/jpeg, image/png" multiple wire:model.lazy='fulls'>
                                         @if ($images)
@@ -47,7 +47,7 @@
                             @else
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label" for="fulls">Galerie du produit</label>:</label>
+                                    <label class="form-label" for="fulls">Galerie de l'annonce</label>:</label>
                                     <input class="form-control form-control-lg mb-3" id="fulls" type="file"
                                         accept=".jpg, .png, image/jpeg, image/png" multiple wire:model.lazy='fulls'>
                                         @if ($fulls)

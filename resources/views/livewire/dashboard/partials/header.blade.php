@@ -1,7 +1,7 @@
 <div class="page-main-header">
         <div class="main-header-right row">
           <div class="main-header-left col-auto px-0 d-lg-none">
-            <div class="logo-wrapper"><a href="index.html"><img src="../assets/images/endless-logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="">Coloc_Student</a></div>
           </div>
           <div class="vertical-mobile-sidebar col-auto ps-3 d-none"><i class="fa fa-bars sidebar-bar"></i></div>
           <div class="mobile-sidebar col-auto ps-0 d-block">
@@ -68,7 +68,7 @@
               <li class="onhover-dropdown">
                 <div class="media align-items-center">
                     @empty(Auth::user()->image_user->path)
-                    <img class="align-self-center pull-right img-50 rounded-circle" src="../assets/images/user/1.png" alt="header-user">
+                    <img class="align-self-center pull-right img-50 rounded-circle" src="{{ asset('assets/images/user/1.png') }}" alt="{{ Auth::user()->name }}">
                     @else
                     <img class="align-self-center pull-right img-50 rounded-circle" src="{{asset('storage')}}/{{Auth::user()->image_user->path}}" alt="{{ Auth::user()->name }}">
                     @endempty

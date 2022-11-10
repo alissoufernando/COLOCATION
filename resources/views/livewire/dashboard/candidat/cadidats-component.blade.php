@@ -21,7 +21,7 @@
                         <div class="alert alert-success">{{Session::get('message')}}</div>
                     @endif
                         <h5 class="d-inline">Liste des Candidats</h5>
-                        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn  btn-primary btn-sm float-end">Ajouter</a>
+                        {{-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn  btn-primary btn-sm float-end">Ajouter</a> --}}
 
                     </div>
 
@@ -38,7 +38,7 @@
                                 <th>Messages</th>
 
                                 <th>Mention</th>
-                                <th>Action</th>
+                                <th>Toutes les Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,44 +71,30 @@
                                     </td>
                                     <td>{{$postuler->message}}</td>
 
-                                    <td  class="text-center">
+                                    <td  class="text-center" >
                                         @if ($postuler->reponse == null)
 
-                                        <form wire:submit.prevent="updateRepondre({{$postuler->id}})">
-                                            @csrf
+                                        <a wire:click.prevent="updateRefuse({{$postuler->id}})" type="submit" data-container="body" data-toggle="popover" data-placement="top" title="Décliner"> <i class="fa fa-times fa-2x text-danger"></i> </a>
 
-                                            <button type="submit" class="btn btn-outline-primary btn-sm  mt-3" style="
-                                            font-size: 10px;
-                                            border-radius: 10px;
-                                            ">Refuser</button>
-                                        </form>
-
-                                        <form wire:submit.prevent="updateRepond({{$postuler->id}})">
-                                            @csrf
-
-                                            <button type="submit" class="btn btn-outline-primary btn-sm  mt-3" style="
-                                            font-size: 10px;
-                                            border-radius: 10px;
-                                             ">Valider</button>
-                                        </form>
-
+                                        <a wire:click.prevent="updateValide({{$postuler->id}})" type="submit" data-container="body" data-toggle="popover" data-placement="top" title="Valider"> <i class="fa fa-check-square-o fa-2x text-primary"></i> </a>
                                         @else
                                         @if ($postuler->reponse == "Refusé")
-                                        <button class="btn btn-outline-primary btn-sm  mt-3" style="
-                                            font-size: 10px;
-                                            border-radius: 10px;
-                                             " disabled>Décliner</button>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Décliner"> <i class="fa fa-times fa-2x text-danger"></i> </a>
                                         @else
-                                        <button class="btn btn-outline-primary btn-sm  mt-3" style="
-                                        font-size: 10px;
-                                        border-radius: 10px;
-                                        " data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Contact</button>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Valider"> <i class="fa fa-check-square-o fa-2x text-primary"></i> </a>
                                         @endif
                                         @endif
                                     </td>
                                     <td>
-                                    {{-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a> --}}
-                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
+                                        @if ($postuler->reponse == "Validé")
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Chat" href="{{route('contact.par-message',['id' => $postuler->product->user->id])}}"> <i class="fa fa-comment-o fa-2x text-primary"></i> </a>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Téléphone" href="tel:+2295185044"> <i class="fa fa-phone fa-2x text-primary"></i> </a>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Mail" href="mailto:alissouanani@gmail.com"> <i class="fa fa-envelope-o fa-2x text-primary"></i> </a>
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
+                                        @else
+                                        {{-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a> --}}
+                                        <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
+                                        @endif
                                 </tr>
                                 @endif
                                 @endforeach

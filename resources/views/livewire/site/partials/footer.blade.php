@@ -34,8 +34,7 @@
 
                             <a href="#"><img src="{{asset('assets/site/assets/images/logo_sb_1.png')}}" alt="logo" width="60" height="60" /></a>
                         </div>
-                        <p>Importation – Vente et Réparation de tout mobilier de bureau et de maison, de Coffre-fort.
-                            Vente de tous les accessoires de fauteuils, de bureau, d’armoires, etc….
+                        <p>communauté de colocataires en ligne parfaite pour les propriétaires proposant une chambre à louer, un studio ou une maison en colocation. Nous les aidons à trouver de manière simple et efficace des locataires de confiance
                             </p>
                     </div>
                     <div class="widget">

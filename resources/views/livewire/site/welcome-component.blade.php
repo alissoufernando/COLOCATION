@@ -58,7 +58,7 @@
                                                 data-animation-delay="0.4s">Trouvez des colocations dans tout le Bénin.</h4>
                                             <div class="mt-3">
                                                 <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
-                                                    <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
+                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
                                             </div>
 
                                         </div>
@@ -79,7 +79,7 @@
                                                 data-animation-delay="0.4s">Aucune commission arbitraire, le service rendu est gratuit.</h4>
                                             <div class="mt-3">
                                                 <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
-                                                    <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
+                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
                                             </div>
 
                                         </div>
@@ -99,8 +99,8 @@
                                         <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
                                             data-animation-delay="0.4s">Trouvez rapidement une personne qui vous correspond</h4>
                                         <div class="mt-3">
-                                            <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out-info btn-radius btn-sm">Trouver une chambre</a>
-                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out-primay btn-radius btn-sm">Proposez des colocations</a>
+                                            <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
+                                            <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
                                         </div>
 
                                         </div>

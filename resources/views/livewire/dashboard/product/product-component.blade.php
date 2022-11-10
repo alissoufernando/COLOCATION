@@ -63,15 +63,20 @@
                     <td>{{$products->place_dispo}}</td>
                     <td>{{$products->normal_price}}</td>
                     <td>
-                        @livewire('toggle-switch-component', [
+                        <div class="media-body text-right icon-state">
+                            <label class="switch">
+                              <input type="checkbox" checked="" ><span class="switch-state"></span>
+                            </label>
+                          </div>
+                        {{-- @livewire('toggle-switch-component', [
                             'model' => $products,
                             'field' => 'disponibilite'
-                            ])
+                            ]) --}}
                     </td>
                     <td>
                       <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Détail" href="{{route('admin.detail-produit',['id' => $products->id])}}"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a>
                       <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Modification" href="{{route('admin.product-edit',['id' => $products->id])}}"> <i class="fa fa-edit fa-1x m-5 text-warning"></i> </a>
-                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteProduct({{$products->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
+                      <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" wire:click.prevent="deleteProduct({{$products->id}})"> <i class="fa fa-trash-o fa-1x text-danger"></i> </a>
                     </td>
                   </tr>
                   @endforeach
