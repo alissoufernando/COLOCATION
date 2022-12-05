@@ -23,7 +23,7 @@ class ProductEditComponent extends Component
     public $departement_id;
     public $disponibilite;
     public $place_dispo;
-    public $user_id, $product_id;
+    public $user_id, $product_id, $categorie_id;
 
     public function resetInputFields()
     {
@@ -76,11 +76,7 @@ class ProductEditComponent extends Component
 
         $myProduct = Product::find($this->product_id);
 
-        if( $this->user_id == Auth::user()->id)
-        {
-            $myProduct->user_id = $this->user_id;
-
-        }
+        $myProduct->user_id = $this->user_id;
         $myProduct->quartier = $this->quartier;
         $myProduct->name = $this->name;
         $myProduct->slug = $this->slug;

@@ -36,7 +36,6 @@
                                 <th>Date de sortie</th>
                                 <th>Détails de l'annonce</th>
                                 <th>Messages</th>
-
                                 <th>Mention</th>
                                 <th>Toutes les Actions</th>
                                 </tr>
@@ -89,10 +88,10 @@
                                     <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Chat" href="{{route('contact.par-message',['id' => $postuler->product->user->id])}}"> <i class="fa fa-comment-o fa-2x text-primary"></i> </a>
                                     <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Téléphone" href="tel:+2295185044"> <i class="fa fa-phone fa-2x text-primary"></i> </a>
                                     <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Mail" href="mailto:alissouanani@gmail.com"> <i class="fa fa-envelope-o fa-2x text-primary"></i> </a>
-                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
+                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deletePostuler({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
                                     @else
                                     {{-- <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <i class="fa fa-list fa-1x m-5 text-primary"></i> </a> --}}
-                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deleteCategory({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
+                                    <a type="button" data-container="body" data-toggle="popover" data-placement="top" title="Supprimer" href="#" wire:click.prevent="deletePostuler({{$postuler->id}})"> <i class="fa fa-trash-o fa-2x text-danger"></i> </a>
                                     @endif
                                 </tr>
                                 @endforeach

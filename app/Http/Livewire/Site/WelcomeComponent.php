@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Site;
 
+use App\Mail\DemandeMail;
 use Cart;
 use App\Models\Ville;
 use App\Models\Article;
@@ -12,6 +13,7 @@ use App\Models\Postuler;
 use App\Models\Parametre;
 use App\Models\Newsletter;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class WelcomeComponent extends Component
@@ -55,8 +57,9 @@ class WelcomeComponent extends Component
         }
 
         $postuler->save();
-
-       $this->resetInputFieldss();
+        $myPostuler = Postuler::latest()->first();
+        Mail::to($myPostuler->product->user->email)->send( new DemandeMail($myPostuler->id));
+        $this->resetInputFieldss();
 
     }
 

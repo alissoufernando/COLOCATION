@@ -31,7 +31,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Image</th>
-                  <th>Name</th>
+                  {{-- <th>Name</th> --}}
                   <th>Departement</th>
                   <th>Ville</th>
                   <th>Nombre de place</th>
@@ -57,7 +57,7 @@
                     <img src="{{asset('storage/galerie')}}/{{$images[0]}}" alt="{{$products->name}}" width="80" height="80">
                     @endempty
                     </td>
-                    <td>{{$products->name}}</td>
+                    {{-- <td>{{$products->name}}</td> --}}
                     <td>{{$products->ville->departement->name}}</td>
                     <td>{{$products->ville->name}}</td>
                     <td>{{$products->place_dispo}}</td>

@@ -8,8 +8,10 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Postuler;
+use App\Mail\DemandeMail;
 use App\Models\Newsletter;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class DetailComponent extends Component
 {
@@ -57,8 +59,10 @@ class DetailComponent extends Component
         }
 
         $postuler->save();
+        $myPostuler = Postuler::latest()->first();
+        Mail::to($myPostuler->product->user->email)->send( new DemandeMail($myPostuler->id));
+        $this->resetInputFieldss();
 
-       $this->resetInputFieldsss();
 
     }
 
@@ -68,12 +72,12 @@ class DetailComponent extends Component
         if(Auth::check())
         {
             $this->product_ids = $id;
-        // dd($this->product_ids);
 
-
+            // requete pour trouver l'auteur d'une annonce
+        $this->auteurAnnonce = Product::where('isDelete', 0)->where('id', $this->product_ids)->first();
+        // dd($this->auteurAnnonce->user->name);
         $this->post = Postuler::where('isDelete', 0)->where('user_id', Auth::user()->id)->where('product_id', $this->product_ids)->first();
-        // $this->post = $this->post->
-        // dd($this->post->reponse);
+
 
         }else{
             return Redirect()->route('login');

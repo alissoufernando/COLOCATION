@@ -16,7 +16,7 @@
       <div class="card">
         <div class="card-header">
             <h5 class="d-inline">Ajouter une annonce</h5>
-            <a href="{{route('admin.product-index')}}" class="btn  btn-primary btn-sm float-end">Mes annonces</a>
+            <a href="{{route('admin.mesproduct-index')}}" class="btn  btn-primary btn-sm float-end">Mes annonces</a>
             @if (Session::has('message'))
                 <div class="alert alert-success">{{Session::get('message')}}</div>
             @endif
@@ -40,7 +40,7 @@
                             <input class="form-control" id="normal_price" type="text" placeholder="prix vente" wire:model="normal_price">
                           </div>
 
-                          
+
                         <div class="col-md-6 mb-3" wire:ignore>
                               <label class="form-label" for="categorie_id">Catégories:</label>
                                   <select class="form-select js-example-basic-single" id="categorie_id"  required="" wire:model="categorie_id">

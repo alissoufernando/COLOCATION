@@ -91,12 +91,12 @@
 
                 <div class="col-xl-8">
                     <div class="product-page-details">
-                        <h5>{{ $product->name }}</h5>
+                        <h5>{{ $product->categorie->name }}</h5>
                     </div>
                     <hr>
-                    <p>{{ $product->short_description }}</p>
+                    <p>{!! $product->short_description !!}</p>
                     <div class="product-price digits">
-                       ${{ $product->normal_price }}
+                       {{ $product->normal_price }} FCFA
                     </div>
                     <hr>
                     <div class="mt-4">

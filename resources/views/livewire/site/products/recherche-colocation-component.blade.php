@@ -133,7 +133,7 @@
                           <div class="product_info">
                               <h6 class="product_title"><a href="{{route('site.detail-produit', ['id' => $product->id])}}">{{$product->categorie->name}}</a></h6>
                               <div class="product_price">
-                                  <span class="price">{{$product->normal_price}} FCFA / mois</span>
+                                  <span class="price">{{number_format($product->normal_price,2,"."," ")}} FCFA / mois</span>
                               </div>
                               <div class="rating_wrap">
                                 <div>{{ $product->place_dispo }} place(s) disponible(s)</div>

@@ -27,8 +27,8 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->lastName,
             'firstname' => $this->faker->firstName,
-            'phone' => $this->faker->firstName,
-            'phone_whatsapp' => $this->faker->firstName,
+            'phone' => $this->faker->phoneNumber('(+299) ## ## ## ##'),
+            'phone_whatsapp' => $this->faker->phoneNumber('(+299) ## ## ## ##'),
             'remember_token' => Str::random(10),
             'last_seen' => $this->faker->dateTimeBetween('-6 months'),
             'created_at' => $this->faker->dateTimeBetween('-4 years', '-6 months'),

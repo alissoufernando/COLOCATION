@@ -45,7 +45,7 @@
         <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow carousel_style2"
                 data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/5.jpg')}}">
+                    <div class="carousel-item active background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/2.jpg')}}">
                         <div class="banner_slide_content banner_content_inner">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/1.jpg')}}">
+                    <div class="carousel-item background_bg overlay_bg_50" data-img-src="{{asset('assets/site/assets/images/6.jpg')}}">
                         <div class="banner_slide_content banner_content_inner">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -185,7 +185,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="heading_s4 text-center">
-                            <h2>Nos derniers annonces</h2>
+                            <h2>Nos dernières annonces</h2>
                         </div>
                         <p class="text-center leads">Un colocataire heureux est un colocataire qui reste plus longtemps! Notre priorité est la mise en relation de qualité</p>
                     </div>
@@ -261,7 +261,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-8">
                         <div class="heading_s1 text-center">
-                            <h2>Derniers actualités</h2>
+                            <h2>Dernières actualités</h2>
                         </div>
                         <p class="leads text-center">Vie étudiante: Conseils actualites</p>
                     </div>

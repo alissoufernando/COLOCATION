@@ -72,7 +72,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                       <div class="card-header">
-                        <h5>Statistiques des products</h5>
+                        <h5>Statistiques des annonces</h5>
                       </div>
                       <div class="card-body">
                         <div class="row">

@@ -128,9 +128,9 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="pr_detail">
                                     <div class="product_description">
-                                        <h4 class="product_title"><a href="#">{{ $products->name }}</a></h4>
+                                        <h4 class="product_title"><a href="#">{{ $products->categorie->name }}</a></h4>
                                         <div class="product_price">
-                                            <span class="price">{{ $products->normal_price }} FCFA / mois</span>
+                                            <span class="price">{{number_format($products->normal_price,2,"."," ")}} FCFA / mois</span>
                                         </div>
                                         <div class="rating_wrap">
                                             @php
@@ -180,7 +180,7 @@
                                     <div class="cart_extra">
                                         <div class="cart_btn">
                                             <a data-bs-toggle="modal" wire:click.prevent='getElementById({{$products->id}})' data-bs-target="#exampleModalCenter" class="btn btn-fill-out" type="button"><i
-                                                    class=""></i> Appeler</a>
+                                                    class=""></i>Contacter</a>
                                             {{-- <a class="add_compare" href="#"><i
                                                     class="icon-shuffle"></i></a> --}}
                                             @if ($witems->contains($products->id))
@@ -376,8 +376,7 @@
                                                         href="{{ route('site.detail-produit', ['id' => $products_relateds->id]) }}">{{ $products_relateds->categorie->name }}</a>
                                                 </h6>
                                                 <div class="product_price">
-                                                    <span class="price">{{ $products_relateds->normal_price }}
-                                                        FCFA / mois</span>
+                                                    <span class="price">{{number_format($products_relateds->normal_price,2,"."," ")}} FCFA / mois</span>
 
                                                 </div>
                                                 <div class="rating_wrap">

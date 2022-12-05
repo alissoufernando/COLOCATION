@@ -22,16 +22,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::factory(5)->create();
         $this->call([
-            RoleTableSeeder::class,
-            UserTableSeeder::class,
             CategoryTableSeeder::class,
             DepartementTableSeeder::class,
             VilleTableSeeder::class,
             ProductSeeder::class,
-            ArticleTableSeeder::class
+            ArticleTableSeeder::class,
+            RoleTableSeeder::class,
+            UserTableSeeder::class,
         ]);
-        User::factory(20)->create();
+
 
     }
 }

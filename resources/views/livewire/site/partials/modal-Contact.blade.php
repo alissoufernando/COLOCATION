@@ -80,7 +80,7 @@
             <h3 class="modal-title ">Les moyens de contact</h3>
             </div>
             <div class="modal-body justify-content-center text-center">
-            <a href="tel:+2295185044" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="icon-headphone-alt"></i>Appeler</a>
+            <a href="tel:+2295185044" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="icon-headphone-alt"></i>Appel</a>
             <a href="mailto:alissouanani@gmail.com" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="icon-email"></i>Mail</a>
             <a href="{{route('contact.par-message',['id' => $this->auteurAnnonce->user->id])}}" class="btn btn-fill-out btn-radius btn-sm justify-content-center"><i class="fa fa-comment-o"></i>Chat</a>
             </div>

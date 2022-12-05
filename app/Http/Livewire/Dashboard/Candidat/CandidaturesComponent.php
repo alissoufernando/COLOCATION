@@ -26,10 +26,10 @@ class CandidaturesComponent extends Component
         $myPostuler->reponse = $this->reponse;
         $myPostuler->save();
 
-        Mail::to($myPostuler->user->email)->send( new ReponseDemande($this->postuler_id));
+        // Mail::to($myPostuler->user->email)->send( new ReponseDemande($this->postuler_id));
 
 
-        // return redirect()->route('admin.toutescandidature-index');
+        return redirect()->route('admin.candidature-index');
 
     }
 
@@ -40,8 +40,9 @@ class CandidaturesComponent extends Component
         $myPostuler = Postuler::findOrFail($this->postuler_id);
         $myPostuler->reponse = $this->reponse;
         $myPostuler->save();
+        Mail::to($myPostuler->user->email)->send( new ReponseDemande($this->postuler_id));
 
-        // return redirect()->route('admin.toutescandidature-index');
+        return redirect()->route('admin.candidature-index');
 
     }
 
@@ -60,11 +61,7 @@ class CandidaturesComponent extends Component
         $this->dispatchBrowserEvent('deleted',['message' => 'Cette candidature à été supprimer']);
 
     }
-    public function deleteSubcategory($id)
-    {
-        $this->deleteIdBeingRemoved = $id;
-        $this->dispatchBrowserEvent('show-delete-confirmation');
-    }
+
     public function render()
     {
         $postulers = Postuler::where('isDelete', 0)->orderBy('created_at','DESC')->get();

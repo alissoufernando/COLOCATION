@@ -17,7 +17,7 @@
             <ul class="header_list menulink">
 
                 @if (Auth::guest())
-                <li><a href="{{route('login')}}" class="{{ Route::currentRouteName()== 'login' ? 'active' : '' }}"><i class="ti-user"></i><span>Connéxion</span></a></li>
+                <li><a href="{{route('login')}}" class="{{ Route::currentRouteName()== 'login' ? 'active' : '' }}"><i class="ti-user"></i><span>Connexion</span></a></li>
                 <li><a href="{{route('register')}}" class="{{ Route::currentRouteName()== 'register' ? 'active' : '' }}"><i class="ti-user"></i><span>S'enregistrer</span></a></li>
                 @else
                 <li><a href="{{route('site.my-account')}}" class="{{ Route::currentRouteName()== 'site.my-account' ? 'active' : '' }}"><i class="ti-user"></i><span>Mon Compte</span></a></li>
