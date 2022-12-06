@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 10 nov. 2022 à 14:43
+-- Généré le : mar. 06 déc. 2022 à 11:26
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -94,18 +94,18 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `menu`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 'Entrée coucher', 'entree-coucher', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(2, 'Une chambre salon', 'une-chambre-salon', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(3, 'Deux chambres salon', 'deux-chambres-salon', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(4, 'Trois chambres salon', 'trois-chambres-salon', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(5, 'Entrée coucher semi sanitaire', 'entree-coucher-semi-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(6, 'Une chambre salon semi sanitaire', 'une-chambre-salon-semi-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(7, 'Deux chambres salon semi sanitaire', 'deux-chambres-salon-semi-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(8, 'Trois chambres salon semi sanitaire', 'trois-chambres-salon-semi-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(9, 'Entrée coucher sanitaire', 'entree-coucher-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(10, 'Une chambre salon sanitaire', 'une-chambre-salon-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(11, 'Deux chambres salon sanitaire', 'deux-chambres-salon-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(12, 'Trois chambres salon sanitaire', 'trois-chambres-salon-sanitaire', 0, 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21');
+(1, 'Entrée coucher', 'entree-coucher', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(2, 'Une chambre salon', 'une-chambre-salon', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(3, 'Deux chambres salon', 'deux-chambres-salon', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(4, 'Trois chambres salon', 'trois-chambres-salon', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(5, 'Entrée coucher semi sanitaire', 'entree-coucher-semi-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(6, 'Une chambre salon semi sanitaire', 'une-chambre-salon-semi-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(7, 'Deux chambres salon semi sanitaire', 'deux-chambres-salon-semi-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(8, 'Trois chambres salon semi sanitaire', 'trois-chambres-salon-semi-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(9, 'Entrée coucher sanitaire', 'entree-coucher-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(10, 'Une chambre salon sanitaire', 'une-chambre-salon-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(11, 'Deux chambres salon sanitaire', 'deux-chambres-salon-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(12, 'Trois chambres salon sanitaire', 'trois-chambres-salon-sanitaire', 0, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41');
 
 -- --------------------------------------------------------
 
@@ -143,18 +143,18 @@ CREATE TABLE `departements` (
 --
 
 INSERT INTO `departements` (`id`, `name`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 'Littoral', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(2, 'Atlantique', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(3, 'Ouémé', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(4, 'Borgou', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(5, 'Donga', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(6, 'Atacora', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(7, 'Collines', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(8, 'Zou', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(9, 'Mono', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(10, 'Couffo', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(11, 'Alibori', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21'),
-(12, 'Plateau', 0, '2022-11-08 21:54:21', '2022-11-08 21:54:21');
+(1, 'Littoral', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(2, 'Atlantique', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(3, 'Ouémé', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(4, 'Borgou', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(5, 'Donga', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(6, 'Atacora', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(7, 'Collines', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(8, 'Zou', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(9, 'Mono', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(10, 'Couffo', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(11, 'Alibori', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(12, 'Plateau', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41');
 
 -- --------------------------------------------------------
 
@@ -214,13 +214,6 @@ CREATE TABLE `messages` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `messages`
---
-
-INSERT INTO `messages` (`message`, `distinataire_id`, `auteur_id`, `isDelete`, `created_at`, `updated_at`) VALUES
-('sdfghjk', 1, 2, 0, '2022-11-09 19:04:39', '2022-11-09 19:04:39');
 
 -- --------------------------------------------------------
 
@@ -335,13 +328,6 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `password_resets`
---
-
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('admin@admin.com', '$2y$10$J1Q0yu8jy8b.rafnpEvNKuVahSA4PIJpNNFzStEEsv8zDLwQf50EG', '2022-11-09 23:50:04');
-
 -- --------------------------------------------------------
 
 --
@@ -385,10 +371,8 @@ CREATE TABLE `postulers` (
 --
 
 INSERT INTO `postulers` (`id`, `indetermine`, `date_entre`, `date_de_sortie`, `message`, `reponse`, `isDelete`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(1, 0, '2022-11-26', '2022-12-10', '\nMerci d\'avance pour vos réponses !\n', NULL, 0, 2, 1, '2022-11-09 15:21:55', '2022-11-09 15:35:15'),
-(2, 1, '2022-11-25', NULL, '\nMerci d\'avance pour vos réponses !\n', NULL, 0, 2, 2, '2022-11-09 15:22:24', '2022-11-09 18:38:12'),
-(3, 0, '2022-11-26', '2022-12-03', 'Merci d\'avance pour vos réponses !', 'Refusé', 0, 2, 3, '2022-11-09 15:27:41', '2022-11-09 18:47:11'),
-(4, 1, '2022-11-26', NULL, 'Merci d\'avance pour vos réponses !', 'Validé', 0, 2, 4, '2022-11-09 15:28:07', '2022-11-09 15:34:25');
+(1, 0, '2022-12-16', '2022-12-30', 'vbhjnk', 'Refusé', 0, 7, 1, '2022-12-03 20:23:24', '2022-12-03 20:28:30'),
+(2, 1, '2022-12-21', NULL, 'h', 'Validé', 0, 7, 2, '2022-12-03 20:27:30', '2022-12-03 20:28:25');
 
 -- --------------------------------------------------------
 
@@ -420,27 +404,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `slug`, `type_annonce`, `quartier`, `description`, `short_description`, `normal_price`, `disponibilite`, `place_dispo`, `isDelete`, `ville_id`, `categorie_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'et reiciendis et perspiciatis', 'et-asperiores', 'COLOCATION', 'Cortezmouth', 'Repellat est dignissimos earum eligendi praesentium nobis. Praesentium ad nam omnis eum. Amet eveniet pariatur autem rerum id odio dolorem. Nisi reiciendis omnis est eos necessitatibus sunt odio. Animi est vero asperiores rerum vitae labore. Quia qui officia porro quia omnis est beatae. Ad minima fugiat molestias sed. Dignissimos quas libero magni et ea perferendis impedit.', 'Commodi inventore consequuntur et officia. Tenetur qui officia quidem. Praesentium nemo rem a fugiat. Itaque deserunt a rem quis esse.', '3217.000', 1, 5, 0, 9, 8, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(2, 'et reiciendis et perspiciatis', 'vero-tempore', 'COLOCATION', 'Ricetown', 'Consectetur dolor non placeat voluptates natus. Voluptas magni voluptas aut eos corporis aut vel laborum. In necessitatibus nihil vel eveniet. Ex quo ipsa suscipit. Inventore in voluptatem sed corrupti velit perferendis. Est ea qui similique non fugiat et magnam. Voluptatibus vel laboriosam eos doloribus et aperiam iste. Eius sunt aut occaecati blanditiis. Dolor et sunt sint qui. Quia illum quia accusantium eius voluptatem. Expedita animi dignissimos expedita explicabo commodi vel odio.', 'Deserunt vero odit itaque. Mollitia voluptatem natus et a itaque amet quaerat. Eveniet dolorem voluptatem minus quos quisquam.', '1929.000', 1, 1, 1, 13, 3, 2, '2022-11-08 21:54:22', '2022-11-09 23:39:15'),
-(3, 'et reiciendis et perspiciatis', 'voluptas-sapiente', 'COLOCATION', 'Bradtkechester', 'Enim eligendi dolorem sed omnis. Maxime harum aut cumque officiis tenetur culpa provident. Unde omnis corporis aut id. Deleniti quasi ex sequi nihil enim aut dolores itaque. Cumque eum tempore debitis ipsum reiciendis quo. Inventore officia laboriosam vel qui asperiores dolor modi impedit. Neque dolorem unde architecto blanditiis est in consectetur. Quia corporis ea et ut fugiat. Eius iure labore iure. Consequuntur doloremque doloremque iusto laborum.', 'Eos ut enim aut sint et eum eos id. Omnis accusamus tenetur rerum. Et asperiores modi dolorum. Sapiente aliquam dolorem ea explicabo quia.', '3487.000', 1, 5, 1, 15, 10, 1, '2022-11-08 21:54:22', '2022-11-09 23:38:33'),
-(4, 'et reiciendis et perspiciatis', 'consequuntur-consequatur', 'COLOCATION', 'East Christina', 'Accusamus corporis repudiandae sunt laborum. Deleniti aperiam quia iusto rerum voluptatum vel. Repudiandae iure rerum temporibus est. Corporis vitae occaecati nulla accusamus illo. Sit ipsum velit fuga autem. Qui illo voluptas recusandae tempore omnis pariatur omnis. Voluptatem sunt officiis libero omnis. Aut et in et et molestias error voluptas aperiam. Voluptatem est aliquam ipsa qui omnis.', 'Accusamus minima ab delectus dolore placeat vel sunt. Impedit officia eligendi quasi autem rerum id eaque. Voluptate odit ipsam non. Dolorum hic voluptas unde molestiae mollitia ad sit.', '9635.000', 1, 3, 0, 4, 1, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(5, 'et reiciendis et perspiciatis', 'iste-enim', 'COLOCATION', 'East Liliane', 'Ipsam sint doloremque dicta rem accusamus ducimus possimus dignissimos. Ut et debitis beatae. Sed iusto molestias inventore et laboriosam voluptas sint. A corrupti explicabo inventore. Culpa beatae odit aperiam vel est recusandae sed. Consectetur eligendi id vel autem vel. Rerum voluptate et similique possimus. Iure quis voluptatibus omnis sed ut beatae.', 'Magni molestiae quia nobis dolores praesentium error perferendis nam. Et voluptate error deserunt modi. Ut beatae illum labore sint.', '7189.000', 1, 1, 0, 5, 10, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(6, 'et reiciendis et perspiciatis', 'ducimus-consequatur', 'COLOCATION', 'Lake Gaylehaven', 'Laboriosam odit qui nisi assumenda. Tempore incidunt doloribus ex quis natus voluptatem. Quis distinctio accusantium voluptatem nam. Aut nihil libero rem et. Aut sint fuga modi distinctio. Similique quae eaque et mollitia culpa pariatur totam. Quis perferendis optio qui consequatur commodi. Qui libero ut ad consequuntur iure quas iure. Dicta et ad odit iure laboriosam.', 'Aspernatur voluptatem quibusdam neque fuga iste maxime vero. Nam laudantium soluta rem corporis. Iusto excepturi odio et vitae animi eos at et. Beatae impedit pariatur veritatis officiis.', '4231.000', 1, 3, 0, 22, 11, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(7, 'et reiciendis et perspiciatis', 'consequuntur-tenetur', 'COLOCATION', 'Stammberg', 'Omnis doloribus quaerat assumenda quas quae. Voluptas id necessitatibus dolores officia culpa. Veritatis ut rerum delectus quos ea eos adipisci. Magnam eos omnis ut sapiente expedita ullam dolorum. Dolores non dolores rem laboriosam nisi deserunt. Natus voluptas expedita harum laborum voluptas. Dolorem doloremque et eius inventore ratione vero nihil.', 'Expedita quasi nulla suscipit non. Ut ut enim quasi vel quo ut quis dignissimos. Accusantium et laborum nesciunt minus sunt.', '5994.000', 1, 5, 0, 19, 12, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(8, 'et reiciendis et perspiciatis', 'delectus-repellat', 'COLOCATION', 'Port Lacystad', 'A laudantium in distinctio ratione excepturi. Explicabo rem architecto saepe optio enim. Ullam repudiandae aut dignissimos assumenda cupiditate placeat. Aut rerum delectus molestias. Mollitia nobis voluptates qui aut. Maiores sed velit beatae sint voluptas sunt. Aut nihil excepturi quo quos. Labore omnis magnam veniam tempore autem laborum tempore sint. Sint et officiis magni est. Ullam sint adipisci perferendis soluta enim ex alias sequi. Quia quia sequi et vero sint fugiat velit.', 'Qui beatae enim rerum rem quibusdam id. Vel et velit animi libero inventore voluptatem dolorem. Dolores voluptatem beatae culpa et eum. Voluptatum voluptas quia expedita repellat.', '6116.000', 1, 3, 0, 26, 1, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(9, 'et reiciendis et perspiciatis', 'laboriosam-nostrum', 'COLOCATION', 'East Cesar', 'Eum ut dicta fuga sit fugiat odit omnis autem. Est rerum sed molestiae nihil ut officiis nihil. Sit error velit omnis explicabo quasi sit necessitatibus. Non laboriosam sunt ea. Quae voluptatum cupiditate fugit blanditiis quod. Enim quam sequi rerum vitae non mollitia facilis similique. Facere temporibus dolores delectus id vel eos. Doloremque et laborum ea omnis optio. Aut qui vel rerum voluptatem sapiente dicta. Natus ratione eveniet accusamus libero.', 'Voluptatem recusandae nostrum voluptatibus architecto natus. Aut maxime animi vel dignissimos. Et quia pariatur ducimus.', '5258.000', 1, 3, 0, 7, 2, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(10, 'et reiciendis et perspiciatis', 'quaerat-consequuntur', 'COLOCATION', 'East Joanymouth', 'Dolor consequatur harum qui. Molestiae doloremque qui cumque minima numquam vel nobis. Corrupti modi omnis culpa similique fugit tenetur asperiores aspernatur. Et ducimus vel ducimus saepe. Eaque dolorem placeat laudantium minus. Porro quaerat aut mollitia et ipsum. Quae sit sapiente dolorem numquam et.', 'Labore et omnis vero beatae molestiae. Quos consequatur atque nesciunt rerum quia nobis molestias. Enim asperiores maxime consequuntur at.', '2126.000', 1, 3, 0, 10, 3, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(11, 'et reiciendis et perspiciatis', 'rem-sint', 'LOCATION', 'Nettieberg', 'Dolores occaecati quibusdam maiores odio. Ut ad neque quasi rerum expedita qui. Sint doloribus facilis quidem dolorem est iste sunt. Et sit et labore maiores. Sit odio dolores rem perferendis libero et. Quae omnis assumenda et culpa. Sit consequatur repudiandae molestiae. Quo dolore aut ut sunt. Non id officiis exercitationem sint consequatur. Quibusdam laboriosam nulla at. Accusamus similique nisi fuga voluptates tempore eaque officiis. Id exercitationem saepe blanditiis est optio molestiae.', 'Et sed aut libero rerum assumenda ipsum et. Ab vero quia explicabo eaque consequatur. Assumenda eum ut harum debitis. Et fugiat aliquam porro soluta quo.', '2571.000', 1, 1, 0, 33, 7, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(12, 'et reiciendis et perspiciatis', 'voluptatem-voluptas', 'LOCATION', 'North Rasheedburgh', 'Consequatur rem saepe voluptatem unde omnis. Consequuntur et fugiat earum quia magnam vitae. Unde nihil alias id dolorem. Eaque voluptatem non vel hic et et molestiae. Similique omnis officiis ipsa laboriosam. Voluptatem in quia reiciendis et nesciunt delectus magni quisquam. Est aliquam quia aliquam tempora.', 'Vel placeat omnis nobis et quisquam est. Ratione dolor ut eum vel quaerat enim quisquam. Sit unde esse eum a animi beatae mollitia.', '1940.000', 1, 2, 0, 22, 10, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(13, 'et reiciendis et perspiciatis', 'culpa-et', 'LOCATION', 'Port Margaret', 'Fuga et laborum sed inventore cumque odit. Aperiam architecto omnis nihil harum fugiat fuga ullam. Quia autem aspernatur minima non. Deserunt eos est eligendi illo. Consequatur est tempora iure reiciendis sit. Omnis et ipsa sint animi veniam assumenda. Optio et iure deleniti accusantium doloribus. Consequatur voluptatem ut et est laborum. Rerum quisquam sed qui veritatis et et. Amet placeat maiores assumenda voluptatem error quos.', 'Eveniet soluta distinctio maxime qui consequatur quas voluptatem rerum. Doloribus qui laudantium debitis iure aut. Dolor ab consequuntur non quibusdam veritatis dolores dignissimos.', '7508.000', 1, 4, 0, 5, 11, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(14, 'et reiciendis et perspiciatis', 'earum-repudiandae', 'LOCATION', 'Sporerstad', 'Rerum voluptatem unde inventore qui in. Reprehenderit repudiandae officiis quos consequatur unde in quo. Iste omnis harum facere nulla excepturi eos deserunt. Et molestias in fuga cum. Atque repellendus rerum qui repellendus nihil doloribus laudantium. At dolores labore omnis nesciunt explicabo perferendis velit repudiandae. Ea ab tempore dolor ea tempora voluptates odio ut. Dolorum a est et eum. Voluptas numquam animi repellat eum dignissimos eum.', 'Quaerat amet rem cum. Laudantium quasi debitis suscipit velit ut reiciendis. Quia delectus totam praesentium rerum at placeat labore.', '2771.000', 1, 4, 0, 17, 5, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(15, 'et reiciendis et perspiciatis', 'officiis-praesentium', 'LOCATION', 'Ericafort', 'Reprehenderit aut eveniet qui a vitae quod eum. Fuga nulla dolorem dolor. Maiores quia eum ut qui consequuntur. Libero laudantium velit ab vel iure sapiente et ut. Delectus earum qui omnis qui quo ut natus voluptatibus. Autem aut non non similique. Minima enim eligendi et. Doloribus alias et aut sit eos aut. Officiis iusto animi et quis. Et neque sequi officia consequatur deleniti adipisci voluptas.', 'Sunt dolores porro dolorum sed at et sed. Id adipisci in sit quo est perferendis maxime. Eveniet voluptatibus qui quaerat.', '9678.000', 1, 3, 0, 17, 1, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(16, 'et reiciendis et perspiciatis', 'dolor-nam', 'LOCATION', 'Gaylordville', 'Sint qui tempore ut magni itaque quam molestias. Ad omnis ipsam harum voluptas adipisci impedit. Cupiditate a totam voluptatem sit. Est iste dolores architecto molestiae et sed blanditiis. Quisquam non voluptatem laborum nihil ut. Odit molestias ducimus dolorum excepturi ut sint. Suscipit et quisquam aut fugit quaerat. Libero accusantium unde ut et soluta ullam adipisci. Pariatur ea sequi ut libero cumque.', 'Natus ut est impedit labore autem qui. Modi veritatis earum dolorem molestiae dolorem laudantium. Ab et sit esse et. Consequuntur cum at laborum ut omnis ut officia.', '3297.000', 1, 4, 0, 15, 9, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(17, 'et reiciendis et perspiciatis', 'voluptas-nisi', 'LOCATION', 'West Celestine', 'Voluptatibus perspiciatis voluptas similique omnis rerum iure rem. Corporis quos est fuga amet sint autem. Enim odio est in aperiam repellat aspernatur est. Dolorem praesentium sed sit labore qui. Id adipisci quis modi distinctio. Quam autem sint assumenda. Libero ad tempore vero dolores et sunt eum. Numquam ut unde eligendi porro libero quisquam. Dicta eos voluptates esse consequatur rerum similique. Quisquam minus eos qui perferendis et.', 'Officia neque qui cum corrupti. Id sint quis corrupti illo aut illum. Officiis numquam optio dolores. Rem ipsam quia dolores ipsam et. Quia et dolor ut. Eveniet et ex at omnis.', '2645.000', 1, 5, 0, 10, 3, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(18, 'et reiciendis et perspiciatis', 'aut-itaque', 'LOCATION', 'Lillaport', 'Similique rerum dolorem aut labore id necessitatibus cumque. Vel aut quis impedit odio dolores fuga. Voluptas quis repellendus vero laudantium rerum dolorem. Est quia numquam velit modi. Perferendis minima ea inventore qui dignissimos qui tempore. Nesciunt nihil vitae quo exercitationem quos.', 'Earum sunt porro sint quis pariatur. Et aut aut et ut. Labore delectus sapiente aut tenetur et fuga quo perspiciatis.', '4698.000', 1, 3, 0, 9, 5, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(19, 'et reiciendis et perspiciatis', 'blanditiis-nam', 'LOCATION', 'Mozelleland', 'Earum qui asperiores facilis ipsam ex ut. Nihil accusantium id dicta qui dolores exercitationem iusto rem. Quasi vel est assumenda tenetur animi. Et voluptatem quia cupiditate quidem deleniti nihil in. Aspernatur adipisci sapiente ab aut explicabo qui sit voluptatum. Facilis id eum illo debitis. Commodi in ea voluptates quo consequatur delectus unde aut. Quis molestias laborum ad. Aut eaque aut nobis vitae quia reiciendis iusto. Repellendus porro id consequatur quia.', 'Nobis quos perferendis quam eveniet. Molestiae nihil cum reiciendis accusantium. Assumenda eligendi consequatur magnam. Debitis non vero autem aspernatur ex quia vel.', '9552.000', 1, 4, 0, 24, 10, 2, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(20, 'et reiciendis et perspiciatis', 'nam-ipsum', 'LOCATION', 'Lake Seth', 'Dolor et deleniti nobis omnis maiores. Dolore et sunt voluptatibus quod ut omnis dolorem. Officiis facere illo fugit rerum. Deleniti totam qui doloremque nemo cupiditate soluta. Accusantium harum reiciendis qui quis praesentium repudiandae et. Maxime corporis omnis sit veritatis veniam unde. Error blanditiis maxime nihil. Mollitia tempora dolores et sint sed. Incidunt omnis asperiores optio corrupti nobis.', 'Laboriosam ut laboriosam assumenda voluptatem aut adipisci. Impedit ut et delectus non repudiandae et. Ex nesciunt quae voluptatem nemo.', '8502.000', 1, 3, 0, 19, 2, 1, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(21, 'autostop', 'autostop', 'COLOCATION', 'cité la victoire', '<p>Lors d&lsquo;un achat en ligne, la fiche produit doit pouvoir &agrave; la fois rassurer le consommateur sur la qualit&eacute; du produit sur lequel il a jet&eacute; son d&eacute;volu, mais aussi apporter des informations et des conseils, comme le ferait un vendeur en boutique physique.</p>\n<p>&nbsp;</p>\n<p>Lors d&lsquo;un achat en ligne, la fiche produit doit pouvoir &agrave; la fois rassurer le consommateur sur la qualit&eacute; du produit sur lequel il a jet&eacute; son d&eacute;volu, mais aussi apporter des informations et des conseils, comme le ferait un vendeur en boutique physique.</p>', '<p>Lors d&lsquo;un achat en ligne, la fiche produit doit pouvoir &agrave; la fois rassurer le consommateur sur la qualit&eacute; du produit sur lequel il a jet&eacute; son d&eacute;volu, mais aussi apporter des informations et des conseils, comme le ferait un vendeur en boutique physique.</p>', '75486.000', 1, 4, 0, 2, 3, 2, '2022-11-10 07:34:36', '2022-11-10 07:34:36');
+(1, 'perspiciatis autem at minima', 'amet-sed', 'COLOCATION', 'Calavi', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '10000.000', 1, 2, 0, 2, 11, 2, '2022-12-03 18:52:41', '2022-12-03 20:00:03'),
+(2, 'perspiciatis autem at minima', 'a-facilis', 'COLOCATION', 'CALAVI', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '10000.000', 0, 3, 0, 2, 4, 5, '2022-12-03 18:52:41', '2022-12-03 20:38:09'),
+(3, 'perspiciatis autem at minima', 'cupiditate-consequatur', 'COLOCATION', 'Calavi', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '7500.000', 1, 3, 0, 2, 3, 1, '2022-12-03 18:52:41', '2022-12-03 20:00:56'),
+(4, 'perspiciatis autem at minima', 'eos-saepe', 'COLOCATION', 'Calavi', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '6000.000', 1, 1, 0, 2, 9, 1, '2022-12-03 18:52:41', '2022-12-03 19:40:10'),
+(5, 'perspiciatis autem at minima', 'et-praesentium', 'COLOCATION', 'Nikolausport', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '6840.000', 1, 2, 0, 4, 10, 4, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(6, 'perspiciatis autem at minima', 'et-nostrum', 'LOCATION', 'Josiemouth', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '13478.000', 1, 1, 0, 31, 2, 4, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(7, 'perspiciatis autem at minima', 'velit-voluptas', 'LOCATION', 'West Warren', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '8032.000', 1, 5, 0, 17, 2, 1, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(8, 'perspiciatis autem at minima', 'quibusdam-eligendi', 'LOCATION', 'Goyettebury', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '8803.000', 1, 1, 0, 13, 2, 1, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(9, 'perspiciatis autem at minima', 'voluptate-voluptatum', 'LOCATION', 'Pagacview', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '14155.000', 1, 4, 0, 27, 7, 2, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(10, 'perspiciatis autem at minima', 'odio-non', 'LOCATION', 'Blandaview', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés. A proximité des transports en commun, elle permet un accès rapide aux établissements d\'enseignement supérieur.\n\n                Avec un accès direct au centre-ville par le tramway et à 2 minutes à pieds du domaine D’O, elle constitue un cadre idéal pour une vie étudiante épanouie.', 'Cette nouvelle résidence étudiante située au cœur du quartier des Universités propose 217 logements type studio, studio supérieur et 2 pièces allant de 19m² à 29m² entièrement équipés.', '11928.000', 1, 4, 0, 5, 6, 5, '2022-12-03 18:52:41', '2022-12-03 18:52:41');
 
 -- --------------------------------------------------------
 
@@ -452,6 +425,7 @@ CREATE TABLE `product_images` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `full` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `isDelete` tinyint(1) NOT NULL DEFAULT '0',
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -461,27 +435,18 @@ CREATE TABLE `product_images` (
 -- Déchargement des données de la table `product_images`
 --
 
-INSERT INTO `product_images` (`id`, `thumbnail`, `full`, `product_id`, `created_at`, `updated_at`) VALUES
-(1, 'thumb-6356e0bddf03f.jpg,thumb-6356e0be2fa0f.jpg,thumb-6356e0be3d849.jpg,thumb-6356e0be4b16a.jpg', 'full-6356e0bddf045.jpg,full-6356e0be2fa20.jpg,full-6356e0be3d89f.jpg,full-6356e0be4b181.jpg', 1, '2022-10-24 18:00:14', '2022-10-24 18:00:14'),
-(2, 'thumb-6356e0e975c3c.jpg,thumb-6356e0e98d61b.jpg,thumb-6356e0e9a2f9d.jpg', 'full-6356e0e975c45.jpg,full-6356e0e98d630.jpg,full-6356e0e9a2fad.jpg', 2, '2022-10-24 18:00:57', '2022-10-24 18:00:57'),
-(3, 'thumb-6356e344e81cb.jpg,thumb-6356e34511f95.jpg,thumb-6356e3452c393.jpg,thumb-6356e345412bc.jpg', 'full-6356e344e81d6.jpg,full-6356e34511fa9.jpg,full-6356e3452c3a5.jpg,full-6356e345412d0.jpg', 3, '2022-10-24 18:11:01', '2022-10-24 18:11:01'),
-(4, 'thumb-6356e3635a41b.jpg,thumb-6356e36371dc5.jpg,thumb-6356e3638b42d.jpg', 'full-6356e3635a424.jpg,full-6356e36371ddb.jpg,full-6356e3638b44b.jpg', 4, '2022-10-24 18:11:31', '2022-10-24 18:11:31'),
-(5, 'thumb-6356e3952ac33.jpg,thumb-6356e39544524.jpg,thumb-6356e39551ded.jpg,thumb-6356e395658f2.jpg,thumb-6356e3957ad7f.jpg,thumb-6356e395974df.jpg,thumb-6356e395a3a1a.jpg,thumb-6356e395bf72d.jpg,thumb-6356e395cd3d2.jpg', 'full-6356e3952ac40.jpg,full-6356e39544536.jpg,full-6356e39551e01.jpg,full-6356e39565912.jpg,full-6356e3957ad9a.jpg,full-6356e395974ef.jpg,full-6356e395a3a33.jpg,full-6356e395bf747.jpg,full-6356e395cd3ec.jpg', 5, '2022-10-24 18:12:21', '2022-10-24 18:12:21'),
-(6, 'thumb-6356e3b32698b.jpg,thumb-6356e3b33f1f6.jpg,thumb-6356e3b352e22.jpg,thumb-6356e3b366886.jpg,thumb-6356e3b37cc65.jpg', 'full-6356e3b32699a.jpg,full-6356e3b33f20e.jpg,full-6356e3b352e39.jpg,full-6356e3b3668a2.jpg,full-6356e3b37cc8f.jpg', 10, '2022-10-24 18:12:51', '2022-10-24 18:12:51'),
-(7, 'thumb-6356e3d08a6e5.jpg,thumb-6356e3d0a1067.jpg,thumb-6356e3d0b7381.jpg,thumb-6356e3d0cd14f.jpg', 'full-6356e3d08a6ef.jpg,full-6356e3d0a107e.jpg,full-6356e3d0b7394.jpg,full-6356e3d0cd169.jpg', 9, '2022-10-24 18:13:20', '2022-10-24 18:13:20'),
-(8, 'thumb-6356e3f054b42.jpg,thumb-6356e3f075e47.jpg,thumb-6356e3f085c3c.jpg,thumb-6356e3f093291.jpg,thumb-6356e3f0ab636.jpg,thumb-6356e3f0baf1a.jpg,thumb-6356e3f0c871d.jpg', 'full-6356e3f054b54.jpg,full-6356e3f075e5a.jpg,full-6356e3f085c52.jpg,full-6356e3f0932b4.jpg,full-6356e3f0ab64e.jpg,full-6356e3f0baf36.jpg,full-6356e3f0c8745.jpg', 7, '2022-10-24 18:13:52', '2022-10-24 18:13:52'),
-(9, 'thumb-6356e422820be.jpg,thumb-6356e4229a13e.jpg,thumb-6356e422ac67d.jpg,thumb-6356e422bef4e.jpg,thumb-6356e422e1d92.jpg,thumb-6356e4231788a.jpg,thumb-6356e42336acb.jpg', 'full-6356e422820d2.jpg,full-6356e4229a159.jpg,full-6356e422ac698.jpg,full-6356e422bef62.jpg,full-6356e422e1dad.jpg,full-6356e423178a3.jpg,full-6356e42336ae4.jpg', 8, '2022-10-24 18:14:43', '2022-10-24 18:14:43'),
-(10, 'thumb-6356e454063ef.jpg,thumb-6356e45414351.jpg,thumb-6356e45428c73.jpg,thumb-6356e45435cd2.jpg,thumb-6356e45447f35.jpg,thumb-6356e454612ad.jpg,thumb-6356e4546fd97.jpg', 'full-6356e454063fa.jpg,full-6356e4541436a.jpg,full-6356e45428c89.jpg,full-6356e45435ce1.jpg,full-6356e45447f45.jpg,full-6356e454612c3.jpg,full-6356e4546fdad.jpg', 6, '2022-10-24 18:15:32', '2022-10-24 18:15:32'),
-(11, 'thumb-6356e4a004039.jpg,thumb-6356e4a018b86.jpg,thumb-6356e4a040171.jpg,thumb-6356e4a06540c.jpg,thumb-6356e4a08865a.jpg,thumb-6356e4a0b601f.jpg', 'full-6356e4a004042.jpg,full-6356e4a018b9f.jpg,full-6356e4a040187.jpg,full-6356e4a06542f.jpg,full-6356e4a0886cc.jpg,full-6356e4a0b6037.jpg', 11, '2022-10-24 18:16:48', '2022-10-24 18:16:48'),
-(12, 'thumb-6356e500415d1.jpg,thumb-6356e500575d7.jpg', 'full-6356e500415dc.jpg,full-6356e500575f4.jpg', 19, '2022-10-24 18:18:24', '2022-10-24 18:18:24'),
-(13, 'thumb-6356e5796f274.jpg,thumb-6356e57984b39.jpg,thumb-6356e57997eb7.jpg,thumb-6356e579a50b8.jpg,thumb-6356e579b87ae.jpg', 'full-6356e5796f27f.jpg,full-6356e57984b4c.jpg,full-6356e57997ece.jpg,full-6356e579a50c9.jpg,full-6356e579b87c0.jpg', 20, '2022-10-24 18:20:25', '2022-10-24 18:20:25'),
-(14, 'thumb-6356e5a222afb.jpg,thumb-6356e5a233032.jpg,thumb-6356e5a249e40.jpg', 'full-6356e5a222b05.jpg,full-6356e5a233045.jpg,full-6356e5a249e52.jpg', 18, '2022-10-24 18:21:06', '2022-10-24 18:21:06'),
-(15, 'thumb-6356e5c75aa88.jpg,thumb-6356e5c773032.jpg,thumb-6356e5c78cfbe.jpg,thumb-6356e5c79a861.jpg,thumb-6356e5c7aa05d.jpg,thumb-6356e5c7b6258.jpg', 'full-6356e5c75aa93.jpg,full-6356e5c773046.jpg,full-6356e5c78cfd8.jpg,full-6356e5c79a887.jpg,full-6356e5c7aa06c.jpg,full-6356e5c7b626c.jpg', 17, '2022-10-24 18:21:43', '2022-10-24 18:21:43'),
-(16, 'thumb-6356e5e8d1c96.jpg,thumb-6356e5e8dfadd.jpg,thumb-6356e5e8f0874.jpg,thumb-6356e5e908ee3.jpg,thumb-6356e5e9150aa.jpg,thumb-6356e5e9223f8.jpg,thumb-6356e5e92e366.jpg', 'full-6356e5e8d1ca0.jpg,full-6356e5e8dfaf7.jpg,full-6356e5e8f088d.jpg,full-6356e5e908efd.jpg,full-6356e5e9150b9.jpg,full-6356e5e922409.jpg,full-6356e5e92e37c.jpg', 16, '2022-10-24 18:22:17', '2022-10-24 18:22:17'),
-(17, 'thumb-6356e6158eaca.jpg,thumb-6356e615a0766.jpg,thumb-6356e615b10fa.jpg', 'full-6356e6158ead4.jpg,full-6356e615a077e.jpg,full-6356e615b111f.jpg', 12, '2022-10-24 18:23:01', '2022-10-24 18:23:01'),
-(18, 'thumb-6356e63f74493.jpg,thumb-6356e63f9361f.jpg,thumb-6356e63fab902.jpg,thumb-6356e63fc0807.jpg,thumb-6356e63fd7a80.jpg', 'full-6356e63f744a7.jpg,full-6356e63f93639.jpg,full-6356e63fab920.jpg,full-6356e63fc081d.jpg,full-6356e63fd7a95.jpg', 14, '2022-10-24 18:23:43', '2022-10-24 18:23:43'),
-(19, 'thumb-6356e671bd1d2.jpg,thumb-6356e671d544a.jpg,thumb-6356e671ea965.jpg,thumb-6356e6720ec2b.jpg,thumb-6356e672226d6.jpg', 'full-6356e671bd1dd.jpg,full-6356e671d5461.jpg,full-6356e671ea981.jpg,full-6356e6720ec3e.jpg,full-6356e672226e9.jpg', 15, '2022-10-24 18:24:34', '2022-10-24 18:24:34'),
-(20, 'thumb-6356e6ab5d39d.jpg,thumb-6356e6ab6bf0e.jpg,thumb-6356e6ab83ff7.jpg', 'full-6356e6ab5d3ad.jpg,full-6356e6ab6bf23.jpg,full-6356e6ab8400a.jpg', 13, '2022-10-24 18:25:31', '2022-10-24 18:25:31');
+INSERT INTO `product_images` (`id`, `thumbnail`, `full`, `isDelete`, `product_id`, `created_at`, `updated_at`) VALUES
+(1, 'thumb-638baa0b8cd7b.jpg,thumb-638baa0bd290d.jpg,thumb-638baa0bea38b.jpg,thumb-638baa0c145e6.jpg', 'full-638baa0b8cd85.jpg,full-638baa0bd292a.jpg,full-638baa0bea3a0.jpg,full-638baa0c145f6.jpg', 0, 1, '2022-12-03 18:57:00', '2022-12-03 18:57:00'),
+(2, 'thumb-638baa4ff41fd.jpg,thumb-638baa50321bd.jpg,thumb-638baa5053f16.jpg,thumb-638baa506b294.jpg,thumb-638baa508356e.jpg', 'full-638baa4ff420d.jpg,full-638baa50321e1.jpg,full-638baa5053f26.jpg,full-638baa506b2ac.jpg,full-638baa5083587.jpg', 0, 1, '2022-12-03 18:58:08', '2022-12-03 18:58:08'),
+(3, 'thumb-638baa9829480.jpg,thumb-638baa984a35e.jpg,thumb-638baa9872d1f.jpg,thumb-638baa98a1585.jpg,thumb-638baa98a833a.jpg,thumb-638baa98dcabc.jpg', 'full-638baa982948e.jpg,full-638baa984a37c.jpg,full-638baa9872d33.jpg,full-638baa98a1593.jpg,full-638baa98a834c.jpg,full-638baa98dcad8.jpg', 0, 2, '2022-12-03 18:59:21', '2022-12-03 18:59:21'),
+(4, 'thumb-638bab7d65d90.jpg,thumb-638bab7d7a7fd.jpg', 'full-638bab7d65d9c.jpg,full-638bab7d7a810.jpg', 0, 3, '2022-12-03 19:03:09', '2022-12-03 19:03:09'),
+(5, 'thumb-638babf1d2ff7.jpg,thumb-638babf1f2aad.jpg,thumb-638babf2267e2.jpg,thumb-638babf24c294.jpg,thumb-638babf2632fb.jpg', 'full-638babf1d3001.jpg,full-638babf1f2acb.jpg,full-638babf226804.jpg,full-638babf24c2ae.jpg,full-638babf263311.jpg', 0, 4, '2022-12-03 19:05:06', '2022-12-03 19:05:06'),
+(6, 'thumb-638bac39a60d1.jpg,thumb-638bac39becc8.jpg,thumb-638bac39e3bdd.jpg,thumb-638bac3a082ad.jpg,thumb-638bac3a2c1c2.jpg,thumb-638bac3a4b48f.jpg', 'full-638bac39a60dc.jpg,full-638bac39bece0.jpg,full-638bac39e3bf3.jpg,full-638bac3a082c3.jpg,full-638bac3a2c1db.jpg,full-638bac3a4b4ae.jpg', 0, 5, '2022-12-03 19:06:18', '2022-12-03 19:06:18'),
+(7, 'thumb-638bac6a67eb4.jpg', 'full-638bac6a67ec0.jpg', 0, 6, '2022-12-03 19:07:06', '2022-12-03 19:07:06'),
+(8, 'thumb-638bacc68fe68.jpg,thumb-638bacc6b22e9.jpg,thumb-638bacc6cc867.jpg,thumb-638bacc6e19de.jpg,thumb-638bacc70a0f1.jpg,thumb-638bacc723159.jpg', 'full-638bacc68fe7c.jpg,full-638bacc6b22fb.jpg,full-638bacc6cc888.jpg,full-638bacc6e19f3.jpg,full-638bacc70a112.jpg,full-638bacc723175.jpg', 0, 7, '2022-12-03 19:08:39', '2022-12-03 19:08:39'),
+(9, 'thumb-638bad007fe8f.jpg,thumb-638bad00a1de8.jpg,thumb-638bad00bcf85.jpg,thumb-638bad00ea64d.jpg,thumb-638bad0126f87.jpg', 'full-638bad007fe98.jpg,full-638bad00a1df9.jpg,full-638bad00bcf96.jpg,full-638bad00ea669.jpg,full-638bad0126fb8.jpg', 0, 8, '2022-12-03 19:09:37', '2022-12-03 19:09:37'),
+(10, 'thumb-638badb187b2b.jpg,thumb-638badb1aa55e.jpg,thumb-638badb1ca389.jpg,thumb-638badb1e89ee.jpg,thumb-638badb1f0cf6.jpg,thumb-638badb22485b.jpg', 'full-638badb187b34.jpg,full-638badb1aa56c.jpg,full-638badb1ca3a1.jpg,full-638badb1e89fe.jpg,full-638badb1f0d0a.jpg,full-638badb22486a.jpg', 0, 9, '2022-12-03 19:12:34', '2022-12-03 19:12:34'),
+(11, 'thumb-638bae155640a.jpg,thumb-638bae1570a05.jpg,thumb-638bae15883c3.jpg,thumb-638bae15a537d.jpg', 'full-638bae1556416.jpg,full-638bae1570a27.jpg,full-638bae15883db.jpg,full-638bae15a5399.jpg', 0, 10, '2022-12-03 19:14:13', '2022-12-03 19:14:13');
 
 -- --------------------------------------------------------
 
@@ -511,7 +476,7 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`id`, `user_id`, `name`, `email`, `phone`, `birthday`, `adresse`, `profession`, `link_facebook`, `link_twitter`, `link_instagram`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Admin', 'admin@admin.com', '95185044', '2022-11-10', 'None', 'None', '#', '#', '#', 0, '2022-11-09 23:43:52', '2022-11-09 23:43:52');
+(1, 8, 'Fernando ALISSOU', 'alissouanani@gmail.com', '+22995185044', '2022-12-03', 'None', 'None', '#', '#', '#', 0, '2022-12-03 20:15:54', '2022-12-03 20:15:54');
 
 -- --------------------------------------------------------
 
@@ -549,11 +514,11 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `nom`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 'Administrateur', 0, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(2, 'Etudiant', 0, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(3, 'Locataire', 0, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(4, 'Propriétaire', 0, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(5, 'Super Administrateur', 0, '2022-11-08 21:54:20', '2022-11-08 21:54:20');
+(1, 'Administrateur', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(2, 'Etudiant', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(3, 'Locataire', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(4, 'Propriétaire', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(5, 'Super Administrateur', 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41');
 
 -- --------------------------------------------------------
 
@@ -575,8 +540,9 @@ CREATE TABLE `role_user` (
 --
 
 INSERT INTO `role_user` (`id`, `user_id`, `role_id`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 1, 5, 0, NULL, NULL),
-(2, 2, 1, 0, NULL, NULL);
+(1, 6, 5, 0, NULL, NULL),
+(2, 7, 1, 0, NULL, NULL),
+(3, 8, 2, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -598,8 +564,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('9K4qhjt5wsgbl6PeiA3u3AMlZbcwPSmPfMZ6rtRI', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoieDBvMEFpM29ZTVdOZHdza2ZzYXBNdHZmbWd5RXZ6SG5yY21Bd01sUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kZXRhaWwtcHJvZHVpdC8xIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjQ6ImNhcnQiO2E6MTp7czo4OiJ3aXNobGlzdCI7TzoyOToiSWxsdW1pbmF0ZVxTdXBwb3J0XENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MDp7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDkySVhVTnBrak8wck9RNWJ5TWkuWWU0b0tvRWEzUm85bGxDLy5vZy9hdDIudWhlV0cvaWdpIjt9', 1668069737),
-('ZAwUOVy21cCEHX2Oiu3sQ1GLggnmbqlstOc5xkGR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYVgycThVTDR0RmRSRll3ZzJaTUdEa3BuWUtyRERleDFkaHNVa2tBWCI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0NDoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FkbWluL2RldGFpbC1wcm9kdWl0LzEiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xvZ2luIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1668077201);
+('ku4zKFMTnzakh4kfj51tMbItXeAdckvuOOpFhbB8', 7, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiQ291bmVuOXVab09rbU01QkV4UjFsdTdIYzV4a3diU25taW5pUWFEeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9saXN0ZXMtdG91dGVzLWNhbmRpZGF0dWVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NztzOjQ6ImNhcnQiO2E6MTp7czo4OiJ3aXNobGlzdCI7TzoyOToiSWxsdW1pbmF0ZVxTdXBwb3J0XENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MDp7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDkySVhVTnBrak8wck9RNWJ5TWkuWWU0b0tvRWEzUm85bGxDLy5vZy9hdDIudWhlV0cvaWdpIjt9', 1670102921),
+('zDAtcwwY7zjZdxY9qXjbhfFeYzreS9SZVAK6BQ7l', 7, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSGFoVnM4dDFOTFJ4c2JmVkhNM3dHUVpmYmM2TTU5dlBxeUdGbUxBeSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9saXN0ZXMtcHJvZHVpdHMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo3O3M6NDoiY2FydCI7YToxOntzOjg6Indpc2hsaXN0IjtPOjI5OiJJbGx1bWluYXRlXFN1cHBvcnRcQ29sbGVjdGlvbiI6Mjp7czo4OiIAKgBpdGVtcyI7YTowOnt9czoyODoiACoAZXNjYXBlV2hlbkNhc3RpbmdUb1N0cmluZyI7YjowO319czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkOTJJWFVOcGtqTzByT1E1YnlNaS5ZZTRvS29FYTNSbzlsbEMvLm9nL2F0Mi51aGVXRy9pZ2kiO30=', 1670103489);
 
 -- --------------------------------------------------------
 
@@ -620,7 +586,7 @@ CREATE TABLE `shoppingcart` (
 --
 
 INSERT INTO `shoppingcart` (`identifier`, `instance`, `content`, `created_at`, `updated_at`) VALUES
-('admin@admin.com', 'wishlist', 'O:29:\"Illuminate\\Support\\Collection\":2:{s:8:\"\0*\0items\";a:0:{}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}', '2022-11-09 15:44:05', NULL);
+('admin@admin.com', 'wishlist', 'O:29:\"Illuminate\\Support\\Collection\":2:{s:8:\"\0*\0items\";a:0:{}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}', '2022-12-03 20:31:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -653,28 +619,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `name`, `phone`, `phone_whatsapp`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `last_seen`, `remember_token`, `isDelete`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Administrateur', 'Super', '95185044', '95185044', 'super@admin.com', '2022-11-08 21:54:20', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-11-08 22:54:20', 'ELi6CD305U', 0, NULL, NULL, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(2, 'Administrateur', 'Admin', '95185044', '95185044', 'admin@admin.com', '2022-11-08 21:54:20', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-11-08 22:54:20', 'NHnXHVpO6xlbPFCi2vf89bXgYu7SN42pv8mCD0iNC1XxAbsA9qcPdLkdhk7v', 0, NULL, NULL, '2022-11-08 21:54:20', '2022-11-08 21:54:20'),
-(3, 'August', 'Monahan', 'Jameson', 'Iva', 'loyal59@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-01 22:32:24', 'jvmFzmfoGb', 0, NULL, NULL, '2019-05-27 16:51:52', '2022-11-08 21:54:22'),
-(4, 'Layla', 'Satterfield', 'Carmen', 'Curtis', 'larson.santino@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-09-01 22:26:12', '2ySAK19nSh', 0, NULL, NULL, '2020-09-06 19:37:57', '2022-11-08 21:54:22'),
-(5, 'Darwin', 'Ankunding', 'Violet', 'Genoveva', 'hermiston.harold@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-06-20 08:46:49', 'kYG1FZUlIW', 0, NULL, NULL, '2021-04-25 11:10:12', '2022-11-08 21:54:22'),
-(6, 'Marisol', 'Moore', 'Herman', 'Jody', 'stiedemann.jerad@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-06 15:01:56', 'dsy1l9FWhw', 0, NULL, NULL, '2021-05-28 00:10:51', '2022-11-08 21:54:22'),
-(7, 'Kiara', 'Mueller', 'Jany', 'Faustino', 'slarkin@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-19 02:11:17', '8MtR5s8EWE', 0, NULL, NULL, '2019-06-04 17:40:08', '2022-11-08 21:54:22'),
-(8, 'Dandre', 'Williamson', 'Mable', 'Rebecca', 'trantow.lavon@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-10-29 01:26:39', 'CxRiCGDRxy', 0, NULL, NULL, '2021-04-19 04:48:25', '2022-11-08 21:54:22'),
-(9, 'Deborah', 'Brown', 'Rhianna', 'Amie', 'alexandrea13@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-10-07 20:11:00', 'geN2tLlekO', 0, NULL, NULL, '2019-04-17 23:30:30', '2022-11-08 21:54:22'),
-(10, 'Alene', 'Crist', 'Richmond', 'Sam', 'thiel.marvin@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-22 05:08:29', 'lacDVnugfn', 0, NULL, NULL, '2019-12-06 06:13:44', '2022-11-08 21:54:22'),
-(11, 'Adele', 'Heathcote', 'Ardella', 'Esteban', 'kian50@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-01 05:40:35', 'bzql3RiitC', 0, NULL, NULL, '2021-11-21 22:51:29', '2022-11-08 21:54:22'),
-(12, 'Camron', 'Grimes', 'Dorris', 'Barry', 'nframi@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-16 09:05:10', 'T3RzlwwwiP', 0, NULL, NULL, '2020-07-20 01:48:08', '2022-11-08 21:54:22'),
-(13, 'Lorine', 'Cartwright', 'Reinhold', 'Nichole', 'andrew37@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-13 05:17:55', 'sGDBY1Njht', 0, NULL, NULL, '2019-01-09 00:27:17', '2022-11-08 21:54:22'),
-(14, 'Burnice', 'Bechtelar', 'Victoria', 'Barton', 'ilindgren@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-05-21 18:34:19', 'r0HHYjh3xs', 0, NULL, NULL, '2019-01-14 22:37:47', '2022-11-08 21:54:22'),
-(15, 'Alycia', 'Collins', 'Reese', 'Sonia', 'daniel.friedrich@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-06-30 19:38:12', 'L1iv1SYDMH', 0, NULL, NULL, '2019-02-27 17:56:38', '2022-11-08 21:54:22'),
-(16, 'Mozelle', 'Dooley', 'Frieda', 'Armand', 'monserrat.lind@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-09-04 17:07:10', 'i6J3InXmxx', 0, NULL, NULL, '2020-01-06 23:04:21', '2022-11-08 21:54:22'),
-(17, 'Cali', 'Mohr', 'Summer', 'Celestino', 'zkunze@example.org', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-02 01:33:17', 'gaJieDtxR9', 0, NULL, NULL, '2019-09-11 12:45:00', '2022-11-08 21:54:22'),
-(18, 'Saige', 'Hessel', 'Kira', 'Lura', 'walker.london@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-03 17:30:40', '36VY3mVLA0', 0, NULL, NULL, '2020-03-20 02:37:12', '2022-11-08 21:54:22'),
-(19, 'Hassan', 'Bernhard', 'Edythe', 'Kailyn', 'jany50@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-29 10:30:56', 'za1gR7Hind', 0, NULL, NULL, '2022-02-24 03:19:32', '2022-11-08 21:54:22'),
-(20, 'Harry', 'McGlynn', 'Magdalena', 'Jenifer', 'janelle07@example.net', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-06-06 03:01:57', 'fRVGMPiKiY', 0, NULL, NULL, '2019-07-19 15:49:52', '2022-11-08 21:54:22'),
-(21, 'Jodie', 'Auer', 'Lessie', 'Norma', 'ctillman@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-27 10:07:23', '7EQcYiGoEs', 0, NULL, NULL, '2019-01-30 07:12:53', '2022-11-08 21:54:22'),
-(22, 'Amani', 'Veum', 'Ernestine', 'Mollie', 'wabshire@example.com', '2022-11-08 21:54:22', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-07 18:42:24', '4pUxKdHktp', 0, NULL, NULL, '2021-12-20 19:35:53', '2022-11-08 21:54:22');
+(1, 'Marilie', 'Romaguera', '480.447.3532', '+18068481881', 'aurore.gorczany@example.net', '2022-12-03 18:52:40', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-11-06 04:33:03', 'cn85d43y59', 0, NULL, NULL, '2019-01-06 12:00:40', '2022-12-03 18:52:40'),
+(2, 'Rick', 'Raynor', '1-424-381-9861', '1-458-474-6172', 'mona53@example.net', '2022-12-03 18:52:40', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-07-28 03:26:33', 'lEryU7HpkH', 0, NULL, NULL, '2019-11-09 05:08:42', '2022-12-03 18:52:40'),
+(3, 'Raheem', 'McDermott', '+1-616-353-6042', '726.595.3929', 'simonis.bud@example.com', '2022-12-03 18:52:40', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-11-19 07:34:59', 'pV6UAN3I3C', 0, NULL, NULL, '2021-07-18 06:56:02', '2022-12-03 18:52:40'),
+(4, 'Nicole', 'Gerlach', '+1-747-499-2956', '430-377-9571', 'iokuneva@example.org', '2022-12-03 18:52:40', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-11-24 10:14:32', 'zXXE8u2cOX', 0, NULL, NULL, '2021-06-20 12:22:01', '2022-12-03 18:52:40'),
+(5, 'Callie', 'Yundt', '(616) 393-9877', '+1.989.939.7627', 'eda29@example.org', '2022-12-03 18:52:40', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-08-09 22:28:29', 'VKX9430kJI', 0, NULL, NULL, '2022-01-08 19:21:24', '2022-12-03 18:52:40'),
+(6, 'Administrateur', 'Super', '95185044', '95185044', 'super@admin.com', '2022-12-03 18:52:41', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-12-03 19:52:41', 'prjeY6kBsu', 0, NULL, NULL, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(7, 'Administrateur', 'Admin', '95185044', '95185044', 'admin@admin.com', '2022-12-03 18:52:41', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, NULL, '2022-12-03 19:52:41', '1kkPyIQO7OKzmFpBzx0YWWQgixBp5p6K4E1WUyi1LwZWVLfekej2jTbAV0Kt', 0, NULL, NULL, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(8, NULL, 'Fernando ALISSOU', '+22995185044', NULL, 'alissouanani@gmail.com', NULL, '$2y$10$SE07FPAhC3OEt2YBcWy0Pets0xEFo8QLp.avPW0P5RkO1jmpUoTmy', NULL, NULL, NULL, NULL, 0, NULL, NULL, '2022-12-03 20:15:27', '2022-12-03 20:15:27');
 
 -- --------------------------------------------------------
 
@@ -696,41 +648,41 @@ CREATE TABLE `villes` (
 --
 
 INSERT INTO `villes` (`id`, `name`, `departement_id`, `isDelete`, `created_at`, `updated_at`) VALUES
-(1, 'Cotonou', 1, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(2, 'Abomey-Calavi', 2, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(3, 'Porto-Novo', 3, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(4, 'Parakou', 4, 1, '2022-11-08 21:54:22', '2022-11-09 23:40:50'),
-(5, 'Djougou', 5, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(6, 'Bohicon', 8, 1, '2022-11-08 21:54:22', '2022-11-09 23:38:48'),
-(7, 'Natitingou', 6, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(8, 'Savé', 7, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(9, 'Abomey', 8, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(10, 'Nikki', 4, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(11, 'Lokossa', 9, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(12, 'Ouidah', 2, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(13, 'Dogbo-Tota', 10, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(14, 'Kandi', 11, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(15, 'Cové', 8, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(16, 'Malanville', 11, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(17, 'Pobé', 12, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(18, 'Kérou', 6, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(19, 'Savalou', 7, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(20, 'Sakété', 12, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(21, 'Comè', 9, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(22, 'Bembéréké', 4, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(23, 'Bassila', 5, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(24, 'Banikoara', 11, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(25, 'Kétou', 12, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(26, 'Dassa-Zoumè', 7, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(27, 'Tchaourou', 4, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(28, 'Allada', 2, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(29, 'Aplahoué', 10, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(30, 'Tanguiéta', 6, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(31, 'N\\\'Dali', 4, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(32, 'Segbana', 11, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(33, 'Athiémé', 9, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(34, 'Grand Popo', 9, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22'),
-(35, 'Kouandé', 6, 0, '2022-11-08 21:54:22', '2022-11-08 21:54:22');
+(1, 'Cotonou', 1, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(2, 'Abomey-Calavi', 2, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(3, 'Porto-Novo', 3, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(4, 'Parakou', 4, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(5, 'Djougou', 5, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(6, 'Bohicon', 8, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(7, 'Natitingou', 6, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(8, 'Savé', 7, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(9, 'Abomey', 8, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(10, 'Nikki', 4, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(11, 'Lokossa', 9, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(12, 'Ouidah', 2, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(13, 'Dogbo-Tota', 10, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(14, 'Kandi', 11, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(15, 'Cové', 8, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(16, 'Malanville', 11, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(17, 'Pobé', 12, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(18, 'Kérou', 6, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(19, 'Savalou', 7, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(20, 'Sakété', 12, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(21, 'Comè', 9, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(22, 'Bembéréké', 4, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(23, 'Bassila', 5, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(24, 'Banikoara', 11, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(25, 'Kétou', 12, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(26, 'Dassa-Zoumè', 7, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(27, 'Tchaourou', 4, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(28, 'Allada', 2, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(29, 'Aplahoué', 10, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(30, 'Tanguiéta', 6, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(31, 'N\\\'Dali', 4, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(32, 'Segbana', 11, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(33, 'Athiémé', 9, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(34, 'Grand Popo', 9, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41'),
+(35, 'Kouandé', 6, 0, '2022-12-03 18:52:41', '2022-12-03 18:52:41');
 
 --
 -- Index pour les tables déchargées
@@ -998,19 +950,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT pour la table `postulers`
 --
 ALTER TABLE `postulers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `profiles`
@@ -1034,13 +986,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT pour la table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `villes`
