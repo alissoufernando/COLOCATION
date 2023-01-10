@@ -55,10 +55,10 @@
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
                                                 data-animation-delay="0.3s">Bienvenue sur "STUDENT-COLOC"</h2>
                                             <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
-                                                data-animation-delay="0.4s">Trouvez des colocations dans tout le Bénin.</h4>
+                                                data-animation-delay="0.4s">Trouver des colocations dans tout le Bénin.</h4>
                                             <div class="mt-3">
                                                 <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
-                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
+                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposer des colocations</a>
                                             </div>
 
                                         </div>
@@ -79,7 +79,7 @@
                                                 data-animation-delay="0.4s">Aucune commission arbitraire, le service rendu est gratuit.</h4>
                                             <div class="mt-3">
                                                 <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
-                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
+                                                <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposer des colocations</a>
                                             </div>
 
                                         </div>
@@ -97,10 +97,10 @@
                                             <h2 class="staggered-animation" data-animation="fadeInDown"
                                             data-animation-delay="0.3s">Recherche avancée</h2>
                                         <h4 class="staggered-animation mb-3" data-animation="fadeInUp"
-                                            data-animation-delay="0.4s">Trouvez rapidement une personne qui vous correspond</h4>
+                                            data-animation-delay="0.4s">Trouver rapidement une personne qui vous correspond</h4>
                                         <div class="mt-3">
                                             <a href="{{ route('site.colocation') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Trouver une chambre</a>
-                                            <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposez des colocations</a>
+                                            <a href="{{ route('admin.product-create') }}" type="" class="btn btn-fill-out btn-radius btn-sm">Proposer des colocations</a>
                                         </div>
 
                                         </div>
@@ -263,7 +263,7 @@
                         <div class="heading_s1 text-center">
                             <h2>Dernières actualités</h2>
                         </div>
-                        <p class="leads text-center">Vie étudiante: Conseils actualites</p>
+                        <p class="leads text-center">Vie estudiantine: Conseils et actualités</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">

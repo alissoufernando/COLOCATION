@@ -85,7 +85,7 @@
                                         <li><a href="#"><i class="ti-calendar"></i> {{ $article->created_at->format('d M o') }}</a></li>
                                         <li><a href="#"><i class="ti-user"></i> posté par {{ $article->auteur }}</a></li>
                                     </ul>
-                                    <p>{!! $article->short_description !!}</p>
+                                    <p style="text-align: justify">{!! $article->short_description !!}</p>
                                     <a href="{{route('site.detail-article',['id' => $article->id])}}" class="btn btn-fill-out btn-radius btn-xs">Voir plus</a>
                                 </div>
                             </div>

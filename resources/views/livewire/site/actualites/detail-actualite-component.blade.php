@@ -80,9 +80,9 @@ v<div>
                     </div>
                     <div class="blog_content">
                         <div class="blog_text">
-                            <div>{!! $article->description !!}</div>
+                            <div style="text-align: justify">{!! $article->description !!}</div>
                             <blockquote class="blockquote_style3">
-                                <div>{!! $article->short_description !!}</div>
+                                <div style="text-align: justify">{!! $article->short_description !!}</div>
                             </blockquote>
                         	<div class="blog_post_footer">
                                 <div class="row justify-content-between align-items-center">
